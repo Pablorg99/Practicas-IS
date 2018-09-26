@@ -1,6 +1,6 @@
 
-![Imagen de Git](https://cdn-images-1.medium.com/max/910/1*BCZkmZR1_YzDZy22Vn4uUw.png)  
-  
+![imagengit](https://cdn-images-1.medium.com/max/910/1*BCZkmZR1_YzDZy22Vn4uUw.png)  
+
     
 # Configuración básica de git  
 
