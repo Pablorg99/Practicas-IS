@@ -1,6 +1,6 @@
 # Repositorio para practicas de IS
 
-En este repositorio subiremos las pracitcas de la asignatura Ingenieria del software.
+En este repositorio subiremos las prácticas de la asignatura Ingenieria del software.
 
 Realizado por:  
 
