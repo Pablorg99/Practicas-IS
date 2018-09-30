@@ -1,5 +1,5 @@
 
-![imagengit](https://cdn-images-1.medium.com/max/910/1*BCZkmZR1_YzDZy22Vn4uUw.png)  
+![imagengit](https://upload-images.jianshu.io/upload_images/2982112-db343fb0221ada9f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/646)  
 
     
 # Configuración básica de git  
@@ -33,6 +33,7 @@ Git utilizará un editor por defecto para editar los commits y demás documentos
 > git config --global core.editor tu_editor_favorito
 
 ### Confirmar
+
 Para comprobar que tenemos una configuración correcta utilizaremos:
 
 > git config --list
