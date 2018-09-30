@@ -1,3 +1,44 @@
+# **TUTORIAL GIT Y GITHUB**
+
+![imagengit](https://upload-images.jianshu.io/upload_images/2982112-db343fb0221ada9f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/646)  
+
+
+# Configuración básica de git  
+
+## Instalación  (Ubuntu)
+
+La instalación de Git en ubuntu es bastante sencilla. Basta con ejecutar el siguiente comando:
+
+>sudo apt install git
+
+Por lo general, en la mayoría de variantes del sistema ubuntu Git viene instalado de serie.
+
+## Configuración básica
+
+### Usuario y correo
+
+Lo primero antes de empezar a utilizar git es configurar nuestro usuario y nuestro correo electrónico:
+
+> git config --global user.name "tu usuario"
+
+> git config --global user.email tuemail@example.com
+
+Es importante hacerlo ya que en cada commit usaremos esta información.
+
+Si queremos configurar un usuario distinto para un proyecto en concreto solo tenemos que ejecutar el mismo comando dentro del directorio sin `--global`.
+
+### Editor de texto
+
+Git utilizará un editor por defecto para editar los commits y demás documentos. Si queremos cambiar este editor usaremos:
+
+> git config --global core.editor tu_editor_favorito
+
+### Confirmar
+
+Para comprobar que tenemos una configuración correcta utilizaremos:
+
+> git config --list
+
 ### Los estados de *git*.
 ![Git states](https://alexdiliberto.com/talks/all-things-git/img/git_local_to_remote.png)
 
@@ -168,3 +209,65 @@ Muestra la comparación entre entre el *commit* actual y el introducido.
 Muestra la comparación entre dos *commits*.
 
 Más información sobre [comparación de *commits*](https://git-scm.com/docs/git-diff).
+
+# Ramas o Branches
+
+Su utilización está muy extendida ya que permite un mejor control del código, especialmente cuando su evolución se produce en paralelo.
+
+Uno de sus usos más comunes es representar las diferentes versiones del software.
+
+### Ver listado de ramas
+`git branch`
+
+### Crear una rama
+`git branch nombre_rama`
+
+ Git es consciente de la rama en la que nos encontramos en cada momento debido a la existencia de un apuntador especial denominado HEAD que apunta a la rama en la que nos encontramos.
+
+### Cambiar a una rama
+`git checkout nombre_rama`
+
+ A través de este comando, el apuntador HEAD mencionado anteriormente pasa a apuntar a la rama 'nombre_rama'.
+
+### Comparar ramas
+`git diff nombre_rama1..nombre_rama2`
+
+>Para listar los archivos que han cambiado se puede utilizar `git diff --name-status nombre_rama1..nombre_rama2`
+
+### Renombrar ramas
+`git branch -m nombre_antiguo nombre_nuevo`
+
+### Eliminar ramas
+~~~
+git branch -d nombre_rama
+git branch -D nombre_rama
+~~~
+>El primero de estos 2 comandos dará un error si la rama no es idéntica a la rama master. Con el segundo forzamos el borrado.
+
+### Ver si una rama es igual que la rama en la que nos encontramos
+`git branch --merged`
+
+### Integrar una rama a la acutal
+`git branch merge rama_a_integrar`
+
+Con la ejecución de este comando, suelen producirse conflictos con los archivos de ambas ramas. Estos conflictos suelen resolverse manualmente realizando commmits con el mensaje "merge"
+
+## Cambios temporales
+
+### Almacenar cambios temporales
+`git stash save "Mensaje"`
+
+### Listar cambios
+`git stash --list`
+
+### Ver contenido de un cambio
+`git stash show -p nombre_stash`
+
+### Eliminar un cambio
+`git stash drop nombre_stash`
+
+### Aplicar cambio del stash
+~~~
+git stash apply nombre_stash
+git stash pop nombre nombre_stash
+~~~
