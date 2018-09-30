@@ -10,17 +10,6 @@ La instalación de Git en ubuntu es bastante sencilla. Basta con ejecutar el sig
 
 >sudo apt install git
 
-Por lo general, en la mayoria de variantes del sistema ubuntu Git viene instalado de serie.
-
-## Configuración básica
-# Configuración básica de git  
-
-## Instalación  (Ubuntu)
-
-La instalación de Git en ubuntu es bastante sencilla. Basta con ejecutar el siguiente comando:
-
->sudo apt install git
-
 Por lo general, en la mayoría de variantes del sistema ubuntu Git viene instalado de serie.
 
 ## Configuración básica
