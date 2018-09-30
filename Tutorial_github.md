@@ -6,7 +6,7 @@ Github es una plataforma de trabajo colaborativo para alojar proyectos utilizand
 
 Para vincular nuestra cuenta de github con nuestro equipo en el que vamos a realizar el trabajo tendremos que generar una clave SSH.  
 Lo primero es comprobar que no tenemos ya una clave SSH pública. Para ello nos movemos al directorio `~/.ssh` y comprobamos que no hay ningún archivo con la extensión `.pub`. Si tenemos un archivo con dicha extensión esa será nuestra clave y no tendremos que generar una.  
-Para generar una clave nueva utilizaremos el siguente comando:
+Para generar una clave nueva utilizaremos el siguiente comando:
 
 > ssh-keygen
 
@@ -22,7 +22,7 @@ Para sincronizar un repositorio de github con un repositorio local nuestro ejecu
 
 > git remote add origin git@github.com:usuario/repositorio.git
 
-Podemos conseguir la dirección ssh de nuestro repositorio de github pinchando en el botón `clone or download` en la pagina principal del mismo.
+Podemos conseguir la dirección ssh de nuestro repositorio de github pinchando en el botón `clone or download` en la página principal del mismo.
 
 ## Comandos básicos con github
 
@@ -30,8 +30,15 @@ Hay dos comandos principales a la hora de trabajar con un repositorio remoto. Es
 
 ### Pull
 
-Para bajarnos las ultimas actualizaciones de nuestro repositorio remoto ejecutaremos `git pull`. Este comando comparará nuestro repositorio local con el remoto y descargará los cambios que no tengamos.
+Para bajarnos las últimas actualizaciones de nuestro repositorio remoto ejecutaremos `git pull`. Este comando comparará nuestro repositorio local con el remoto y descargará los cambios que no tengamos.
 
 ### Push
 
-Para subir a nuestro repositorio remoto los últimos cambios que hemos realizado en el local ejecutaremos `git push`. Este comando subirá los últimos commits que esten en nuestro repositorio local y no en el remoto.
+Para subir a nuestro repositorio remoto los últimos cambios que hemos realizado en el local ejecutaremos `git push`. Este comando subirá los últimos commits que estén en nuestro repositorio local y no en el remoto.
+
+## Merge
+
+Cuando queremos hacer un Push pero en el repositorio remoto hay contenido que no tenemos en nuestro local tendremos que bajar primero ese contenido y mezclarlo con el nuestro*.
+Para ello haremos nuestro commit, un Pull y luego haremos push. O directamente ejecutaremos `git merge` (ver apartado de ramas para más información).
+
+*Si hay un mismo archivo con más contenido arriba tendremos que decirle a git con que nos queremos quedar.
