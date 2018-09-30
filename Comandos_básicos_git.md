@@ -1,6 +1,12 @@
+### Los estados de *git*.
+![Git states](https://alexdiliberto.com/talks/all-things-git/img/git_local_to_remote.png)
+
+Antes de empezar a trabajar con *git* debemos entender que existen tres posibles estados. Estos estados son los representados en el área local de la imagen anterior. El cuarto estado (*remote*) hace referencia a los repositorios sincronizados con *github*.  
+En la siguiente sección aprenderá los comandos necesarios para cambiar el estado de los repositorios.
+
 # Comandos básicos de *git*.
 
-En este apartado veremos los comandos básicos para trabajar con *git*.
+En este apartado veremos los comandos básicos para trabajar con *git*.  
 
 ### Iniciar repositorio en un directorio:
 ` git  init`
