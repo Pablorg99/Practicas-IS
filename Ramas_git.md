@@ -39,3 +39,23 @@ git branch -D nombre_rama
 `git branch merge rama_a_integrar`
 
 Con la ejecución de este comando, suelen producirse conflictos con los archivos de ambas ramas. Estos conflictos suelen resolverse manualmente realizando commmits con el mensaje "merge"
+
+## Cambios temporales
+
+### Almacenar cambios temporales
+`git stash save "Mensaje"`
+
+### Listar cambios
+`git stash --list`
+
+### Ver contenido de un cambio
+`git stash show -p nombre_stash`
+
+### Eliminar un cambio
+`git stash drop nombre_stash`
+
+### Aplicar cambio del stash
+~~~
+git stash apply nombre_stash
+git stash pop nombre nombre_stash
+~~~
