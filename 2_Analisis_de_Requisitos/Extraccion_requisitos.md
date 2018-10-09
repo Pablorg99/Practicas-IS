@@ -15,22 +15,24 @@
 * Nº de equipo.
 * Líder ( Sí / No ).
 
-> Los atributos marcados con un * serán campos obligatorios.
+> *Nota:* Los atributos marcados con un * serán campos obligatorios.
 
 
 ## Extracción Requistos:
 
 #### Requisiotos funcionales:
 
-1. Insertar alumno.
-2. Modificarlo.
-3. Borrarlo.
-4. Mostrarlo.
-5. Añadir líder.
-6. Generar copia de seguridad.
-7. Reset base de datos.
-8. Ordenar alumnos.
-9. Seleccionar alumnos.
+1. Insertar alumno. (1)
+2. Modificarlo. (4)
+3. Borrarlo. (4)
+4. Mostrarlo. (4)
+5. Añadir líder. (2)
+6. Generar copia de seguridad. (5)
+7. Reset base de datos. (5)
+8. Ordenar alumnos. (5)
+9. Buscar alumnos. (3)
+
+> *Nota:* Las prioridades se establecerán con un número entre paréntesis tras el requisito referenciado.
 
 #### Requisitos no funcionales:
 
