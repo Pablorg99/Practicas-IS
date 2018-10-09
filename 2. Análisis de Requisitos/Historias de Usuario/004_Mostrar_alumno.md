@@ -1,7 +1,7 @@
 ## (Anverso)
 ---
 
-### **ID**: 04 Mostrar Alumno
+### **ID**: 004 Mostrar Alumno
 
 Como usuario quiero poder mostrar alumnos  
 
