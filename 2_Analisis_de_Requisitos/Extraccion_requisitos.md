@@ -1,9 +1,11 @@
-## Actores:
-* Principal:  Profesor.
+## Actores
+
+* Principal:  Profesor
 
 * Secundarios: Alumnos.
 
-## Datos:
+## Datos
+
 * DNI.*
 * Nombre.*
 * Apellidos.*
