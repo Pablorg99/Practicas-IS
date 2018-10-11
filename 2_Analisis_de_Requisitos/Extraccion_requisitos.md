@@ -34,7 +34,9 @@
 8. Ordenar alumnos. (5)
 9. Buscar alumnos. (3)
 
-> *Nota:* Las prioridades se establecerán con un número entre paréntesis tras el requisito referenciado.
+> *Nota:* Las prioridades se establecerán con un número entre paréntesis tras el requisito
+al que hace referencia (siendo 1 la máxima prioridad y 5 la mínima)
+
 
 #### Requisitos no funcionales:
 
