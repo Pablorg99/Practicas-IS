@@ -17,6 +17,8 @@ Como usuario quiero poder ordenar los alumnos que se van a mostrar.
 
 * Quiero poder ordenarlos por apellido.
 
-* Quiero poder ordenarlos por curso.
+* Quiero poder ordenarlos por curso más alto matriculado.
+
+* Las 3 formas tienen que poder ser ascendentes y descendentes.
 
 ---

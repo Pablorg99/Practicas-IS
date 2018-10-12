@@ -1,7 +1,7 @@
 ## (Anverso)
 ---
 
-### **ID**: 006 **Generar Backup**
+### **ID**: 006 **Generar Copia de Seguridad**
 
 Como usuario quiero poder hacer copias de seguridad de mis datos.  
 

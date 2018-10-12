@@ -22,17 +22,18 @@
 
 ## Extracción Requistos:
 
-#### Requisiotos funcionales:
+#### Requisitos funcionales:
 
 1. Insertar alumno. (1)
 2. Modificarlo. (4)
 3. Borrarlo. (4)
 4. Mostrarlo. (4)
-5. Añadir líder. (2)
+5. Insertar líder. (2)
 6. Generar copia de seguridad. (5)
-7. Reset base de datos. (5)
+7. Reseteo de base de datos. (5)
 8. Ordenar alumnos. (5)
 9. Buscar alumnos. (3)
+[//]: # (Mostrar alumnos equipo en 5.?)
 
 > *Nota:* Las prioridades se establecerán con un número entre paréntesis tras el requisito
 al que hace referencia (siendo 1 la máxima prioridad y 5 la mínima)

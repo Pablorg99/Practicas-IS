@@ -13,7 +13,7 @@ Quiero poder añadir al sistema un nuevo alumno
 
 ---
 
-* Cada alumno cuenta con una serie de datos que introduce el usuario:
+* Quiero poder introducir todos los datos de un nuevo alumno:
     * DNI
     * Nombre
     * Apellidos
@@ -25,8 +25,6 @@ Quiero poder añadir al sistema un nuevo alumno
     * Nº equipo
     * Líder (Sí/No)
 
-* Para poder insertar un alumno hay que comprobar que no existe uno con mismo DNI
-
-* Introducir el equipo no es obligatorio al añadir un alumno
+* Introducir el equipo y especificar si es líder o no, no es obligatorio al añadir un alumno.
 
 ---
