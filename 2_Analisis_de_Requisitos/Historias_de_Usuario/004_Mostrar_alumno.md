@@ -1,11 +1,11 @@
 ## (Anverso)
 ---
 
-### **ID**: 004 Mostrar Alumno
+### **ID**: 004 **Mostrar Alumno**
 
 Como usuario quiero poder mostrar alumnos  
 
-**Prioridad**: 004 (De momento)
+**Prioridad**: 4
 
 ---
 

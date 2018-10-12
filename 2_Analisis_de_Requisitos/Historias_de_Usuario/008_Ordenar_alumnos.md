@@ -1,11 +1,11 @@
 ## (Anverso)
 ---
 
-### **ID**: 008 Ordenar Alumnos
+### **ID**: 008 **Ordenar Alumnos**
 
 Como usuario quiero poder ordenar los alumnos que se van a mostrar.
 
-**Prioridad**: 004 (De momento)
+**Prioridad**: 5
 
 ---
 

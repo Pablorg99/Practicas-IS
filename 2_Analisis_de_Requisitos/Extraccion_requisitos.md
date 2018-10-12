@@ -1,4 +1,4 @@
-## Actores
+# Actores
 
 * Principal:  Profesor
 
@@ -15,7 +15,7 @@
 * Último curso matriculado.
 * Fecha de nacimiento.
 * Nº de equipo.
-* Líder ( Sí / No ).
+* Líder (Sí/No).
 
 > *Nota:* Los atributos marcados con un * serán campos obligatorios.
 
