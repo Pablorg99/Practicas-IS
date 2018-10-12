@@ -3,7 +3,7 @@
 
 ### **ID**: 002 **Modificar Alumno**
 
-Como usuario quiero poder modificar un almno que ya está en la base de datos.  
+Como usuario quiero poder modificar un alumno que ya está en la base de datos.  
 
 **Prioridad:** 4
 
