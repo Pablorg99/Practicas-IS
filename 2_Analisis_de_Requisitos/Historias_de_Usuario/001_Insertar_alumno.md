@@ -13,7 +13,7 @@ Quiero poder añadir al sistema un nuevo alumno
 
 ---
 
-* Cada alumno cuenta con una serie de datos:
+* Cada alumno cuenta con una serie de datos que introduce el usuario:
     * DNI
     * Nombre
     * Apellidos
