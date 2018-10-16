@@ -13,6 +13,12 @@ Como usuario quiero poder mostrar alumnos
 
 ---
 
+
+* Quiero poder mostrar
+  * Un único alumno
+  * Los alumnos de un equipo
+  * Todos los alumnos registrados
+
 * Quiero poder mostrar todos los datos de un alumno.
 
 * Se tienen que poder mostrar varios alumnos a la vez.
