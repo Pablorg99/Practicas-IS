@@ -1,10 +1,9 @@
-[//]: # (Pendiente de cambios) 
 ## (Anverso)
 ---
 
 ### **ID:** 005 **Insertar líder**
 
-Quiero poder
+Quiero poder seleccionar un miembro del grupo como líder
 
 **Prioridad:** 2
 
@@ -14,6 +13,8 @@ Quiero poder
 
 ---
 
-* Permitir
+* Permitir la selección de un grupo, y posteriormente la asignación de un líder.
+
+* Imposibilitat la selección de dos líderes para un mismo grupo.
 
 ---
