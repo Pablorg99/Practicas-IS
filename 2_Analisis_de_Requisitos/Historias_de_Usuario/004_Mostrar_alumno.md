@@ -13,9 +13,12 @@ Como usuario quiero poder mostrar alumnos
 
 ---
 
-* Quiero poder mostrar todos los datos de un alumno.
+* Quiero poder mostrar:
+  * Un único alumno.
+  * Los alumnos de un equipo.
+  * Todos los alumnos registrados.
 
-* Se tienen que poder mostrar varios alumnos a la vez.
+* Quiero poder mostrar todos los datos del alumno mostrado.
 
 * Quiero que se me impriman los datos en un único archivo pdf.
 
