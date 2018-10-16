@@ -33,7 +33,6 @@
 7. Reseteo de base de datos. (5)
 8. Ordenar alumnos. (5)
 9. Buscar alumnos. (3)
-[//]: # (Mostrar alumnos equipo en 5.?)
 
 > *Nota:* Las prioridades se establecerán con un número entre paréntesis tras el requisito
 al que hace referencia (siendo 1 la máxima prioridad y 5 la mínima)
