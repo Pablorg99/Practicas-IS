@@ -1,10 +1,10 @@
 # Caso_uso_1.md
 ### Insertar Alumno
-**ID:** 001  
-**Breve descripción:** Permite insertar un nuevo alumno
+**ID:** 001.  
+**Breve descripción:** Permite insertar un nuevo alumno.
 
-**Actores principales:** Profesor  
-**Actores secundarios:** Alumnos
+**Actores principales:** Profesor.  
+**Actores secundarios:** Alumnos.
 
 **Precondiciones:**
 1. Se debe incluir el DNI, nombre y apellidos de forma obligatoria.

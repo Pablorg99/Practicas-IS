@@ -1,7 +1,6 @@
 # Actores
 
-* Principal:  Profesor
-
+* Principal:  Profesor.
 * Secundarios: Alumnos.
 
 ## Datos
