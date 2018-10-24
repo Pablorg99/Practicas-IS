@@ -1,5 +1,5 @@
-# Caso_uso_1.md
-### Insertar Alumno
+# Caso_uso_001.md
+## Insertar Alumno
 **ID:** 001.  
 **Breve descripción:** Permite insertar un nuevo alumno.
 
@@ -7,8 +7,7 @@
 **Actores secundarios:** Alumnos.
 
 **Precondiciones:**
-1. Se debe incluir el DNI, nombre y apellidos de forma obligatoria.
-2. El máximo permitido será de 150 alumos.
+1. El máximo permitido será de 150 alumos.
 
 **Flujo Principal:**
 1. El caso empieza cuando el usuario desea añadir un alumno.
@@ -18,4 +17,4 @@
 * El sistema guarda los datos introducidos.
 
 **Flujo alternativo:**
-* Si no se introducen los campos obligatorios, el sistema muestra un error.
+* Si no se introducen los campos obligatorios (DNI, nombre y apellidos), el sistema muestra un error.

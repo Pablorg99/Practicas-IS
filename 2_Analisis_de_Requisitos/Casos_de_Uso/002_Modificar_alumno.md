@@ -1,5 +1,5 @@
-# Caso_uso_2.md
-### Modificar Alumno
+# Caso_uso_002.md
+## Modificar Alumno
 **ID:** 002.  
 **Breve descripción:** Permite editar un alumno ya existente.
 
