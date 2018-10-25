@@ -1,6 +1,6 @@
 # Caso_uso_005.md
 
-## Mostrar alumnos
+## Seleccionar lider
 
 **ID:** 005  
 **Breve descripción:** Permite introducir quien es el alumno lider de grupo (Solo 1 por grupo).
