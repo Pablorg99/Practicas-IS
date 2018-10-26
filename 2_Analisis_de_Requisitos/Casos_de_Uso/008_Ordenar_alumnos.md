@@ -14,7 +14,7 @@
 
 **Flujo Principal:**
 
-1. El caso empieza cuando el usuario elige la opción de mostrar varios alumnos (todos, o de un equipo) y se ha producido la selección de los mismos.
+1. El caso empieza cuando el usuario elige la opción de mostrar alumnos (deben ser varios) y se ha seleccionado la opción de ordenar.
 2. Se pregunta al usuario por el parámetro encargado de ordenar el conjunto de alumnos entre los siguientes:
     * DNI
     * Apellido
@@ -23,7 +23,7 @@
 
 **Postcondiciones:**
 
-* El sistema borra todos los datos de la base de datos.
+* Se produce la impresión de los alumnos en el orden establecido.
 
 **Flujo alternativo:**
 
