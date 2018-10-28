@@ -10,6 +10,7 @@
 
 1. El alumno debe existir.
 2. El usuario debe haber buscado y seleccionado los alumnos.
+3. El usuario debe haber seleccionado el metodo de ordenación de los alumnos.
 
 **Flujo Principal:**
 
