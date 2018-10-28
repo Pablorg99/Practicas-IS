@@ -1,6 +1,6 @@
 ## Generar Backup
 
-**ID:** 006
+**ID:** 006.
 **Breve descripción:** Guardar un archivo binario con los datos de los alumnos.
 
 **Actores principales:** Profesor.  
