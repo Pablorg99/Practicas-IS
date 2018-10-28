@@ -1,4 +1,4 @@
-# Modificar Alumno
+## Modificar Alumno
 
 **ID:** 002.  
 **Breve descripción:** Permite editar un alumno ya existente.
