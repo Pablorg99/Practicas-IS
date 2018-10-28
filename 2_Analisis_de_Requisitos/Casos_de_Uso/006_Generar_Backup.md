@@ -1,5 +1,3 @@
-## Caso_uso_006.md
-
 ## Generar Backup
 
 **ID:** 006
