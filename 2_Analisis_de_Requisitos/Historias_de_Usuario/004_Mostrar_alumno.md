@@ -1,4 +1,5 @@
 ## (Anverso)
+
 ---
 
 ### **ID**: 004 **Mostrar Alumno**

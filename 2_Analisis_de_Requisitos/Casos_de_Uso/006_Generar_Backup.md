@@ -20,7 +20,6 @@
 
 **Postcondiciones:**
 
-
 **Flujo alternativo:**
 
 * Si no hay datos el sistema mostrará un mensaje de error.

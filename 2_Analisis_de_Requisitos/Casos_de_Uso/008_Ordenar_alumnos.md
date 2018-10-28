@@ -1,5 +1,3 @@
-# Caso_uso_008.md
-
 ## Ordenar alumnos
 
 **ID:** 008.  
@@ -10,11 +8,11 @@
 
 **Precondiciones:**
 
-1. Debe haber dos o más alumnos almacenados en el sistema.
+1. Deben de haberse seleccionado dos o más alumnos en el sistema.
 
 **Flujo Principal:**
 
-1. El caso empieza cuando el usuario elige la opción de mostrar alumnos (deben ser varios) y se ha seleccionado la opción de ordenar.
+1. El caso empieza cuando el usuario elige la opción de mostrar alumnos, y posteriormente ha seleccionado la opción de mostrar con un orden determinado.
 2. Se pregunta al usuario por el parámetro encargado de ordenar el conjunto de alumnos entre los siguientes:
     * DNI
     * Apellido

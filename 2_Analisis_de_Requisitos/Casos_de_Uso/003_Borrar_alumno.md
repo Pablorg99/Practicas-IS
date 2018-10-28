@@ -1,6 +1,4 @@
-# Caso_uso_003.md
-
-## Borrar Alumno
+# Borrar Alumno
 
 **ID:** 003.  
 **Breve descripción:** Permite borrar un alumno.

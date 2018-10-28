@@ -1,5 +1,3 @@
-# Caso_uso_004.md
-
 ## Mostrar alumnos
 
 **ID:** 004.  

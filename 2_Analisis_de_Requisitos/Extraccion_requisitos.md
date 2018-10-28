@@ -1,4 +1,4 @@
-# Actores
+## Actores
 
 * Principal:  Profesor.
 * Secundarios: Alumnos.
@@ -18,10 +18,9 @@
 
 > *Nota:* Los atributos marcados con un * serán campos obligatorios.
 
+## Extracción Requistos
 
-## Extracción Requistos:
-
-#### Requisitos funcionales:
+### Requisitos funcionales
 
 1. Insertar alumno. (1)
 2. Modificarlo. (4)
@@ -36,8 +35,7 @@
 > *Nota:* Las prioridades se establecerán con un número entre paréntesis tras el requisito
 al que hace referencia (siendo 1 la máxima prioridad y 5 la mínima)
 
-
-#### Requisitos no funcionales:
+### Requisitos no funcionales
 
 1. SO: linux.
 2. C++.

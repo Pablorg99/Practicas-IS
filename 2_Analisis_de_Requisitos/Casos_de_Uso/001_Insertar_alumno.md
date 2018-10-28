@@ -1,5 +1,3 @@
-# Caso_uso_001.md
-
 ## Insertar Alumno
 
 **ID:** 001.  

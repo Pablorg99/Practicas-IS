@@ -1,5 +1,3 @@
-# Caso_uso_009.md
-
 ## Buscar alumnos
 
 **ID:** 009.  
@@ -21,18 +19,19 @@
     * Todos los alumnos.
     * Un número determinado de alumnos.
 3. Según lo que se haya seleccionado:
-    * *Un alumno:* 
+    * *Un alumno:*
         * Se le pregunta al usuario por el parámetro por el que se quiere buscar:
             * DNI.
             * Apellidos.
         * Se pide dicho parámetro.
     * *Un equipo:*
-        * Se pide el número del equipo. 
+        * Se pide el número del equipo.
     * *Un numero determinado:*
         * El usuario introduce dicho número.
-        * Se pregunta el parámetro por el que se quiere buscar.
+        * Se pregunta el parámetro por el que se quiere buscar (DNI/Apellidos).
         * Se itera preguntando dicho parámetro el número de veces introducido previamente.
 4. Se sale de la búsqueda
+
 **Postcondiciones:**
 
 * El alumno o conjunto de alumnos de la búsqueda son seleccionados y se abre el menú para seleccionar la acción a realizar.

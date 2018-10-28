@@ -1,5 +1,3 @@
-# Caso_uso_007.md
-
 ## Resetear Base de Datos
 
 **ID:** 007.  
@@ -10,7 +8,7 @@
 
 **Precondiciones:**
 
-1. La base de datos debe tener almacena información de almenos un alumno.
+1. La base de datos debe tener almacenada información de almenos un alumno.
 
 **Flujo Principal:**
 
