@@ -9,6 +9,7 @@
 **Precondiciones:**
 
 1. El alumno debe existir.
+2. El usuario debe haber buscado y seleccionado los alumnos.
 
 **Flujo Principal:**
 
