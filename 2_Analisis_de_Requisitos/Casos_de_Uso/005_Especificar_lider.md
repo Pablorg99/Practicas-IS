@@ -1,4 +1,4 @@
-# Seleccionar lider
+## Seleccionar lider
 
 **ID:** 005  
 **Breve descripción:** Permite introducir quien es el alumno lider de grupo (Solo 1 por grupo).

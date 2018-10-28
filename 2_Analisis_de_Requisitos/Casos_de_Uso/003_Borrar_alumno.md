@@ -1,4 +1,4 @@
-# Borrar Alumno
+## Borrar Alumno
 
 **ID:** 003.  
 **Breve descripción:** Permite borrar un alumno.
