@@ -13,7 +13,7 @@
 
 **Flujo Principal:**
 
-1. El caso empieza cuando el usuario desea modificar un alumno.
+1. El caso empieza cuando el usuario desea modificar un alumno en el menú que aparece tras el proceso de buscar y seleccionar alumno.
 2. El sistema pregunta al usuario que parámetro desea editar.
 3. El sistema recoge el nuevo valor introducido por el ususario.
 4. El sistema pregunta si se desea editar algún otro parámetro.

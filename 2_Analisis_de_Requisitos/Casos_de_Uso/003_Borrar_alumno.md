@@ -12,7 +12,7 @@
 
 **Flujo Principal:**
 
-1. El caso empieza cuando el usuario desea eliminar un alumno.
+1. El caso empieza cuando el usuario desea eliminar un alumno en el menú que aparece tras el proceso de buscar y seleccionar alumno.
 2. El sistema pide una confirmación del borrado del alumno seleccionado.
 
 **Postcondiciones:**
