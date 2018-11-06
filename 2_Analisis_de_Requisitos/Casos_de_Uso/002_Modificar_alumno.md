@@ -17,7 +17,7 @@
 2. El sistema pregunta al usuario que parámetro desea editar.
 3. El sistema recoge el nuevo valor introducido por el ususario.
 4. El sistema pregunta si se desea editar algún otro parámetro.
-5. En caso afirmattivo, se vuelve al paso 2.
+5. En caso afirmativo, se vuelve al paso 2.
 
 **Postcondiciones:**
 

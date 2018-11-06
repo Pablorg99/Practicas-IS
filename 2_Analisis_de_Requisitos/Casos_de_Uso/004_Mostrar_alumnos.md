@@ -10,7 +10,7 @@
 
 1. El alumno debe existir.
 2. El usuario debe haber buscado y seleccionado los alumnos.
-3. El usuario puede haber seleccionado la opción de ordenar.
+3. El usuario puede haber seleccionado la opción de ordenar la selección.
 
 **Flujo Principal:**
 

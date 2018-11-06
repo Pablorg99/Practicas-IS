@@ -16,6 +16,6 @@ Quiero poder seleccionar un miembro del grupo como líder
 
 * Permitir la selección de un grupo, y posteriormente la asignación de un líder.
 
-* Imposibilitat la selección de dos líderes para un mismo grupo.
+* Imposibilitar la selección de dos líderes para un mismo grupo.
 
 ---

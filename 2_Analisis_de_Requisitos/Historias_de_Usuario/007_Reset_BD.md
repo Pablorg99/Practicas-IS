@@ -2,7 +2,7 @@
 
 ---
 
-### **ID:** 007 **Reseteo de base de datos**
+### **ID:** 007 **Formatear base de datos**
 
 Quiero poder eliminar todos los alumnos registrados en el sistema
 
