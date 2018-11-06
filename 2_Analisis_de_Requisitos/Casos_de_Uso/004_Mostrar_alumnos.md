@@ -1,7 +1,7 @@
 ## Mostrar alumnos
 
 **ID:** 004.  
-**Breve descripción:** Permite imprimir los datos en un archivo pdf.
+**Breve descripción:** Permite imprimir los datos en un fichero.
 
 **Actores principales:** Profesor.  
 **Actores secundarios:** Alumnos.
@@ -10,7 +10,7 @@
 
 1. El alumno debe existir.
 2. El usuario debe haber buscado y seleccionado los alumnos.
-3. El usuario debe haber seleccionado el metodo de ordenación de los alumnos.
+3. El usuario puede haber seleccionado la opción de ordenar.
 
 **Flujo Principal:**
 
@@ -20,7 +20,7 @@
 
 **Postcondiciones:**
 
-* El archivo pdf ha sido creado con los datos correctos.
+* Los datos se imprimen en el fichero.
 
 **Flujo alternativo:**
 
