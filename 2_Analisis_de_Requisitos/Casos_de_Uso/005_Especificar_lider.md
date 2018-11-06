@@ -13,10 +13,9 @@
 
 **Flujo Principal:**
 
-1. El caso comienza cuando el usuario quiere seleccionar quien es el líder de un grupo.
-2. El usuario debe buscar y seleccionar el alumno que quiere seleccionar como líder.
-3. El sistema comprueba que no hay otro líder en el grupo del alumno seleccionado.
-4. El alumno queda guardado como líder.
+1. El caso comienza cuando el usuario quiere seleccionar quien es el lider de un grupo.
+2. El usuario debe buscar y seleccionar el alumno que quiere seleccionar como lider.
+3. El sistema comprueba que no hay otro lider en el grupo del alumno seleccionado.
 
 **Postcondiciones:**
 

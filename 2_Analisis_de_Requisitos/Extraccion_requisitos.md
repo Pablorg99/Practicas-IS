@@ -18,7 +18,7 @@
 
 > *Nota:* Los atributos marcados con un * serán campos obligatorios.
 
-## Extracción Requistos
+## Extracción Requisitos
 
 ### Requisitos funcionales
 
@@ -28,9 +28,10 @@
 4. Mostrarlo. (4)
 5. Insertar líder. (2)
 6. Generar copia de seguridad. (5)
-7. Reseteo de base de datos. (5)
-8. Ordenar alumnos. (5)
-9. Buscar alumnos. (3)
+7. Restaurar copia de datos (5)
+8. Formateo de base de datos. (5)
+9. Ordenar alumnos. (5)
+10. Buscar alumnos. (3)
 
 > *Nota:* Las prioridades se establecerán con un número entre paréntesis tras el requisito
 al que hace referencia (siendo 1 la máxima prioridad y 5 la mínima)
