@@ -22,4 +22,4 @@
 **Flujo alternativo:**
 
 * Si el alumno a borrar no existe, el sistema muestra un error.
-* Si el ususario rechaza la confirmación de borrado se rechaza la petición de borrado.
+* Si el usuario rechaza la confirmación de borrado se rechaza la petición de borrado.

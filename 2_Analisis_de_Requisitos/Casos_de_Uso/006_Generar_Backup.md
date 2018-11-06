@@ -8,7 +8,7 @@
 
 **Precondiciones:**
 
-1. Debe exister al menos un alumno en la base de datos.
+1. Debe existir al menos un alumno en la base de datos.
 
 **Flujo Principal:**
 

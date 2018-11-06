@@ -1,4 +1,4 @@
-## Resetear Base de Datos
+## Formatear la Base de Datos
 
 **ID:** 007.  
 **Breve descripción:** Borra todos los datos almacenados en la base de datos.
@@ -8,7 +8,7 @@
 
 **Precondiciones:**
 
-1. La base de datos debe tener almacenada información de almenos un alumno.
+1. La base de datos debe tener almacenada información de al menos un alumno.
 
 **Flujo Principal:**
 

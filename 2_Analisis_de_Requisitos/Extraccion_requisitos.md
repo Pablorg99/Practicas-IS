@@ -39,8 +39,7 @@ al que hace referencia (siendo 1 la máxima prioridad y 5 la mínima)
 
 1. SO: linux.
 2. C++.
-3. Interfaz gráfica.
-4. Copia de seguridad fichero binario.
-5. Mostrar datos en html.
-6. Campo obligatorio de un alumno: dni, nombre, apellido.
-7. Máximo 150 alumnos.
+3. Copia de seguridad fichero binario.
+4. Mostrar datos en html.
+5. Campo obligatorio de un alumno: dni, nombre, apellido.
+6. Máximo 150 alumnos.
