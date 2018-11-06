@@ -14,9 +14,10 @@
 
 1. El caso comienza cuando el usuario quiere guardar una copia exacta de la base de datos.
 2. El usuario seleccionará donde quiere guardar el archivo.
-3. El sistema crea el archivo.
 
 **Postcondiciones:**
+
+* El sistema crea el archivo.
 
 **Flujo alternativo:**
 
