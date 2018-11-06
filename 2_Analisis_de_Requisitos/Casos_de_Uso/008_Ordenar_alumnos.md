@@ -25,4 +25,5 @@
 
 **Flujo alternativo:**
 
+* Si los apellidos de 2 o más alumnos son los mismos, esa sección de la selección se ordenará por orden alfabético de los nombres de los alumnos.
 * Si se ha seleccionado la opción de mostrar todos los alumnos, también se debe seleccionar un cuarto parámetro por el que ordenar los alumnos: Nº de equipo.
