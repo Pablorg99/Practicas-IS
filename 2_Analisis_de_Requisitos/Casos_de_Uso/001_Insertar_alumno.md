@@ -9,6 +9,7 @@
 **Precondiciones:**
 
 1. El máximo permitido será de 150 alumos.
+2. El alumno no debe existir.
 
 **Flujo Principal:**
 
@@ -21,4 +22,5 @@
 
 **Flujo alternativo:**
 
-* Si no se introducen los campos obligatorios (DNI, nombre y apellidos), el sistema muestra un error.
+* Si no se introducen los campos obligatorios (DNI, nombre y apellidos), el sistema muestra un error y pide que se introduzcan.
+* Si el alumno existe se mostrará un error y se vuelve al menú.
