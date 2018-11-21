@@ -32,6 +32,11 @@
 8. Formateo de base de datos. (5)
 9. Ordenar alumnos. (5)
 10. Buscar alumnos. (3)
+11. Crear coordinador. (1)
+12. Modificar coordinador. (4)
+13. Añadir profesor ayudante. (2)
+14. Modificar profesor ayudante. (4)
+15. Eliminar profesor ayudante. (4)
 
 > *Nota:* Las prioridades se establecerán con un número entre paréntesis tras el requisito
 al que hace referencia (siendo 1 la máxima prioridad y 5 la mínima)
