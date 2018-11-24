@@ -17,7 +17,7 @@
 
 **Postcondiciones:**
 
-*  El sistema recoge los datos introducidos por el usuario y lo registra como coordinador.
+* El sistema recoge los datos introducidos por el usuario y lo registra como coordinador.
 
 **Flujo alternativo:**
 
