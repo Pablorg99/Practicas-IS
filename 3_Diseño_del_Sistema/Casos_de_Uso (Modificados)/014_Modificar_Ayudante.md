@@ -17,7 +17,7 @@
 1. El caso empieza cuando el usuario desea modificar un ayudante.
 2. El sistema pide al usuario que identifique al ayudante a modificar mediante su DNI.
 3. El sistema pregunta al usuario que parámetro desea editar.
-4. El sistema recoge el nuevo valor introducido por el ususario.
+4. El sistema recoge el nuevo valor introducido por el usuario.
 5. El sistema pregunta si se desea editar algún otro parámetro.
 6. En caso afirmativo, se vuelve al paso 3.
 

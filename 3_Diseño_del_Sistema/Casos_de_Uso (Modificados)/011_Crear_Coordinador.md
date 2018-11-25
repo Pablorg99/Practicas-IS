@@ -1,4 +1,4 @@
-##Crear Coordinador
+## Crear Coordinador
 
 **ID:** 011.  
 **Breve descripción:** Permite insertar al profesor coordinador.
@@ -13,7 +13,7 @@
 **Flujo Principal:**
 
 1. El caso empieza cuando el usuario inicia el sistema por primera vez.
-2. El sistema comprueba que no existe ningún coordindor y pide que el usuario se registre como tal.
+2. El sistema comprueba que no existe ningún coordinador y pide que el usuario se registre como tal.
 
 **Postcondiciones:**
 

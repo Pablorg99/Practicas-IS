@@ -16,7 +16,7 @@
 1. El caso empieza cuando el usuario desea modificar la información del coordinador, ya sea por corregir o añadir información del coordinador actual o por un cambio de coordinador.
 2. El sistema pide la clave de coordinador para confirmar la selección de la opción.
 2. El sistema pregunta al usuario que parámetro desea editar.
-3. El sistema recoge el nuevo valor introducido por el ususario.
+3. El sistema recoge el nuevo valor introducido por el usuario.
 4. El sistema pregunta si se desea editar algún otro parámetro.
 5. En caso afirmativo, se vuelve al paso 3.
 
