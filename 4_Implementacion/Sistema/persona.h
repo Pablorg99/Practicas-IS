@@ -15,7 +15,7 @@ class Persona{
         string nombre_;
         string apellidos_;
         string fechanacimiento_; // dd/mm/aa
-        int relefono_;
+        int telefono_;
         string email_;
         string direccion_;
 
