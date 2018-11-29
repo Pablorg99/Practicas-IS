@@ -24,7 +24,7 @@ class Persona{
         Persona(string dni, string nombre, string apellidos,
         int telefono=0, string direccion="", string email="");
 
-        //Modifiers
+        //Modificadores
         inline void setDNI(string nuevo_dni){dni_ = nuevo_dni;};
         inline void setNombre(string nuevo_nombre){nombre_ = nuevo_nombre;};
         inline void setApellido(string nuevo_apellidos){apellidos_ = nuevo_apellidos;};
@@ -33,7 +33,7 @@ class Persona{
         inline void setPais(string nuevo_email){email_ = nuevo_email;};
 
 
-        //Observers
+        //Observadores
         inline string getDNI(){return dni_;};
         inline string getNombre(){return nombre_;};
         inline string getApellidos(){return apellidos_;};
