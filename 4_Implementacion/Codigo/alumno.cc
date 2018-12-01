@@ -9,3 +9,8 @@ Alumno::Alumno(string dni, string nombre, string apellidos,
     setNequipo(Nequipo);
     setlider(lider);
   }
+
+void setLider(Alumno aux){
+  if(aux.getLider()){ lider_ = false; }
+  else{ lider_ = true; }
+}

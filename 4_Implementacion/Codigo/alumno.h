@@ -22,7 +22,7 @@ class Alumno :public Persona{
     //Modificadores
     inline void setCurso(int nuevo_curso){curso_ = nuevo_curso;};
     inline void setNequipo(int nuevo_Nequipo){Nequipo_=nuevo_Nequipo;};
-    inline void setLider(bool nuevo_lider){lider_=nuevo_lider;};
+    void setLider(Alumno aux);           //Se encarga de cambiar el valor de lider_ entre true y false
 
     //Observadores
     inline int getCurso(){return dni_;};
