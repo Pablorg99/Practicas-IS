@@ -5,7 +5,7 @@
 #ifndef ALUMNO_H
 #define ALUMNO_H
 
-#include "persona"
+#include "persona.h"
 
 class Alumno :public Persona{
   private:
