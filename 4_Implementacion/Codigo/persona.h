@@ -25,12 +25,13 @@ class Persona{
         int telefono=0, string direccion="", string email="");
 
         //Modificadores
-        inline void setDNI(string nuevo_dni){dni_ = nuevo_dni;};
+        bool setDNI(string nuevo_dni);
         inline void setNombre(string nuevo_nombre){nombre_ = nuevo_nombre;};
         inline void setApellido(string nuevo_apellidos){apellidos_ = nuevo_apellidos;};
         inline void setFechaNacimiento(int nueva_fecha);
         inline void setDireccion(string nueva_direccion){direccion_ = nueva_direccion;};
-        inline void setPais(string nuevo_email){email_ = nuevo_email;};
+        inline void setEmail(string nuevo_email){email_ = nuevo_email;};
+        bool setTelefono(int nuevo_telefono);
 
 
         //Observadores
@@ -41,6 +42,7 @@ class Persona{
         inline string getFechaNacimiento(){return fechanacimiento_;};
         inline string getDireccion(){return direccion_;};
         inline string getEmail(){return email_;};
+        inline int getTelefono(){return telefono_;};
 };
 
 
