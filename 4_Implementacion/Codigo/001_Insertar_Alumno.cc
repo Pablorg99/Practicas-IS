@@ -6,28 +6,29 @@ using std::cin;
 Alumno InsertaAlumno(){
   Alumno alumno;
   cout << "--Insertar alumno--" << endl;
-  string aux;
+  string straux;
+  int intaux;
 
   //Introduce DNI
   cout << "DNI:  ";
-  cin >> aux;
+  cin >> straux;
   //Comprobaciónd e formato de DNI--//En mantenimiento
-  while(compruebaDNI(aux)) {
+  while(compruebaDNI(straux)) {
     cout << "Error. Formato de DNI incorrecto."<<endl;
     cout << "Introduzcalo de nuevo. DNI:  " << endl;
   }
-  alumno.setDNI(aux);
+  alumno.setDNI(straux);
   //----------------------------------------------
 
   //Introduce Nombre
   cout << "Nombre:  ";
-  cin >> aux;
-  alumno.setNombre(aux);
+  cin >> straux;
+  alumno.setNombre(straux);
 
   //Introduce Apellido
   cout << "Apellido:  ";
-  cin >> aux;
-  alumno.setApellido(aux);
+  cin >> straux;
+  alumno.setApellido(straux);
 
   int opcion;
 
@@ -50,15 +51,15 @@ Alumno InsertaAlumno(){
    switch (opcion) {
        case '1':
            cout << "Teléfono:  ";
-           cin >> aux;
-           alumno.setTelefono(aux);
+           cin >> intaux;
+           alumno.setTelefono(intaux);
            cout << "\n";
            break;
 
        case '2':
            cout << "Dirección:  ";
-           cin >> aux;
-           alumno.setDireccion(aux);
+           cin >> straux;
+           alumno.setDireccion(straux);
            cout << "\n";
            break;
        case '3':
@@ -70,22 +71,20 @@ Alumno InsertaAlumno(){
 
        case '4':
            cout << "Último curso matriculado:  ";
-           cin >> aux;
-           alumno.setCurso(aux);
+           cin >> intaux;
+           alumno.setCurso(intaux);
            cout << "\n";
            break;
 
        case '5':
            cout << "Nº de equipo:  ";
-           cin >> aux;
-           alumno.setNequipo(aux);
+           cin >> intaux;
+           alumno.setNequipo(intaux);
            cout << "\n";
            break;
 
        case '6':
-           cout << "Líder de equipo:  ";
-           cin >> aux;
-           alumno.setLider(aux);
+           alumno.setLider(alumno);         //setLider cambia el valor de lider_ cada vez que se ejecuta
            cout << "\n";
            break;
 
@@ -99,7 +98,6 @@ Alumno InsertaAlumno(){
        cout << endl;
      }
    }while (selection != 7 );
-
 
   return alumno;
 }
