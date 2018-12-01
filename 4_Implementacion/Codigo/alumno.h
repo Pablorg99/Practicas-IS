@@ -20,14 +20,14 @@ class Alumno :public Persona{
     int curso=0, int Nequipo=0, bool lider=false);
 
     //Modificadores
-    inline void setcurso(int nuevo_curso){curso_ = nuevo_curso;};
+    inline void setCurso(int nuevo_curso){curso_ = nuevo_curso;};
     inline void setNequipo(int nuevo_Nequipo){Nequipo_=nuevo_Nequipo;};
-    inline void setlider(bool nuevo_lider){lider_=nuevo_lider;};
+    inline void setLider(bool nuevo_lider){lider_=nuevo_lider;};
 
     //Observadores
-    inline int getcurso(){return dni_;};
+    inline int getCurso(){return dni_;};
     inline int getNequipo(){return Nequipo_;};
-    inline bool getlider(){return lider_;};
+    inline bool getLider(){return lider_;};
 };
 
 #endif
