@@ -13,12 +13,12 @@ Alumno InsertaAlumno(){
   cout << "DNI:  ";
   cin >> straux;
   //Comprobaciónd e formato de DNI--//En mantenimiento
-  while(compruebaDNI(straux)) {
+  while(!compruebaDNI(straux)) {
     cout << "Error. Formato de DNI incorrecto."<<endl;
     cout << "Introduzcalo de nuevo. DNI:  " << endl;
+    cin >> straux;
   }
   alumno.setDNI(straux);
-  //----------------------------------------------
 
   //Introduce Nombre
   cout << "Nombre:  ";
@@ -42,7 +42,7 @@ Alumno InsertaAlumno(){
     cout << "\t6. Líder de equipo:";
     if(alumno.getLider()){cout << "Sí" <<endl;}
     else{cout << "No" << endl;}
-    cout << 7. "Guardar alumno y salir." << endl;
+    cout << "\t7. Guardar alumno y salir." << endl;
     cout << enld;             //Para que no quede tan apelotonado
 
     cout << "Opción número: ";
@@ -105,13 +105,13 @@ Alumno InsertaAlumno(){
 
 //-----------------Para lo del DNI----------------------
 bool compruebaDNI(string aux){
-  if(aux.length() != 8){return false;}
-  for(int i=0; i<7; i++){
+  if(aux.length() != 9){return false;}
+  for(int i=0; i<8; i++){
     if( !( isdigit( (aux.c_str())[i] ) ) ) {
       return false;
     }
   }
-  if( !( isalpha( (aux.c_str())[7] ) ) ) {
+  if( !( isalpha( (aux.c_str())[8] ) ) ) {
     return false;
   }
   return true;
