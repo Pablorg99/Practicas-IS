@@ -14,3 +14,19 @@ void Alumno::setLider(Alumno aux){
   if(aux.getLider()){ lider_ = false; }
   else{ lider_ = true; }
 }
+
+ostream &operator<<(ostream &output_stream, const Alumno &alumno) {
+  size_t string_size;
+  string_size = alumno.getDNI().size();
+  output_stream.write(alumno.getDNI().data(), string_size);
+  string_size = alumno.getNombre().size();
+  output_stream.write(alumno.getNombre().data(), string_size);
+  string_size = alumno.getApellidos().size();
+  output_stream.write(alumno.getApellidos().data(), string_size);
+  string_size = alumno.getDireccion().size();
+  output_stream.write(alumno.getDNI().data(), string_size);
+
+}
+istream &operator>>(istream &input_stream, Alumno &alumno) {
+
+}
