@@ -15,7 +15,9 @@ void Alumno::setLider(Alumno aux){
   else{ lider_ = true; }
 }
 
+
 ostream &operator<<(ostream &output_stream, const Alumno &alumno) {
+  //IN PROGRESS
   size_t string_size;
   string_size = alumno.getDNI().size();
   output_stream.write(alumno.getDNI().data(), string_size);
@@ -23,10 +25,11 @@ ostream &operator<<(ostream &output_stream, const Alumno &alumno) {
   output_stream.write(alumno.getNombre().data(), string_size);
   string_size = alumno.getApellidos().size();
   output_stream.write(alumno.getApellidos().data(), string_size);
+
   string_size = alumno.getDireccion().size();
-  output_stream.write(alumno.getDNI().data(), string_size);
+  output_stream.write(alumno.getDireccion().data(), string_size);
 
 }
 istream &operator>>(istream &input_stream, Alumno &alumno) {
-
+  //IN PROGRESS  
 }
