@@ -43,7 +43,7 @@ bool Persona::setDNI(string nuevo_dni){
 }
 
 //Return del nombre completo
-string Persona::getApellidosyNombre(){
+string Persona::getApellidosyNombre() const {
     string nombrecompleto;
     nombrecompleto = nombre_ + " " + apellidos_;
     return nombrecompleto;

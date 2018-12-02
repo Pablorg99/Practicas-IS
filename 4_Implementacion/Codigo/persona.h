@@ -35,14 +35,14 @@ class Persona{
 
 
         //Observadores
-        inline string getDNI(){return dni_;};
-        inline string getNombre(){return nombre_;};
-        inline string getApellidos(){return apellidos_;};
-        string getApellidosyNombre();
-        inline string getFechaNacimiento(){return fechanacimiento_;};
-        inline string getDireccion(){return direccion_;};
-        inline string getEmail(){return email_;};
-        inline int getTelefono(){return telefono_;};
+        inline string getDNI() const {return dni_;};
+        inline string getNombre() const {return nombre_;};
+        inline string getApellidos() const {return apellidos_;};
+        string getApellidosyNombre() const;
+        inline string getFechaNacimiento() const {return fechanacimiento_;};
+        inline string getDireccion() const {return direccion_;};
+        inline string getEmail() const {return email_;};
+        inline int getTelefono() const {return telefono_;};
 };
 
 
