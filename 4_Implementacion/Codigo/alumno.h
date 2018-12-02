@@ -6,6 +6,8 @@
 #define ALUMNO_H
 
 #include "persona.h"
+using std::ostream;
+using std::istream;
 
 class Alumno :public Persona{
   private:
@@ -25,9 +27,13 @@ class Alumno :public Persona{
     void setLider(Alumno aux);           //Se encarga de cambiar el valor de lider_ entre true y false
 
     //Observadores
-    inline int getCurso(){return dni_;};
-    inline int getNequipo(){return Nequipo_;};
-    inline bool getLider(){return lider_;};
+    inline int getCurso() const {return curso_;};
+    inline int getNequipo() const {return Nequipo_;};
+    inline bool getLider() const {return lider_;};
+
+    //Operadores
+    friend ostream &operator<<(ostream &output_stream, const Alumno &alumno);
+    friend istream &operator>>(istream &input_stream, Alumno &alumno);
 };
 
 #endif
