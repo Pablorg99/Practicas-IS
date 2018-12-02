@@ -5,31 +5,29 @@ using std::endl;
 #include "alumno.h"
 
 Alumno InsertaAlumno(){
-  Alumno alumno; //CUANDO DECLARAS ALUMNO TIENES QUE PASARLE UNOS PARAMETROS
   cout << "--Insertar alumno--" << endl;
-  string straux;
+  string dniaux, nombreaux, straux;
   int intaux;
 
   //Introduce DNI
   cout << "DNI:  ";
-  cin >> straux;
+  cin >> dniaux;
   //Comprobaciónd e formato de DNI--//En mantenimiento
   while(!compruebaDNI(straux)) {
     cout << "Error. Formato de DNI incorrecto."<<endl;
     cout << "Introduzcalo de nuevo. DNI:  " << endl;
     cin >> straux;
   }
-  alumno.setDNI(straux);
 
   //Introduce Nombre
   cout << "Nombre:  ";
-  cin >> straux;
-  alumno.setNombre(straux);
+  cin >> nombreaux;
 
   //Introduce Apellido
   cout << "Apellido:  ";
   cin >> straux;
-  alumno.setApellido(straux);
+
+  Alumno alumno(dniaux, nombreaux, straux); 
 
   int opcion;
 
