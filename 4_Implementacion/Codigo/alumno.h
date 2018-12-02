@@ -25,7 +25,7 @@ class Alumno :public Persona{
     void setLider(Alumno aux);           //Se encarga de cambiar el valor de lider_ entre true y false
 
     //Observadores
-    inline int getCurso(){return dni_;};
+    inline int getCurso(){return curso_;};
     inline int getNequipo(){return Nequipo_;};
     inline bool getLider(){return lider_;};
 };

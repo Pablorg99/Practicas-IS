@@ -1,6 +1,7 @@
 #include <iostream>
 using std::cout;
 using std::cin;
+using std::endl;
 #include "alumno.h"
 
 Alumno InsertaAlumno(){
@@ -40,10 +41,10 @@ Alumno InsertaAlumno(){
     cout << "\t4. Último curso matriculado:" << alumno.getCurso() << endl;
     cout << "\t5. Nº de equipo:" << alumno.getNequipo() << endl;
     cout << "\t6. Líder de equipo:";
-    if(alumno.getLider()){cout << "Sí" <<endl;}
-    else{cout << "No" << endl;}
-    cout << 7. "Guardar alumno y salir." << endl;
-    cout << enld;             //Para que no quede tan apelotonado
+    if(alumno.getLider()) cout << "Sí" <<endl;
+    else cout << "No" << endl;
+    cout << "7. Guardar alumno y salir." << endl;
+    cout << endl;             //Para que no quede tan apelotonado
 
     cout << "Opción número: ";
     cin >> opcion;
@@ -64,8 +65,8 @@ Alumno InsertaAlumno(){
            break;
        case '3':
            cout << "Email:  ";
-           cin >> aux;
-           alumno.setEmail(aux);
+           cin >> straux;
+           alumno.setEmail(straux);
            cout << "\n";
            break;
 
@@ -97,7 +98,7 @@ Alumno InsertaAlumno(){
 
        cout << endl;
      }
-   }while (selection != 7 );
+   }while (opcion != 7 );
 
   return alumno;
 }
