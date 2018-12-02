@@ -30,7 +30,7 @@ char letraDNI(int dni){
     return letras[letra];
 }
 
-//Comprovacion de DNI correcto
+//Comprobacion de DNI correcto
 bool Persona::setDNI(string nuevo_dni){
     if (nuevo_dni.size()!=9){
         return false;
@@ -43,7 +43,7 @@ bool Persona::setDNI(string nuevo_dni){
 }
 
 //Return del nombre completo
-string Persona::getApellidosyNombre(){
+string Persona::getApellidosyNombre() const {
     string nombrecompleto;
     nombrecompleto = nombre_ + " " + apellidos_;
     return nombrecompleto;
