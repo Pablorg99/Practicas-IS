@@ -8,8 +8,8 @@
 class system{
     public:
         void LeeCredenciales(string ficheroCredenciales);
-        void start(string usuario, string pwd);
-
+        void start(Profesor usuario);
+        Profesor getUsuarioByCredencial(string credencial);
 
 };
 

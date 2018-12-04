@@ -3,19 +3,22 @@
 #include <string>
 #include <fstream>
 
-
+//Lee el fichero de credenciales e inicia el sistema si este usuario es valido
 void system::LeeCredenciales(string ficheroCredenciales){
     std::ifstream fichero;
     fichero.open(ficheroCredenciales);
 
-    std::string usuario;
-    fichero >> usuario;
-    string pwd;
-    fichero >> pwd;
+    //Lee las credenciales
+    std::string credencial;
+    fichero >> credencial;
 
-    start(usuario, pwd);
+    //Devolvera el usaurio si existe y Error si no
+    Profesor usuario("0", "0", "0", "0");
+    usuario = getUsuarioByCredencial(credencial);
+
+    start(usuario);
 }
 
-void system::start(string usuario, string pwd){
-}
+void system::start(Profesor usuario){
 
+}
