@@ -27,7 +27,7 @@ Alumno InsertaAlumno(){
   cout << "Apellido:  ";
   cin >> straux;
 
-  Alumno alumno(dniaux, nombreaux, straux); 
+  Alumno alumno(dniaux, nombreaux, straux);
 
   int opcion;
 
@@ -42,7 +42,7 @@ Alumno InsertaAlumno(){
     if(alumno.getLider()){cout << "Sí" <<endl;}
     else{cout << "No" << endl;}
     cout << "\t7. Guardar alumno y salir." << endl;
-    cout << enld;             //Para que no quede tan apelotonado
+    cout << endl;             //Para que no quede tan apelotonado
 
 
     cout << "Opción número: ";
@@ -84,7 +84,7 @@ Alumno InsertaAlumno(){
            break;
 
        case '6':
-           alumno.setLider(alumno);         //setLider cambia el valor de lider_ cada vez que se ejecuta
+           alumno.cambiaLider();         //setLider cambia el valor de lider_ cada vez que se ejecuta
            cout << "\n";
            break;
 
@@ -101,6 +101,7 @@ Alumno InsertaAlumno(){
 
   return alumno;
 }
+
 
 
 //-----------------Para lo del DNI----------------------
