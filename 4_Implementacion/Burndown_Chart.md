@@ -1,8 +1,8 @@
 # Burndown Chart
 
-## Sprint 1: 02/12/2018
+## Sprint 1: 03/12/2018
 
-**Horas:** 1
+**Horas:** 4
 
 ## Sprint 2: 06/12/2018
 
