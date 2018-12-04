@@ -5,6 +5,8 @@
 #ifndef ALUMNO_H
 #define ALUMNO_H
 
+#define BD "Sutdents_DataBase.txt"
+
 #include "persona.h"
 using std::ostream;
 using std::istream;
