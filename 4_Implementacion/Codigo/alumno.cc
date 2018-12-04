@@ -2,36 +2,53 @@
 
 Alumno::Alumno(string dni, string nombre, string apellidos,
 	int telefono, string direccion, string email,
-	int curso, int Nequipo, bool lider): Persona(dni, nombre, 
+	int curso, int Nequipo, bool lider): Persona(dni, nombre,
 	apellidos, telefono, direccion, email){
 	setCurso(curso);
 	setNequipo(Nequipo);
-	//La función setLider necesita corregirse, aquí se pasa un booleano y la función recibe un objeto Alumno
-	lider_ = lider;
+	setLider(lider);
 }
 
-void Alumno::cambiaLider(){
-	//Falta comprobar nº lideres en equipo = 1
-	if(getLider()) lider_ = false;
-	else lider_ = true;
+bool ALumno::unicoLider(){
+	Alumno aux;
+	ifstream file(BD);
+
+	while(file.eof()){
+			file >> aux;
+			if( this->getNequipo() == aux.getNequipo() ){
+				if(aux.getLider()){return false;}
+			}
+	}
+
+	file.close();
+	return true;
 }
 
 void Alumno::setLider(bool nuevo_lider) {
-	//Falta comprobar nº lideres en equipo = 1
-	lider_ = nuevo_lider;
+	if( nuevo_lider && !unicoLider() ){
+		exit(-1);
+	}
+	setLider(nuevo_lider);
+}
+
+void Alumno::cambiaLider(){     //Se encarga de cambiar el valor de lider_ entre true y false
+	if(!getLider() && !unicoLider()) { exit(-1); }
+	else{ if(getLider) { setLider(false); }
+		else { setLider(true); }
+	}
 }
 
 ostream &operator<<(ostream &output_stream, const Alumno &alumno) {
 	string bool_lider;
 	if(alumno.getLider()) bool_lider = "true";
 	else bool_lider = "false";
-	
-	output_stream << alumno.getDNI() << ',' << alumno.getNombre() << 
+
+	output_stream << alumno.getDNI() << ',' << alumno.getNombre() <<
 		alumno.getApellidos() << ',' << alumno.getTelefono() << ','
 		<< alumno.getDireccion() << ',' << alumno.getEmail() << ','
 		<< alumno.getCurso() << ',' << alumno.getNequipo() << ','
 		<< bool_lider << '\n';
-	
+
 	return output_stream;
 }
 
@@ -58,6 +75,6 @@ istream &operator>>(istream &input_stream, Alumno &alumno) {
 	if(aux_string == "true") is_lider = true;
 	else is_lider = false;
 	alumno.setLider(is_lider);
-	
+
 	return input_stream;
 }

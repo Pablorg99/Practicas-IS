@@ -27,7 +27,8 @@ class Alumno :public Persona{
 		inline void setCurso(int nuevo_curso){curso_ = nuevo_curso;};
 		inline void setNequipo(int nuevo_Nequipo){Nequipo_=nuevo_Nequipo;};
 		void setLider(bool nuevo_lider);
-		void cambiaLider();           //Se encarga de cambiar el valor de lider_ entre true y false
+		void cambiaLider();
+		bool unicoLider();
 		//Observadores
 		inline int getCurso() const {return curso_;};
 		inline int getNequipo() const {return Nequipo_;};
