@@ -33,33 +33,32 @@ list <Alumno> BuscarAlumnos() {
 		switch (opcion_submenu) {
 			case 1:
 				return getAllStudents();    
-			break;
+				break;
 
 			case 2:
 				int n_equipo;
 				cout << "Introduzca el número del equipo que desea seleccionar: ";
 				cin >> n_equipo;
 				return SeleccionarUnEquipo(n_equipo);
-			break;
+				break;
 
 			case 3:
 				int n_alumnos;
 				cout << "Introduzca el número de alumnos que desea seleccioanr: ";
 				cin >> n_alumnos;
 				return SeleccionarNumeroAlumnos(n_alumnos);
-			break;
+				break;
 			
 			case 4:
 				return SeleccionarNumeroAlumnos(1);
-			break;
+				break;
 			
 			case 5:
 				return;
-			break;
+				break;
 			
 			default:
 				cout << "Elija una opción del menú." << endl;
-			break;
 		}
 	}
 }
@@ -130,23 +129,22 @@ int PedirParametro() {
 		switch (opcion_parametro) {
 			case 1:
 				return 1;
-			break;
+				break;
 
 			case 2:
 				return 2;
-			break;
+				break;
 			
 			case 3:
 				return 3;
-			break;
+				break;
 
 			case 4:
 				return 0;
-			break;
+				break;
 		
 			default:
 				cout << "Elija una opción del menú." << endl;
-			break;
 		}
 	}
 }
@@ -159,19 +157,19 @@ string PedirValor(int parametro) {
 			cout << "Introduzca un DNI: ";
 			cin >> valor;
 			return valor;
-		break;
+			break;
 
 		case 2:
 			cout << "Introduzca un nombre: ";
 			cin >> valor;
 			return valor;
-		break;
+			break;
 
 		case 3:
 			cout << "Introduzca unos apellidos: ";
 			cin >> valor;
 			return valor;
-		break;
+			break;
 	}
 }
 

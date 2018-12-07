@@ -66,7 +66,7 @@ Alumno InsertaAlumno(){
 				cin >> intaux;
 				alumno.setTelefono(intaux);
 				cout << "\n";
-			break;
+				break;
 
 			case '2':
 				cout << "Dirección:  ";
@@ -79,36 +79,35 @@ Alumno InsertaAlumno(){
 				cin >> straux;
 				alumno.setEmail(straux);
 				cout << "\n";
-			break;
+				break;
 
 			case '4':
 				cout << "Último curso matriculado:  ";
 				cin >> intaux;
 				alumno.setCurso(intaux);
 				cout << "\n";
-			break;
+				break;
 
 			case '5':
 				cout << "Nº de equipo:  ";
 				cin >> intaux;
 				alumno.setNequipo(intaux);
 				cout << "\n";
-			break;
+				break;
 
 			case '6':
 				alumno.cambiaLider();         //setLider cambia el valor de lider_ cada vez que se ejecuta
 				cout << "\n";
-			break;
+				break;
 
 			case '7':
 				cout << "Alumno guardado correctamente.\n";
 				cout << "\n";
-			break;
+				break;
 
 			default: 
 				cout <<opcion << " no es una opción válida del menú.\n";
 				cout << endl;
-			break;
 		}
 	}while (opcion != 7 );
 	return alumno;
