@@ -11,6 +11,7 @@ using std::cout;
 using std::cin;
 using std::endl;
 #include <fstream>
+using std::ifstream;
 using std::ofstream;
 #include "alumno.h"
 
@@ -111,6 +112,22 @@ Alumno InsertaAlumno(){
 		}
 	}while (opcion != 7 );
 	return alumno;
+}
+
+bool addStudent(Alumno &new_student) {
+    Alumno aux_student("dni", "nombre", "apellidos");
+	ifstream input_stream;
+    ofstream output_stream;
+
+    input_stream.open(BD);
+    while(input_stream.eof) {
+        input_stream >> aux_student;
+		if(aux_student.getDNI() == new_student.getDNI()) return false;
+    }
+
+	output_stream.open(BD);
+	output_stream << new_student;
+	return true;
 }
 
 //-----------------Para lo del DNI----------------------
