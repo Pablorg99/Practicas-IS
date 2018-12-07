@@ -23,16 +23,16 @@ list <Alumno> ModificaAlumno(){
         do {
           cout << "¿Qué parámetro desea modificar?" << endl;
           cout << endl;
-          cout << "\t1. DNI:" << alumno.getTelefono() << endl;
-          cout << "\t2. Nombre:" << alumno.getTelefono() << endl;
-          cout << "\t3. Apellidos:" << alumno.getTelefono() << endl;
-          cout << "\t4. Teléfono:" << alumno.getTelefono() << endl;
-          cout << "\t5. Dirección:" << alumno.getDireccion() << endl;
-          cout << "\t6. Email:" << alumno.getEmail() << endl;
-          cout << "\t7. Último curso matriculado:" << alumno.getCurso() << endl;
-          cout << "\t8. Nº de equipo:" << alumno.getNequipo() << endl;
+          cout << "\t1. DNI:" << it->getTelefono() << endl;
+          cout << "\t2. Nombre:" << it->getTelefono() << endl;
+          cout << "\t3. Apellidos:" << it->getTelefono() << endl;
+          cout << "\t4. Teléfono:" << it->getTelefono() << endl;
+          cout << "\t5. Dirección:" << it->getDireccion() << endl;
+          cout << "\t6. Email:" << it->getEmail() << endl;
+          cout << "\t7. Último curso matriculado:" << it->getCurso() << endl;
+          cout << "\t8. Nº de equipo:" << it->getNequipo() << endl;
           cout << "\t9. Líder de equipo:aux";
-          if(alumno.getLider()){cout << "Sí" <<endl;}
+          if(it->getLider()){cout << "Sí" <<endl;}
           else{cout << "No" << endl;}
           cout << "\t0. Guardar alumno y salir." << endl;
           cout << endl;             //Para que no quede tan apelotonado
@@ -102,7 +102,7 @@ list <Alumno> ModificaAlumno(){
                  cout << "\n";
                  break;
 
-             case '7':
+             case '0':
                  cout << "Alumno editado correctamente.\n";
                  cout << "\n";
                  break;
