@@ -1,3 +1,11 @@
+/*-----------------------------------------------------------------------------------
+Manuel Alejandro Luque León
+001_Insertar_Alumno.cc
+Fichero que implementa la funcionalidad de añadir alumnos.
+El usuario introduce los datos del alumno y posteriormente este
+es devuelto.
+-----------------------------------------------------------------------------------*/
+
 #include <iostream>
 using std::cout;
 using std::cin;
@@ -33,6 +41,7 @@ Alumno InsertaAlumno(){
 
   do {
     cout << "¿Qué otro parámetro desea rellenar?" << endl;
+    cout << endl;
     cout << "\t1. Teléfono:" << alumno.getTelefono() << endl;
     cout << "\t2. Dirección:" << alumno.getDireccion() << endl;
     cout << "\t3. Email:" << alumno.getEmail() << endl;

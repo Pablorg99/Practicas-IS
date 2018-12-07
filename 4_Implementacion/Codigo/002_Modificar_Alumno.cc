@@ -1,20 +1,28 @@
+/*-----------------------------------------------------------------------------------
+Manuel Alejandro Luque León
+002_Modificar_Alumno.cc
+Fichero que implementa la funcionalidad de modificar alumnos.
+El usuario introduce los parámetros a editar, los nuevos datos del alumno
+y posteriormente este es devuelto.
+-----------------------------------------------------------------------------------*/
 #include "alumno.h"
-#include "009_Buscar_Alumnos.cc" //esto habra que hacer con el .h de Buscar_Alumnos
+#include "009_Buscar_Alumnos.cc" //esto habrá que hacerlo con el .h de Buscar_Alumnos
 
 
 
-ModificaAlumno(){
+list <Alumno> ModificaAlumno(){
 
     string straux;
     int intaux;
     list <Alumno> listalumno = BuscarAlumnos();
 
-    for(int i = 0; i < aux.length(); i++){
+    for(list <Alumno>::iterator it = listalumno.begin(); it != listalumno.end(); it++){
 
         int opcion;
 
         do {
           cout << "¿Qué parámetro desea modificar?" << endl;
+          cout << endl;
           cout << "\t1. DNI:" << alumno.getTelefono() << endl;
           cout << "\t2. Nombre:" << alumno.getTelefono() << endl;
           cout << "\t3. Apellidos:" << alumno.getTelefono() << endl;
@@ -23,7 +31,7 @@ ModificaAlumno(){
           cout << "\t6. Email:" << alumno.getEmail() << endl;
           cout << "\t7. Último curso matriculado:" << alumno.getCurso() << endl;
           cout << "\t8. Nº de equipo:" << alumno.getNequipo() << endl;
-          cout << "\t9. Líder de equipo:";
+          cout << "\t9. Líder de equipo:aux";
           if(alumno.getLider()){cout << "Sí" <<endl;}
           else{cout << "No" << endl;}
           cout << "\t0. Guardar alumno y salir." << endl;
@@ -36,61 +44,61 @@ ModificaAlumno(){
          switch (opcion) {
              case '1':
                  cout << "DNI:  ";
-                 cin >> intaux;
-                 listalumno[i].setDNI(intaux);
+                 cin >> straux;
+                 (*it).setDNI(straux);
                  cout << "\n";
                  break;
 
              case '2':
                  cout << "Nombre:  ";
-                 cin >> intaux;
-                 listalumno[i].setNombre(intaux);
+                 cin >> straux;
+                 (*it).setNombre(straux);
                  cout << "\n";
                  break;
 
              case '3':
                  cout << "Apellidos:  ";
-                 cin >> intaux;
-                 listalumno[i].setApellido(intaux);
+                 cin >> straux;
+                 (*it).setApellido(straux);
                  cout << "\n";
                  break;
 
              case '4':
                  cout << "Teléfono:  ";
                  cin >> intaux;
-                 listalumno[i].setTelefono(intaux);
+                 (*it).setTelefono(intaux);
                  cout << "\n";
                  break;
 
              case '5':
                  cout << "Dirección:  ";
                  cin >> straux;
-                 listalumno[i].setDireccion(straux);
+                 (*it).setDireccion(straux);
                  cout << "\n";
                  break;
              case '6':
                  cout << "Email:  ";
                  cin >> straux;
-                 listalumno[i].setEmail(straux);
+                 (*it).setEmail(straux);
                  cout << "\n";
                  break;
 
              case '7':
                  cout << "Último curso matriculado:  ";
                  cin >> intaux;
-                 listalumno[i].setCurso(intaux);
+                 (*it).setCurso(intaux);
                  cout << "\n";
                  break;
 
              case '8':
                  cout << "Nº de equipo:  ";
                  cin >> intaux;
-                 listalumno[i].setNequipo(intaux);
+                 (*it).setNequipo(intaux);
                  cout << "\n";
                  break;
 
              case '9':
-                 listalumno[i].cambiaLider();         //setLider cambia el valor de lider_ cada vez que se ejecuta
+                 (*it).cambiaLider();         //setLider cambia el valor de lider_ cada vez que se ejecuta
                  cout << "\n";
                  break;
 
@@ -106,5 +114,6 @@ ModificaAlumno(){
         }while (opcion != 0 );
 
     }
-    //Falta guardarlo
+    return listalumno;
+    //La funcion interna se encargará de guardarlo en la base de datos--
 }
