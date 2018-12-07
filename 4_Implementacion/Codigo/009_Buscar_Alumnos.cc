@@ -32,7 +32,7 @@ list <Alumno> BuscarAlumnos() {
 		
 		switch (opcion_submenu) {
 			case 1:
-				return SeleccionarTodosAlumnos();    
+				return getAllStudents();    
 			break;
 
 			case 2:
@@ -64,7 +64,7 @@ list <Alumno> BuscarAlumnos() {
 	}
 }
 
-list <Alumno> SeleccionarTodosAlumnos() {
+list <Alumno> getAllStudents() {
     list <Alumno> list_aux;
 	Alumno alumno_aux("dni", "nombre", "apellidos");
 	ifstream input_stream;
