@@ -40,7 +40,6 @@
 ### Manuel Alejandro Luque León
 
 * Mostrar Alumnos
-* Ordenar Alumnos
 
 ### José Márquez Doblas
 
