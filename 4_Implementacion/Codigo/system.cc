@@ -6,6 +6,7 @@
 system::system(){
     BDusuarios_ = "usuarios.txt";
 }
+
 //Lee el fichero de credenciales e inicia el sistema si este usuario es valido
 void system::LeeCredenciales(string ficheroCredenciales){
     std::ifstream fichero;

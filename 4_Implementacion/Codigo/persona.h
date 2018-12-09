@@ -43,6 +43,7 @@ class Persona{
         inline string getDireccion() const {return direccion_;};
         inline string getEmail() const {return email_;};
         inline int getTelefono() const {return telefono_;};
+
 };
 
 

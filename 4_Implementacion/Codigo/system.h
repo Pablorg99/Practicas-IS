@@ -14,6 +14,8 @@ class system{
         void LeeCredenciales(string ficheroCredenciales);
         void start(Profesor usuario);
         Profesor getUsuarioByCredencial(string credencial);
+        bool registro();
+        Profesor RegistroProfesor();
 
 };
 

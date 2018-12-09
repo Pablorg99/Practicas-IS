@@ -11,6 +11,7 @@ class Profesor :public Persona{
   private:
     string fichero_;
     bool coordinador_;
+    string contrasena_;
 
   public:
     //Constructor
@@ -24,6 +25,7 @@ class Profesor :public Persona{
     //Modificadores
     inline bool setCoordinador();
     inline void setfichero(int nuevo_fichero){fichero_=nuevo_fichero;};
+    inline void setContrasena(string nuevo_password){contrasena_=nuevo_password;};
 
     //Observadores
     inline bool getCoordinador(){return coordinador_;};

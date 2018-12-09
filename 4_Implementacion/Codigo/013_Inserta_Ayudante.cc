@@ -2,9 +2,9 @@
 using std::cout;
 using std::cin;
 using std::endl;
-#include "profesor.h"
+#include "system.h" 
 
-Profesor InsertaAyudante(){
+Profesor system::RegistroProfesor(){
   Profesor ayudante;
   cout << "--Registrar Profesor--" << endl;
   string straux;
