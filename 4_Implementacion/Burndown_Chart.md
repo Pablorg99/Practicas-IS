@@ -6,8 +6,8 @@
 
 ## Sprint 2: 07/12/2018
 
-**Horas:** 5
+**Horas:** 7
 
 ## Sprint 3: 09/12/2018
 
-**Horas:** 2
+**Horas:** 3
