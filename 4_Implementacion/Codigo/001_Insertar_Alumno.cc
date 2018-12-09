@@ -15,7 +15,8 @@ using std::ifstream;
 using std::ofstream;
 #include "alumno.h"
 
-Alumno InsertaAlumno(){
+//Devuelve true si el alumno es añadido correctamente, false en caso contrario
+bool InsertaAlumno(){
 	cout << "--Insertar alumno--" << endl;
 	string dniaux, nombreaux, straux;
 	int intaux;
@@ -105,12 +106,12 @@ Alumno InsertaAlumno(){
 				cout << "\n";
 				break;
 
-			default: 
+			default:
 				cout <<opcion << " no es una opción válida del menú.\n";
 				cout << endl;
 		}
 	}while (opcion != 7 );
-	return alumno;
+	return addStudent(alumno);
 }
 
 bool addStudent(Alumno &new_student) {
