@@ -1,11 +1,12 @@
 #include <iostream>
 using std::cout;
 using std::cin;
+using std::endl;
 #include "profesor.h"
 
 Profesor InsertaAyudante(){
   Profesor ayudante;
-  cout << "--Insertar ayudante--" << endl;
+  cout << "--Registrar Profesor--" << endl;
   string straux;
   int intaux;
 
@@ -13,12 +14,11 @@ Profesor InsertaAyudante(){
   cout << "DNI:  ";
   cin >> straux;
   //Comprobaciónd e formato de DNI
-  while(!compruebaDNI(straux)) {
+  while(!ayudante.setDNI(straux)){
     cout << "Error. Formato de DNI incorrecto."<<endl;
     cout << "Introduzcalo de nuevo. DNI:  " << endl;
     cin >> straux;
   }
-  ayudante.setDNI(straux);
 
   //Introduce Nombre
   cout << "Nombre:  ";
@@ -42,9 +42,9 @@ Profesor InsertaAyudante(){
     cout << "\t1. Teléfono:" << ayudante.getTelefono() << endl;
     cout << "\t2. Dirección:" << ayudante.getDireccion() << endl;
     cout << "\t3. Email:" << ayudante.getEmail() << endl;
-    cout << "\t4. Guardar profesor ayudante y salir." << endl;
-    cout << enld;             //Para que no quede tan apelotonado
-
+    cout << "\t4. Guardar profesor y salir." << endl;
+    cout << endl;             //Para que no quede tan apelotonado
+ 
     cout << "Opción número: ";
     cin >> opcion;
 
@@ -64,8 +64,8 @@ Profesor InsertaAyudante(){
            break;
        case '3':
            cout << "Email:  ";
-           cin >> aux;
-           ayudante.setEmail(aux);
+           cin >> straux;
+           ayudante.setEmail(straux);
            cout << "\n";
            break;
 
@@ -74,11 +74,11 @@ Profesor InsertaAyudante(){
            cout << "\n";
            break;
 
-       default: cout <<opcion << " no es una opción válida del menú.\n";
+       default: cout << opcion << " no es una opción válida del menú.\n";
 
        cout << endl;
      }
-   }while (selection != 4 );
+   }while (opcion != 4 );
 
   return ayudante;
 }
