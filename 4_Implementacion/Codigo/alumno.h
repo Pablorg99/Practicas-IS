@@ -6,6 +6,7 @@
 #define ALUMNO_H
 
 #define BD "Sutdents_DataBase.txt"
+#define BD_BACKUP "Students_DataBase.bin"
 
 #include "persona.h"
 using std::ostream;
