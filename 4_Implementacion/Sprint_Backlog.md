@@ -11,7 +11,7 @@
 
 ### José Márquez Doblas
 
-* Crear coordinador
+* Crear coordinador(1/2)
 
 ### Pablo Rodríguez Guillén
 
@@ -27,7 +27,7 @@
 
 ### José Márquez Doblas
 
-* Especificar Líder
+* Crear coordinador(2/2)
 
 ### Pablo Rodríguez Guillén
 
