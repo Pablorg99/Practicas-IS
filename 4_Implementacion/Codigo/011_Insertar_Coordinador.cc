@@ -5,13 +5,12 @@ using std::cin;
 using std::endl;
 
 
-bool system::registro(){
+void system::RegistroCoordinador(){
     Profesor coordinador;
 
     coordinador = RegistroProfesor();
     coordinador.setCoordinador(); //Tiene que ser True
     //Guardamos al profesor 
     BDusuarios_.InsertarProfesor(coordinador);
-
 }
 
