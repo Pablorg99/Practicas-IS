@@ -5,7 +5,7 @@ using std::endl;
 #include "system.h" 
 
 Profesor system::RegistroProfesor(){
-  Profesor ayudante;
+  Profesor ayudante("dni", "nombre", "fichero", "apellidos");
   cout << "--Registrar Profesor--" << endl;
   string straux;
   int intaux;
