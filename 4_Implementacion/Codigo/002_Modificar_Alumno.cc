@@ -10,7 +10,7 @@ y posteriormente este es devuelto.
 
 
 
-list <Alumno> ModificaAlumno(){
+list <Alumno> ModificarAlumno(){
 
 	string straux;
 	int intaux;

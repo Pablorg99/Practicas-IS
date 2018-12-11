@@ -7,7 +7,7 @@ La función recibe una lista de alumno y se encarga de mostrarlos en pantalla.
 #include "alumno.h"
 #include "009_Buscar_Alumnos.cc" //esto habrá que hacerlo con el .h de Buscar_Alumnos
 
-void MuestraAlumno(list <Alumno> listalumno){
+void MostrarAlumno(list <Alumno> listalumno){
     cout << "---------------------------------------------" << endl;
     cout << endl;
 

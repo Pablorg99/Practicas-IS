@@ -16,7 +16,7 @@ using std::ofstream;
 #include "alumno.h"
 
 //Devuelve true si el alumno es añadido correctamente, false en caso contrario
-bool InsertaAlumno(){
+bool InsertarAlumno(){
 	cout << "--Insertar alumno--" << endl;
 	string dniaux, nombreaux, straux;
 	int intaux;
