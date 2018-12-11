@@ -24,12 +24,6 @@ bool InsertaAlumno(){
 	//Introduce DNI
 	cout << "DNI:  ";
 	cin >> dniaux;
-	//Comprobaciónd e formato de DNI--//En mantenimiento
-	while(!compruebaDNI(straux)) {
-		cout << "Error. Formato de DNI incorrecto."<<endl;
-		cout << "Introduzcalo de nuevo. DNI:  " << endl;
-		cin >> straux;
-	}
 
 	//Introduce Nombre
 	cout << "Nombre:  ";
