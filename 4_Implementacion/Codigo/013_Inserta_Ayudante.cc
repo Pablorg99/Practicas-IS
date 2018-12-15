@@ -2,7 +2,7 @@
 using std::cout;
 using std::cin;
 using std::endl;
-#include "system.h" 
+#include "system.h"
 
 Profesor system::RegistroProfesor(){
   Profesor ayudante("dni", "nombre", "fichero", "apellidos");
@@ -44,7 +44,7 @@ Profesor system::RegistroProfesor(){
     cout << "\t3. Email:" << ayudante.getEmail() << endl;
     cout << "\t4. Guardar profesor y salir." << endl;
     cout << endl;             //Para que no quede tan apelotonado
- 
+
     cout << "Opción número: ";
     cin >> opcion;
 
@@ -80,5 +80,6 @@ Profesor system::RegistroProfesor(){
      }
    }while (opcion != 4 );
 
-  return ayudante;
+   //Guardamos al profesor
+   BDusuarios_.InsertarProfesor(ayudante);
 }
