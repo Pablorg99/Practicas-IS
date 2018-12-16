@@ -10,19 +10,19 @@ Database::Database() {
 	Users_DB = "Users_DataBase.txt";
 }
 
-bool Database::addStudent(Alumno &new_student) {
-    Alumno aux_student("dni", "nombre", "apellidos");
+bool Database::addStudent(Alumno &new_user) {
+    Alumno aux_user("dni", "nombre", "apellidos");
 	ifstream input_stream;
     ofstream output_stream;
 
-    input_stream.open(getStudentsBD());
-    while(input_stream.eof) {
-        input_stream >> aux_student;
-		if(aux_student.getDNI() == new_student.getDNI()) return false;
+    input_stream.open(getStudentsDB());
+    while(!input_stream.eof) {
+        input_stream >> aux_user;
+		if(aux_user.getDNI() == new_user.getDNI()) return false;
     }
 
-	output_stream.open(getStudentsBD());
-	output_stream << new_student;
+	output_stream.open(getStudentsDB());
+	output_stream << new_user;
 	return true;
 }
 
@@ -31,8 +31,8 @@ list <Alumno> Database::getAllStudents() {
 	Alumno alumno_aux("dni", "nombre", "apellidos");
 	ifstream input_stream;
     
-	input_stream.open(getStudentsBD());
-	while(input_stream.eof()) {
+	input_stream.open(getStudentsDB());
+	while(!input_stream.eof()) {
 		input_stream >> alumno_aux;
 		list_aux.push_back(alumno_aux);
 	}
@@ -44,8 +44,8 @@ list <Alumno> Database::getAllStudents() {
 Alumno Database::getStudentByValue(string value, int parameter) {
 	Alumno alumno_aux("dni", "nombre", "apellidos");
 	ifstream input_stream;
-	input_stream.open(getStudentsBD());
-	while(input_stream.eof()) {
+	input_stream.open(getStudentsDB());
+	while(!input_stream.eof()) {
 		input_stream >> alumno_aux;
 		if(CompareValueAndStudent(alumno_aux, value, parameter)) return alumno_aux;
 	}
@@ -74,11 +74,59 @@ bool Database::CompareValueAndStudent(Alumno &alumno_aux, string value, int para
 	return;
 }
 
-bool Database::WriteDataBase(list <Alumno> new_students_list) {
+void Database::WriteStudentsDB(list <Alumno> new_students_list) {
 	list <Alumno> :: iterator student;
 	ofstream output_stream;
-	output_stream.open(getStudentsBD());
+	output_stream.open(getStudentsDB());
 	for(student = new_students_list.begin(); student != new_students_list.end(); student++) {
 		output_stream << *student;
+	}
+}
+
+void Database::addUser(Profesor new_user) {
+    Profesor aux_user("dni", "nombre", "fichero", "apellidos");
+	ifstream input_stream;
+    ofstream output_stream;
+
+    input_stream.open(getUsersDB());
+    while(!input_stream.eof) {
+        input_stream >> aux_user;
+		if(aux_user.getDNI() == new_user.getDNI()) {
+			perror("Este profesor ya existe");
+			return;
+		}
+    }
+
+	output_stream.open(getStudentsDB());
+	output_stream << new_user;
+}
+
+
+void Database::deleteUser(string user_dni) {
+	Profesor aux_user("dni", "nombre", "fichero", "apellidos");
+	list <Profesor> updated_user_list;
+	list <Profesor> :: iterator user;
+	ifstream input_stream;
+    ofstream output_stream;
+
+	input_stream.open(getUsersDB());
+	while(!input_stream.eof) {
+		input_stream >> aux_user;
+		updated_user_list.push_back(aux_user);
+	}
+	
+	for(user = updated_user_list.begin(); user != updated_user_list.end(); user++) {
+		if(user->getDNI() == user_dni) user = updated_user_list.erase(user);
+	}
+
+	WriteUsersDB(updated_user_list);
+}
+
+void Database::WriteUsersDB(list <Profesor> new_users_list) {
+	list <Profesor> :: iterator user;
+	ofstream output_stream;
+	output_stream.open(getStudentsDB());
+	for(user = new_users_list.begin(); user != new_users_list.end(); user++) {
+		output_stream << *user;
 	}
 }
