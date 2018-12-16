@@ -101,6 +101,21 @@ void Database::addUser(Profesor new_user) {
 	output_stream << new_user;
 }
 
+list <Profesor> Database::getAllUsers() {
+    list <Profesor> list_aux;
+	Profesor user_aux("dni", "nombre", "fichero", "apellidos");
+	ifstream input_stream;
+    
+	input_stream.open(getUsersDB());
+	while(!input_stream.eof()) {
+		input_stream >> user_aux;
+		list_aux.push_back(user_aux);
+	}
+	input_stream.close();
+	
+	return list_aux;
+}
+
 
 void Database::deleteUser(string user_dni) {
 	Profesor aux_user("dni", "nombre", "fichero", "apellidos");
@@ -122,10 +137,24 @@ void Database::deleteUser(string user_dni) {
 	WriteUsersDB(updated_user_list);
 }
 
+Profesor Database::getUserByCredentials(string credentials) {
+	ifstream credentials_file;
+	string credentials_from_file;
+	list <Profesor> users_list = getAllUsers();
+	list <Profesor> :: iterator user;
+	for(user = users_list.begin(); user != users_list.end(); user++) {
+		credentials_file.open(user->getFichero());
+		getline(credentials_file, credentials_from_file);
+		if(credentials_from_file == credentials) return *user;
+	}
+	perror("No existe ningún profesor con esos credenciales");
+	exit(-1);
+}
+
 void Database::WriteUsersDB(list <Profesor> new_users_list) {
 	list <Profesor> :: iterator user;
 	ofstream output_stream;
-	output_stream.open(getStudentsDB());
+	output_stream.open(getUsersDB());
 	for(user = new_users_list.begin(); user != new_users_list.end(); user++) {
 		output_stream << *user;
 	}

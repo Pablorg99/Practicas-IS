@@ -23,7 +23,9 @@ class Database {
 		bool CompareValueAndStudent(Alumno &alumno_aux, string value, int parameter);
 		void WriteStudentsDB(list <Alumno> new_students_list);
 		void addUser(Profesor new_user);
+		list <Profesor> getAllUsers();
 		void deleteUser(string user_dni);
+		Profesor getUserByCredentials(string credentials);
 		void WriteUsersDB(list <Profesor> new_users_list);
 };
 
