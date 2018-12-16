@@ -67,7 +67,6 @@ int System::menuPrincipal(){
                     RegistroProfesor();
 					break;
                 case 4:
-					cout<<"Estoy aqui companero\n";
                     ModificarProfesor();
 					break;
                 case 5:
@@ -629,16 +628,15 @@ bool System::ModificarProfesor(){
 		do {
 			cout << "¿Qué parámetro desea modificar?" << endl;
 			cout << endl;
-			cout << "\t1. DNI: " << it->getTelefono() << endl;
-			cout << "\t2. Nombre: " << it->getTelefono() << endl;
-			cout << "\t3. Apellidos: " << it->getTelefono() << endl;
+			cout << "\t1. DNI: " << it->getDNI() << endl;
+			cout << "\t2. Nombre: " << it->getNombre() << endl;
+			cout << "\t3. Apellidos: " << it->getApellidos() << endl;
 			cout << "\t4. Teléfono: " << it->getTelefono() << endl;
 			cout << "\t5. Dirección: " << it->getDireccion() << endl;
 			cout << "\t6. Email: " << it->getEmail() << endl;
-			cout << "\t7. Coordinador: " << endl;
+			cout << "\t7. Coordinador: ";
 			if(it->getCoordinador()){cout << "Sí" <<endl;}
 			else{cout << "No" << endl;}
-            cout << "\t8.Password: ";
 			cout << "\t0. Guardar profesor y salir." << endl;
 			cout << endl;             //Para que no quede tan apelotonado
 
@@ -646,54 +644,54 @@ bool System::ModificarProfesor(){
 			cin >> opcion;
 
 			switch (opcion) {
-				case '1':
+				case 1:
 					cout << "DNI:  ";
 					cin >> straux;
 					(*it).setDNI(straux);
 					cout << "\n";
 					break;
 
-				case '2':
+				case 2:
 					cout << "Nombre:  ";
 					cin >> straux;
 					(*it).setNombre(straux);
 					cout << "\n";
 					break;
 
-				case '3':
+				case 3:
 					cout << "Apellidos:  ";
 					cin >> straux;
 					(*it).setApellido(straux);
 					cout << "\n";
 					break;
 
-				case '4':
+				case 4:
 					cout << "Teléfono:  ";
 					cin >> intaux;
 					(*it).setTelefono(intaux);
 					cout << "\n";
 					break;
 
-				case '5':
+				case 5:
 					cout << "Dirección:  ";
 					cin >> straux;
 					(*it).setDireccion(straux);
 					cout << "\n";
 					break;
 
-				case '6':
+				case 6:
 					cout << "Email:  ";
 					cin >> straux;
 					(*it).setEmail(straux);
 					cout << "\n";
 					break;
 
-				case '7':
+				case 7:
 					(*it).CambiarCoordinador();         //setLider cambia el valor de lider_ cada vez que se ejecuta
 					cout << "\n";
 					break;
 
-				case '0':
+				case 0:
                     //ATENCION esta parte no está hecha
                     BDsistema_.deleteUser(it->getDNI());
                     new_profesor = *it; 
