@@ -7,19 +7,15 @@ using std::cout;
 using std::cin;
 using std::endl;
 
-System::System(string ficheroCredenciales){
+System::System(string ficheroCredenciales, Profesor &usuario, Database BDsistema) : usuario_(usuario), BDsistema_(BDsistema) {
     std::ifstream fichero;
     fichero.open(ficheroCredenciales);
-
-
     //Lee las credenciales
     std::string credencial;
     getline(fichero, credencial);
 
-    Database BDsistema; 
-    BDsistema_ = BDsistema;
-
     usuario_ = BDsistema_.getUserByCredentials(credencial);
+
     int status;
     status = menuPrincipal();
     exit(status);
