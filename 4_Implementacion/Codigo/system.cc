@@ -244,12 +244,12 @@ Profesor System::RegistroProfesor(){
 void EliminarAyudante(){ //Sin terminar
     string dniaux, dniaux2;
     do {
-        std::std::cout << "DNI del profesor ayudante a borrar: ";
-        std::cin >> dniuaux;
-        std::std::cout << "Introduzcalo de nuevo para comprobarlo: ";
-        std::cin >> dniuaux2;
+        cout << "DNI del profesor ayudante a borrar: ";
+        cin >> dniuaux;
+        cout << "Introduzcalo de nuevo para comprobarlo: ";
+        cin >> dniuaux2;
         if(! (dniaux == dniaux2) ){
-            std::cout << "Error, los DNI introducidos no coinciden. Introduzcalos de nuevo.\n";
+            cout << "Error, los DNI introducidos no coinciden. Introduzcalos de nuevo.\n";
         }
     } while(! (dniaux == dniaux2) );
 
@@ -302,7 +302,7 @@ list <Alumno> System::BuscarAlumnos() {
 	}
 }
 
-list <Alumno> SeleccionarUnEquipo(int n_equipo) {
+list <Alumno> System::SeleccionarUnEquipo(int n_equipo) {
 	list <Alumno> list_aux;
 	Alumno alumno_aux("dni", "nombre", "apellidos");
 	std::ifstream input_stream;
@@ -319,7 +319,7 @@ list <Alumno> SeleccionarUnEquipo(int n_equipo) {
 	return list_aux;
 }
 
-list <Alumno> SeleccionarNumeroAlumnos(int n_alumnos) {
+list <Alumno> System::SeleccionarNumeroAlumnos(int n_alumnos) {
 	list <Alumno> list_aux;
 	Alumno alumno_aux("dni", "nombre", "apellidos");
 	int parametro;
@@ -339,7 +339,7 @@ list <Alumno> SeleccionarNumeroAlumnos(int n_alumnos) {
 	return list_aux;
 }
 
-int PedirParametro() {
+int System::PedirParametro() {
 	int opcion_parametro;
 	
 	while(true) {	
@@ -373,7 +373,7 @@ int PedirParametro() {
 	}
 }
 
-string PedirValor(int parametro) {
+string System::PedirValor(int parametro) {
 	string valor;
 
 	switch (parametro) {
@@ -397,13 +397,13 @@ string PedirValor(int parametro) {
 	}
 }
 
-void FormatearBD() {
+void System::FormatearBD() {
 	ofstream BD_file_stream;
 	BD_file_stream.open(BD);
     BD_file_stream.close();
 }
 
-void MostrarAlumno(list <Alumno> listalumno){
+void System::MostrarAlumno(list <Alumno> listalumno){
     cout << "---------------------------------------------" << endl;
     cout << endl;
 
@@ -426,7 +426,7 @@ void MostrarAlumno(list <Alumno> listalumno){
 }
 
 //Devuelve true si el alumno es añadido correctamente, false en caso contrario
-bool InsertarAlumno(){
+bool System::InsertarAlumno(){
 	cout << "--Insertar alumno--" << endl;
 	string dniaux, nombreaux, straux;
 	int intaux;

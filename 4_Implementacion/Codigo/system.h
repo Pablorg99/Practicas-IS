@@ -3,6 +3,7 @@
 #ifndef SYSTEM_H
 #define SYSTEM_H
 
+#include "alumno.h"
 #include "profesor.h"
 #include "alumno.h"
 #include "database.h"
@@ -20,7 +21,14 @@ class System{
         bool RegistroCoordinador();
         Profesor RegistroProfesor();
         bool ModificarProfesor();
-        list<Alumno> BuscarAlumnos();
+		list <Alumno> BuscarAlumnos();
+		list <Alumno> SeleccionarUnEquipo(int n_equipo);
+		list <Alumno> SeleccionarNumeroAlumnos(int n_alumnos);
+		int PedirParametro();
+		string PedirValor(int parametro);
+		void FormatearBD();
+		void MostrarAlumno(list <Alumno> listalumno);
+		bool InsertarAlumno();
 
 };
 
