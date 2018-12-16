@@ -7,23 +7,24 @@ using std::cout;
 using std::cin;
 using std::endl;
 
-System::System(string ficheroCredenciales){ 
+System::System(string ficheroCredenciales){
     std::ifstream fichero;
     fichero.open(ficheroCredenciales);
 
+
     //Lee las credenciales
     std::string credencial;
-    fichero >> credencial;
+    getline(fichero, credencial);
 
     Database BDsistema; 
     BDsistema_ = BDsistema;
 
-    Profesor usuario = BDsistema_.getUsuarioByCredencial(credencial);
-    usuario_ = usuario;
+    usuario_ = BDsistema_.getUserByCredentials(credencial);
     int status;
     status = menuPrincipal();
     exit(status);
 }
+
 int System::subMenuBuscar(){
     int opcion;
     do{
@@ -129,21 +130,6 @@ void System::BorrarAlumnos(list <Alumno> list_seleccion_alumnos) {
 		}
 	}
 	BDsistema_.WriteStudentsDB(list_alumnos_bd); 
-}
-
-Profesor System::getUsuarioByCredencial(string credencial){
-    std::ifstream BDusuarios;
-
-
-    std::string aux;
-    while(BDusuarios.eof()){
-        BDusuarios >> aux;
-        if(aux == credencial){
-            //Lee el usuario y lo devuelve
-        }
-    }
-    perror("Usuario no encontrado");
-
 }
 
 bool System::ModificarProfesor(){
