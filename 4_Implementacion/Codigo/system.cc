@@ -465,9 +465,9 @@ void EliminarAyudante(){ //Sin terminar
 void System::GenerarBackup() {
 	string line;
 	std::ifstream input_file_stream;
-	input_file_stream.open(BDsistema_.getStudentsBD());
+	input_file_stream.open(BDsistema_.getStudentsDB());
 	std::ofstream output_file_stream;
-	output_file_stream.open(BDsistema_.getStudentsBDBackup(), ostream::binary);
+	output_file_stream.open(BDsistema_.getStudentsDBBackup(), ostream::binary);
 	while(!input_file_stream.eof()) {
 		getline(input_file_stream, line);
 		line += "\n";
@@ -480,9 +480,9 @@ void System::GenerarBackup() {
 void System::CargarBackup() {
 	char line[200];
 	std::ifstream input_file_stream;
-	input_file_stream.open(BDsistema_.getStudentsBDBackup(), istream::binary);
+	input_file_stream.open(BDsistema_.getStudentsDBBackup(), istream::binary);
 	std::ofstream output_file_stream;
-	output_file_stream.open(BDsistema_.getStudentsBD());
+	output_file_stream.open(BDsistema_.getStudentsDB());
 	while(!input_file_stream.eof()) {
 		input_file_stream.read(line, 200);
 		output_file_stream << line;
@@ -542,7 +542,7 @@ list <Alumno> System::SeleccionarUnEquipo(int n_equipo) {
 	Alumno alumno_aux("dni", "nombre", "apellidos");
 	std::ifstream input_stream;
 	
-	input_stream.open(BDsistema_.getStudentsBD());
+	input_stream.open(BDsistema_.getStudentsDB());
 	while(input_stream.eof()) {
 		input_stream >> alumno_aux;
 		if(alumno_aux.getNequipo() == n_equipo) {
@@ -634,7 +634,7 @@ string System::PedirValor(int parametro) {
 
 void System::FormatearBD() {
 	std::ofstream BD_file_stream;
-	BD_file_stream.open(BDsistema_.getStudentsBD());
+	BD_file_stream.open(BDsistema_.getStudentsDB());
     BD_file_stream.close();
 }
 

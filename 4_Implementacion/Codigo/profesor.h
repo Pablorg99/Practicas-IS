@@ -6,6 +6,8 @@
 #define PROFESOR_H
 
 #include "persona.h"
+using std::ostream;
+using std::istream;
 
 class Profesor :public Persona{
   private:
@@ -23,13 +25,18 @@ class Profesor :public Persona{
     };
 
     //Modificadores
-    inline bool setCoordinador();
-    inline void setfichero(int nuevo_fichero){fichero_=nuevo_fichero;};
+    inline bool CambiarCoordinador();
+	inline void setCoordinador(bool nuevo_coordinador);
+    inline void setFichero(string nuevo_fichero){fichero_ = nuevo_fichero;};
     inline void setContrasena(string nuevo_password){contrasena_=nuevo_password;};
 
     //Observadores
-    inline bool getCoordinador(){return coordinador_;};
-    inline string getFicheroo(){return fichero_;};
+    inline bool getCoordinador() const {return coordinador_;};
+    inline string getFichero() const {return fichero_;};
+
+	//Operadores
+	friend ostream &operator<<(ostream &output_stream, const Profesor &profesor);
+	friend istream &operator>>(istream &input_stream, Profesor &profesor);
 };
 
 #endif
