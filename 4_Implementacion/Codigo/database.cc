@@ -4,12 +4,14 @@ using std::ifstream;
 using std::ofstream;
 #include <iostream>
 
+//Constructor de la base de datos
 Database::Database() {
 	Students_DB = "Students_DataBase.txt";
 	Students_DB_Backup = "Students_DataBase.bin";
 	Users_DB = "Users_DataBase.txt";
 }
 
+//Funcion que inserta un estudiante en la base de datos
 bool Database::addStudent(Alumno &new_user) {
     Alumno aux_user("dni", "nombre", "apellidos");
 	ifstream input_stream;
@@ -25,6 +27,7 @@ bool Database::addStudent(Alumno &new_user) {
 	return true;
 }
 
+//Devuelve un usuario buscando por su DNI
 Profesor Database::getUserByDNI(string dni){
 	Profesor profesor_aux("dni", "nombre", "fichero", "apellidos");
 	ifstream input_stream;
@@ -36,6 +39,7 @@ Profesor Database::getUserByDNI(string dni){
 	return profesor_aux;
 }
 
+//Devuelve todos los alumnos de la BD
 list <Alumno> Database::getAllStudents() {
     list <Alumno> list_aux;
 	Alumno alumno_aux("dni", "nombre", "apellidos");
@@ -50,6 +54,7 @@ list <Alumno> Database::getAllStudents() {
 	return list_aux;
 }
 
+//Devuelve un alumno buscado por un parametro dinamico
 Alumno Database::getStudentByValue(string value, int parameter) {
 	Alumno alumno_aux("dni", "nombre", "apellidos");
 	ifstream input_stream;
@@ -57,10 +62,11 @@ Alumno Database::getStudentByValue(string value, int parameter) {
 	while(input_stream >> alumno_aux) {
 		if(CompareValueAndStudent(alumno_aux, value, parameter)) return alumno_aux;
 	}
-	perror("Ningun usuario coincide con el valor especificado");
+	fprintf(stderr, "Ningun usuario coincide con el valor especificado");
 	return alumno_aux;
 }
 
+//Compara el valor de un parametro dinamico de un estudiante
 bool Database::CompareValueAndStudent(Alumno &alumno_aux, string value, int parameter) {
 	switch (parameter) {
 		case 1:
@@ -79,9 +85,10 @@ bool Database::CompareValueAndStudent(Alumno &alumno_aux, string value, int para
 			return false;
 		break;
 	}
-	return true;
+	return false;
 }
 
+//Escribe la base de datos de alumnos con una lista de alumnos
 void Database::WriteStudentsDB(list <Alumno> new_students_list) {
 	list <Alumno> :: iterator student;
 	ofstream output_stream;
@@ -91,6 +98,7 @@ void Database::WriteStudentsDB(list <Alumno> new_students_list) {
 	}
 }
 
+//Inserta un usuario en el sistema
 void Database::addUser(Profesor new_user) {
     Profesor aux_user("dni", "nombre", "fichero", "apellidos");
 	ifstream input_stream;
@@ -108,6 +116,7 @@ void Database::addUser(Profesor new_user) {
 	output_stream << new_user;
 }
 
+//Devuelve una lista con todos los usuarios del sistema
 list <Profesor> Database::getAllUsers() {
     list <Profesor> list_aux;
 	Profesor user_aux("dni", "nombre", "fichero", "apellidos");
@@ -122,7 +131,7 @@ list <Profesor> Database::getAllUsers() {
 	return list_aux;
 }
 
-
+//elimna un usaurio del sistema por su DNI
 void Database::deleteUser(string user_dni) {
 	Profesor aux_user("dni", "nombre", "fichero", "apellidos");
 	list <Profesor> updated_user_list;
@@ -142,6 +151,7 @@ void Database::deleteUser(string user_dni) {
 	WriteUsersDB(updated_user_list);
 }
 
+//Busca por las credenciales a un usuario y lo devuelve
 Profesor Database::getUserByCredentials(string credentials) {
 	ifstream credentials_file;
 	string credentials_from_file;
@@ -156,6 +166,7 @@ Profesor Database::getUserByCredentials(string credentials) {
 	exit(-1);
 }
 
+//Escribe una lista de usuarios en la BD de usuarios
 void Database::WriteUsersDB(list <Profesor> new_users_list) {
 	list <Profesor> :: iterator user;
 	ofstream output_stream;

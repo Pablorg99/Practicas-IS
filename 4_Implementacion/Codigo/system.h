@@ -10,8 +10,8 @@
 
 class System{
     private:
-        Database BDsistema_;
         Profesor usuario_;
+        Database BDsistema_;
         list<Alumno> alumnos_;
     public:
         System(string ficheroCredenciales, Profesor &usuario, Database BDsistema);
@@ -30,7 +30,7 @@ class System{
 		list<Profesor> BuscarProfesor();
         Profesor RegistroCoordinador();
         bool ModificarProfesor();
-		//void EliminarAyudante();
+		bool EliminarAyudante();
 		void GenerarBackup();
 		void CargarBackup();
 		void FormatearBD();
