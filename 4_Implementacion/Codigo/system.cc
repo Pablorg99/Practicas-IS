@@ -7,8 +7,7 @@ using std::cout;
 using std::cin;
 using std::endl;
 
-//Lee el fichero de credenciales e inicia el sistema si este usuario es valido
-void System::LeeCredenciales(string ficheroCredenciales){
+System::System(string ficheroCredenciales){ 
     std::ifstream fichero;
     fichero.open(ficheroCredenciales);
 
@@ -16,15 +15,120 @@ void System::LeeCredenciales(string ficheroCredenciales){
     std::string credencial;
     fichero >> credencial;
 
-    //Devolvera el usaurio si existe y Error si no
-    Profesor usuario("0", "0", "0", "0");
-    usuario = getUsuarioByCredencial(credencial);
+    Database BDsistema; 
+    BDsistema_ = BDsistema;
 
-    start(usuario);
+    Profesor usuario = BDsistema_.getUsuarioByCredencial(credencial);
+    usuario_ = usuario;
+    int status;
+    status = menuPrincipal();
+    exit(status);
+}
+int System::subMenuBuscar(){
+    int opcion;
+    do{
+			cout << "SubMenu de busqueda" << endl;
+			cout << endl;
+			cout << "\t1. Modificar Alumnos" << endl;
+			cout << "\t2. Borrar Alumnos " << endl;
+			cout << "\t3. Mostrar Alumnos " << endl;
+            cout << "\t0. Salir" <<endl;
+            cout << endl;             //Para que no quede tan apelotonado
+
+			cout << "Opción número: ";
+            cin >> opcion;
+            switch(opcion){
+                case 1:
+                    ModificarAlumno();
+                case 2:
+                    BorrarAlumnos(alumnos_);
+                    return menuPrincipal();
+                case 3:
+                    MostrarAlumno();
+                case 0:
+                    return menuPrincipal();
+                default:
+                    cout<<"No ha seleccionado una opcion posible"<<endl;
+
+            }
+    }while(opcion!=0);
 }
 
-void System::start(Profesor usuario){
+int System::menuPrincipal(){
+    int opcion;
+    do{
+			cout << "Sistema de gestion del alumnado" << endl;
+			cout << endl;
+			cout << "\t1. Insertar nuevo alumno " << endl;
+			cout << "\t2. Buscar alumno " << endl;
+			cout << "\t3. Registrar nuevo usuario " << endl;
+			cout << "\t4. Modificar usuario " << endl;
+			cout << "\t5. Eliminar usuario " << endl;
+            cout << "\t6. Crear Backup de alumnos" <<endl;
+            cout << "\t7. Cargar Backup de alumnos" <<endl;
+            cout << "\t8. Formatear base de datos de alumnos" <<endl;
+            cout << "\t0. Salir" <<endl;
+            cout << endl;             //Para que no quede tan apelotonado
 
+			cout << "Opción número: ";
+            cin >> opcion;
+
+            int status;
+
+            switch(opcion){
+                case 1:
+                    if(!InsertarAlumno()){ 
+                        cout<<"Error al insertar el alumno"<<endl;
+                    }
+                case 2:
+                    alumnos_ = BuscarAlumnos();
+                    return subMenuBuscar();
+                case 3:
+                    RegistroProfesor();
+                case 4:
+                    ModificarProfesor();
+                case 5:
+                    cout<<"Hola, Work in progress"<<endl;
+                case 6:
+                    if(usuario_.getCoordinador){
+                        GenerarBackup();
+                    }
+                    else{cout<<"No tiene premisos para realizar esta operacion"<<endl;}
+                case 7:
+                    if(usuario_.getCoordinador){
+                        CargarBackup();
+                    }
+                    else{cout<<"No tiene premisos para realizar esta operacion"<<endl;}
+                case 8:
+                    if(usuario_.getCoordinador){
+                        FormatearBD();
+                    }
+                    else{cout<<"No tiene premisos para realizar esta operacion"<<endl;}
+                case 0:
+                    return 0;
+
+                default:
+                    cout<<"No ha seleccionado un operacion posible"<<endl;
+            }
+            
+    }while(opcion!=0);
+}
+
+void System::BorrarAlumnos(list <Alumno> list_seleccion_alumnos) {
+	list <Alumno> :: iterator alumno_seleccion = list_seleccion_alumnos.begin();
+	list <Alumno> list_alumnos_bd; 
+	list <Alumno> :: iterator alumno_bd;
+	list_alumnos_bd = BDsistema_.getAllStudents();
+	for(alumno_bd = list_alumnos_bd.begin(); alumno_bd != list_alumnos_bd.end(); alumno_bd++) {
+		if(alumno_bd->getDNI() == alumno_seleccion->getDNI()) {
+			/*Erase devuelve un nuevo valor disponible para el iterador y
+			hay que asignarlo, porque el iterador se sigue usando en el
+			bucle, si no se hace se producirá un segmentation fault*/
+			alumno_bd = list_alumnos_bd.erase(alumno_bd);
+			alumno_seleccion++;
+		}
+	}
+	BDsistema_.WriteDataBase(list_alumnos_bd);
 }
 
 Profesor System::getUsuarioByCredencial(string credencial){
@@ -45,7 +149,7 @@ Profesor System::getUsuarioByCredencial(string credencial){
 bool System::ModificarProfesor(){
 
 	string straux;
-	int intaux;
+	int intaux; 
 	list <Profesor> listprofesor = BuscarProfesor();
     Profesor new_profesor("dni", "nombre", "fichero", "apellidos");
 
@@ -67,7 +171,7 @@ bool System::ModificarProfesor(){
 			cout << "\t4. Teléfono: " << it->getTelefono() << endl;
 			cout << "\t5. Dirección: " << it->getDireccion() << endl;
 			cout << "\t6. Email: " << it->getEmail() << endl;
-			cout << "\t7. Coordinador: ";
+			cout << "\t7. Coordinador: " << endl;
 			if(it->getCoordinador()){cout << "Sí" <<endl;}
 			else{cout << "No" << endl;}
             cout << "\t8.Password: ";
@@ -142,6 +246,115 @@ bool System::ModificarProfesor(){
 
 	}
 }
+
+list<Alumno> System::ModificarAlumno(){
+
+	string straux;
+	int intaux;
+	list <Alumno> listalumno = BuscarAlumnos();
+
+	for(list <Alumno>::iterator it = listalumno.begin(); it != listalumno.end(); it++){
+
+		int opcion;
+
+		do {
+			cout << "¿Qué parámetro desea modificar?" << endl;
+			cout << endl;
+			cout << "\t1. DNI: " << it->getTelefono() << endl;
+			cout << "\t2. Nombre: " << it->getTelefono() << endl;
+			cout << "\t3. Apellidos: " << it->getTelefono() << endl;
+			cout << "\t4. Teléfono: " << it->getTelefono() << endl;
+			cout << "\t5. Dirección: " << it->getDireccion() << endl;
+			cout << "\t6. Email: " << it->getEmail() << endl;
+			cout << "\t7. Último curso matriculado: " << it->getCurso() << endl;
+			cout << "\t8. Nº de equipo: " << it->getNequipo() << endl;
+			cout << "\t9. Líder de equipo: ";
+			if(it->getLider()){cout << "Sí" <<endl;}
+			else{cout << "No" << endl;}
+			cout << "\t0. Guardar alumno y salir." << endl;
+			cout << endl;             //Para que no quede tan apelotonado
+
+			cout << "Opción número: ";
+			cin >> opcion;
+
+			switch (opcion) {
+				case '1':
+					cout << "DNI:  ";
+					cin >> straux;
+					(*it).setDNI(straux);
+					cout << "\n";
+					break;
+
+				case '2':
+					cout << "Nombre:  ";
+					cin >> straux;
+					(*it).setNombre(straux);
+					cout << "\n";
+					break;
+
+				case '3':
+					cout << "Apellidos:  ";
+					cin >> straux;
+					(*it).setApellido(straux);
+					cout << "\n";
+					break;
+
+				case '4':
+					cout << "Teléfono:  ";
+					cin >> intaux;
+					(*it).setTelefono(intaux);
+					cout << "\n";
+					break;
+
+				case '5':
+					cout << "Dirección:  ";
+					cin >> straux;
+					(*it).setDireccion(straux);
+					cout << "\n";
+					break;
+
+				case '6':
+					cout << "Email:  ";
+					cin >> straux;
+					(*it).setEmail(straux);
+					cout << "\n";
+					break;
+
+				case '7':
+					cout << "Último curso matriculado:  ";
+					cin >> intaux;
+					(*it).setCurso(intaux);
+					cout << "\n";
+					break;
+
+				case '8':
+					cout << "Nº de equipo:  ";
+					cin >> intaux;
+					(*it).setNequipo(intaux);
+					cout << "\n";
+					break;
+
+				case '9':
+					(*it).cambiaLider();         //setLider cambia el valor de lider_ cada vez que se ejecuta
+					cout << "\n";
+					break;
+
+				case '0':
+					cout << "Alumno editado correctamente.\n";
+					cout << "\n";
+					break;
+
+				default:
+					cout <<opcion << " no es una opción válida del menú.\n";
+					cout << endl;
+			}
+		}while (opcion != 0 );
+
+	}
+    return listalumno;
+	//La funcion interna se encargará de guardarlo en la base de datos--
+}
+
 
 bool System::RegistroCoordinador(){
     Profesor coordinador("dni", "nombre", "fichero", "apellido");
@@ -425,9 +638,10 @@ void System::FormatearBD() {
     BD_file_stream.close();
 }
 
-void System::MostrarAlumno(list <Alumno> listalumno){
+void System::MostrarAlumno(){ 
     cout << "---------------------------------------------" << endl;
     cout << endl;
+    list<Alumno> listalumno = alumnos_;
 
     for(list <Alumno>::iterator it = listalumno.begin(); it != listalumno.end(); it++){
         cout << "\t DNI: " << it->getTelefono() << endl;

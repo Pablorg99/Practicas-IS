@@ -12,11 +12,10 @@ class System{
     private:
         Database BDsistema_;
         Profesor usuario_;
+        list<Alumno> alumnos_;
     public:
-        System();
-        void LeeCredenciales(string ficheroCredenciales);
-        void start(Profesor usuario);
-        Profesor getUsuarioByCredencial(string credencial);
+        System(string ficheroCredenciales);
+        //Profesor getUsuarioByCredencial(string credencial);
         bool RegistroCoordinador();
         Profesor RegistroProfesor();
         bool ModificarProfesor();
@@ -28,9 +27,13 @@ class System{
 		int PedirParametro();
 		string PedirValor(int parametro);
 		void FormatearBD();
-		void MostrarAlumno(list <Alumno> listalumno);
+		void MostrarAlumno();
 		bool InsertarAlumno();
         list<Profesor> BuscarProfesor();
+        int menuPrincipal();
+        int subMenuBuscar();
+        list<Alumno> ModificarAlumno();
+        void BorrarAlumnos(list<Alumno> list_seleccion_alumnos);
 
 };
 

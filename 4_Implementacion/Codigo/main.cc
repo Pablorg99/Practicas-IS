@@ -10,6 +10,6 @@ int main(int argc, char const *argv[]){
         return 0;
     }
     credenciales = argv[1];
-    //sistema.inicio(credenciales);
+    System system(credenciales);
     return 0;
 }
