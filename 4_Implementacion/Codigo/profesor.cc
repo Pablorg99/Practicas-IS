@@ -36,7 +36,7 @@ istream &operator>>(istream &input_stream, Profesor &profesor) {
 	getline(input_stream, aux_string, ',');
 	profesor.setApellido(aux_string);
 	getline(input_stream, aux_string, ',');
-	profesor.setTelefono(stoi(aux_string));
+	profesor.setTelefono(atoi(aux_string.c_str()));
 	getline(input_stream, aux_string, ',');
 	profesor.setDireccion(aux_string);
 	getline(input_stream, aux_string, ',');

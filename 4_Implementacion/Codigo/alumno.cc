@@ -63,15 +63,15 @@ istream &operator>>(istream &input_stream, Alumno &alumno) {
 	getline(input_stream, aux_string, ',');
 	alumno.setApellido(aux_string);
 	getline(input_stream, aux_string, ',');
-	alumno.setTelefono(stoi(aux_string));
+	alumno.setTelefono(atoi(aux_string.c_str()));
 	getline(input_stream, aux_string, ',');
 	alumno.setDireccion(aux_string);
 	getline(input_stream, aux_string, ',');
 	alumno.setEmail(aux_string);
 	getline(input_stream, aux_string, ',');
-	alumno.setCurso(stoi(aux_string));
+	alumno.setCurso(atoi(aux_string.c_str()));
 	getline(input_stream, aux_string, ',');
-	alumno.setNequipo(stoi(aux_string));
+	alumno.setNequipo(atoi(aux_string.c_str()));
 	getline(input_stream, aux_string, '\n');
 	if(aux_string == "true") is_lider = true;
 	else is_lider = false;
