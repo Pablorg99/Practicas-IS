@@ -6,8 +6,8 @@ int main(int argc, char const *argv[]){
     string credenciales;
     if (argc != 2){
         std::cout<<"Error de identificación\n";
-        std::cout<<"Por favor, indique su fichero de credenciales\n";
-        std::cout<<"En caso de que sea la primera vez que incia el sistema inique el fichero dado por el fabricante del software\n";
+        std::cout<<"Por favor, adjunte el nombre de su fichero de credenciales\n";
+        std::cout<<"En caso de que sea la primera vez que incia el sistema adjunte el fichero facilitado por el fabricante del software\n";
         return 0;
     }
     credenciales = argv[1];
