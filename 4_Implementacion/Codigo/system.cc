@@ -239,9 +239,9 @@ void EliminarAyudante(){ //Sin terminar
     string dniaux, dniaux2;
     do {
         cout << "DNI del profesor ayudante a borrar: ";
-        cin >> dniuaux;
+        cin >> dniaux;
         cout << "Introduzcalo de nuevo para comprobarlo: ";
-        cin >> dniuaux2;
+        cin >> dniaux2;
         if(! (dniaux == dniaux2) ){
             cout << "Error, los DNI introducidos no coinciden. Introduzcalos de nuevo.\n";
         }
@@ -301,7 +301,7 @@ list <Alumno> System::SeleccionarUnEquipo(int n_equipo) {
 	Alumno alumno_aux("dni", "nombre", "apellidos");
 	std::ifstream input_stream;
 	
-	input_stream.open(BD);
+	input_stream.open(BDsistema_.getStudentsBD());
 	while(input_stream.eof()) {
 		input_stream >> alumno_aux;
 		if(alumno_aux.getNequipo() == n_equipo) {
@@ -392,8 +392,8 @@ string System::PedirValor(int parametro) {
 }
 
 void System::FormatearBD() {
-	ofstream BD_file_stream;
-	BD_file_stream.open(BD);
+	std::ofstream BD_file_stream;
+	BD_file_stream.open(BDsistema_.getStudentsBD());
     BD_file_stream.close();
 }
 
@@ -509,6 +509,6 @@ bool System::InsertarAlumno(){
 				cout << endl;
 		}
 	}while (opcion != 7 );
-	return addStudent(alumno);
+	return BDsistema_.addStudent(alumno);
 }
 

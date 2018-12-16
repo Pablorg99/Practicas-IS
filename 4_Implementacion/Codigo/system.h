@@ -5,7 +5,6 @@
 
 #include "alumno.h"
 #include "profesor.h"
-#include "alumno.h"
 #include "database.h"
 #include <string>
 
