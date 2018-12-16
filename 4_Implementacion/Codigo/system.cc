@@ -156,7 +156,8 @@ bool System::InsertarAlumno(){
 				alumno.setDireccion(straux);
 				cout << "\n";
 				break;
-				case '3':
+				
+			case '3':
 				cout << "Email:  ";
 				cin >> straux;
 				alumno.setEmail(straux);
