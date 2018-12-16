@@ -10,7 +10,7 @@
 8. [Mostrar Alumno](../2_Analisis_de_Requisitos/Historias_de_Usuario/004_Mostrar_alumno.md)
 9. [Ordenar Alumnos](../2_Analisis_de_Requisitos/Historias_de_Usuario/008_Ordenar_alumnos.md)
 10. [Generar Backup](../2_Analisis_de_Requisitos/Historias_de_Usuario/006_Generar_Backup.md)
-11. [Formatear BD](../2_Analisis_de_Requisitos/Historias_de_Usuario/007_Reset_BD.md)
+11. [Formatear BD](../2_Analisis_de_Requisitos/Historias_de_Usuario/007_Formatear_BD.md)
 12. [Cargar Backup (Sin Historia de Usuario)]()
 13. [Eliminar Ayudante (Sin Historia de Usuario)]()
 14. [Modifcar Coordinador (Sin Historia de Usuario)]()
