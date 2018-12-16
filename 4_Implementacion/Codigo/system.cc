@@ -277,7 +277,7 @@ list <Alumno> System::BuscarAlumnos() {
 
 			case 3:
 				int n_alumnos;
-				cout << "Introduzca el número de alumnos que desea seleccioanr: ";
+				cout << "Introduzca el número de alumnos que desea seleccionar: ";
 				cin >> n_alumnos;
 				return SeleccionarNumeroAlumnos(n_alumnos);
 				break;
