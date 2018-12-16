@@ -244,6 +244,7 @@ list <Alumno> System::BuscarAlumnos() {
 	int opcion_submenu;
 
 	while(true) {
+		system("clear");
 		cout << endl;
 		cout << "Indica el tipo de selección que quieres hacer:" << endl;
 		cout << endl;
@@ -389,6 +390,7 @@ string System::PedirValor(int parametro) {
 int System::subMenuBuscar(){
     int opcion;
     do{
+			system("clear");
 			cout << endl;
 			cout << "SubMenu de busqueda" << endl;
 			cout << endl;
@@ -770,7 +772,7 @@ list<Profesor> System::BuscarProfesor(){
 }
 
 
-void EliminarAyudante(){ //Sin terminar
+void System::EliminarAyudante(){ //Sin terminar
     string dniaux, dniaux2;
     Profesor profesor_aux("dni", "nombre", "fichero", "apellidos");
 
