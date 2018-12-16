@@ -149,47 +149,47 @@ bool System::InsertarAlumno(){
 		cin >> opcion;
 
 		switch (opcion) {
-			case '1':
+			case 1:
 				cout << "Teléfono:  ";
 				cin >> intaux;
 				alumno.setTelefono(intaux);
 				cout << "\n";
 				break;
 
-			case '2':
+			case 2:
 				cout << "Dirección:  ";
 				cin >> straux;
 				alumno.setDireccion(straux);
 				cout << "\n";
 				break;
 
-			case '3':
+			case 3:
 				cout << "Email:  ";
 				cin >> straux;
 				alumno.setEmail(straux);
 				cout << "\n";
 				break;
 
-			case '4':
+			case 4:
 				cout << "Último curso matriculado:  ";
 				cin >> intaux;
 				alumno.setCurso(intaux);
 				cout << "\n";
 				break;
 
-			case '5':
+			case 5:
 				cout << "Nº de equipo:  ";
 				cin >> intaux;
 				alumno.setNequipo(intaux);
 				cout << "\n";
 				break;
 
-			case '6':
+			case 6:
 				alumno.cambiaLider();         //setLider cambia el valor de lider_ cada vez que se ejecuta
 				cout << "\n";
 				break;
 
-			case '7':
+			case 7:
 				cout << "Alumno guardado correctamente.\n";
 				cout << "\n";
 				break;
