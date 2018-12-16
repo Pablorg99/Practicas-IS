@@ -37,6 +37,11 @@ int System::subMenuBuscar(){
             switch(opcion){
                 case 1:
                     ModificarAlumno();
+                    BorrarAlumnos(alumnos_);
+                    for(list <Alumno>::iterator it = alumnos_.begin(); it != alumnos_.end(); it++){
+                        BDsistema_.addStudent(*it);
+                    }
+                    return menuPrincipal();
                 case 2:
                     BorrarAlumnos(alumnos_);
                     return menuPrincipal();
