@@ -21,7 +21,6 @@ class System{
         bool RegistroCoordinador();
         Profesor RegistroProfesor();
         bool ModificarProfesor();
-<<<<<<< HEAD
 		list <Alumno> BuscarAlumnos();
 		list <Alumno> SeleccionarUnEquipo(int n_equipo);
 		list <Alumno> SeleccionarNumeroAlumnos(int n_alumnos);
@@ -30,9 +29,6 @@ class System{
 		void FormatearBD();
 		void MostrarAlumno(list <Alumno> listalumno);
 		bool InsertarAlumno();
-=======
-        list<Alumno> BuscarAlumnos();
->>>>>>> d53eea6bfd48b01f0076b5525fa57800fb0424c4
 
 };
 

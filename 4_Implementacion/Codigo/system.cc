@@ -256,11 +256,7 @@ void EliminarAyudante(){ //Sin terminar
 }
 
 
-<<<<<<< HEAD
 list <Alumno> System::BuscarAlumnos() {
-=======
-list <Alumno> system::BuscarAlumnos() {
->>>>>>> d53eea6bfd48b01f0076b5525fa57800fb0424c4
     int opcion_submenu;
 
 	while(true) {
