@@ -10,7 +10,7 @@ using std::endl;
 
 //Constructor de sistema
 System::System(string ficheroCredenciales, Profesor &usuario, Database BDsistema) : usuario_(usuario), BDsistema_(BDsistema) {
-    
+
 	//Comprobamos existen los arvhivos de la BD
 	std::ifstream aux_stream_student(BDsistema.getStudentsDB());
 	if(!aux_stream_student.is_open()){
@@ -29,7 +29,7 @@ System::System(string ficheroCredenciales, Profesor &usuario, Database BDsistema
 	std::ifstream fichero;
     fichero.open(ficheroCredenciales);
     std::string credencial;
-    getline(fichero, credencial); 
+    getline(fichero, credencial);
 
 	//Si no existe ese usuario el programa se cerrará
     usuario_ = BDsistema_.getUserByCredentials(credencial);
@@ -48,7 +48,7 @@ string System::primerInicio(){
 
 	//El nombre del archivo de credenciales esta formado por el dni y la terminacion _CDL.txt
 	string nombreFichero;
-	nombreFichero = usuario.getDNI() + "_CDL.txt"; 
+	nombreFichero = usuario.getDNI() + "_CDL.txt";
 
 	//Se crea el archivo de credenciales
 	std::ofstream new_stream_user(nombreFichero);
@@ -95,7 +95,7 @@ int System::menuPrincipal(){
 			//Selección de la acción a realizar
             switch(opcion){
                 case 1:
-                    if(!InsertarAlumno()){ 
+                    if(!InsertarAlumno()){
                         cout<<"Alumno ya existente"<<endl;
                     }
 					cin.ignore();
@@ -141,7 +141,7 @@ int System::menuPrincipal(){
                     cout<<"No ha seleccionado un operacion posible"<<endl;
 					break;
             }
-            
+
     }while(opcion!=0);
 	return opcion;
 }
@@ -252,7 +252,7 @@ bool System::InsertarAlumno(){
 
 //Busqueda de alumnos
 list <Alumno> System::BuscarAlumnos() {
-    
+
 	list <Alumno> void_list;
 	int opcion_submenu;
 
@@ -267,14 +267,14 @@ list <Alumno> System::BuscarAlumnos() {
 		cout << "\t3. Un número determinado de alumnos." << endl;
 		cout << "\t4. Un único alumno." << endl;
 		cout << "\t5. Volver al menú principal." << endl;
-		
+
 		cout << endl;
 		cout << "Opción número: ";
 		cin >> opcion_submenu;
-		
+
 		switch (opcion_submenu) {
 			case 1:
-				return BDsistema_.getAllStudents();    
+				return BDsistema_.getAllStudents();
 				break;
 
 			case 2:
@@ -290,15 +290,15 @@ list <Alumno> System::BuscarAlumnos() {
 				cin >> n_alumnos;
 				return SeleccionarNumeroAlumnos(n_alumnos);
 				break;
-			
+
 			case 4:
 				return SeleccionarNumeroAlumnos(1);
 				break;
-			
+
 			case 5:
 				return void_list;
 				break;
-			
+
 			default:
 				cout << "Elija una opción del menú." << endl;
 		}
@@ -317,10 +317,10 @@ list <Alumno> System::SeleccionarUnEquipo(int n_equipo) {
 	while(input_stream >> alumno_aux) {
 		if(alumno_aux.getNequipo() == n_equipo) {
 			cout << alumno_aux.getApellidosyNombre() << " seleccionado" << endl;
-			list_aux.push_back(alumno_aux);	
+			list_aux.push_back(alumno_aux);
 		}
 	}
-	
+
 	return list_aux;
 }
 
@@ -334,14 +334,14 @@ list <Alumno> System::SeleccionarNumeroAlumnos(int n_alumnos) {
 	parametro = PedirParametro();
 	//Sale de la función si PedirParametro devuelve 0
 	if(!parametro) return list_aux;
-	
+
 	for(int i = 0; i < n_alumnos; i++) {
 		valor = PedirValor(parametro);
 		alumno_aux = BDsistema_.getStudentByValue(valor, parametro);
 		cout << alumno_aux.getApellidosyNombre() << " seleccionado" << endl;
 		list_aux.push_back(alumno_aux);
 	}
-	
+
 	return list_aux;
 }
 
@@ -366,7 +366,7 @@ int System::PedirParametro() {
 			case 2:
 				return 2;
 				break;
-			
+
 			case 3:
 				return 3;
 				break;
@@ -374,7 +374,7 @@ int System::PedirParametro() {
 			case 4:
 				return 0;
 				break;
-		
+
 			default:
 				cout << "Elija una opción del menú." << endl;
 		}
@@ -589,7 +589,7 @@ list<Alumno> System::ModificarAlumno(){
 //Borra todos los alumnos de la lista list_seleccion_alumnos de la BD
 void System::BorrarAlumnos(list <Alumno> list_seleccion_alumnos) {
 	list <Alumno> :: iterator alumno_seleccion = list_seleccion_alumnos.begin();
-	list <Alumno> list_alumnos_bd; 
+	list <Alumno> list_alumnos_bd;
 	list <Alumno> :: iterator alumno_bd;
 	list_alumnos_bd = BDsistema_.getAllStudents();
 	for(alumno_bd = list_alumnos_bd.begin(); alumno_bd != list_alumnos_bd.end(); alumno_bd++) {
@@ -601,7 +601,7 @@ void System::BorrarAlumnos(list <Alumno> list_seleccion_alumnos) {
 			alumno_seleccion++;
 		}
 	}
-	BDsistema_.WriteStudentsDB(list_alumnos_bd); 
+	BDsistema_.WriteStudentsDB(list_alumnos_bd);
 }
 
 //Depliega la interfaz de registro de un profesor
@@ -670,7 +670,7 @@ Profesor System::RegistroProfesor(){
 				break;
 
 			case 4:
-				BDsistema_.addUser(ayudante); 
+				BDsistema_.addUser(ayudante);
 				cout << "Profesor guardado correctamente.\n";
 				cout << "\n";
 				break;
@@ -687,7 +687,7 @@ Profesor System::RegistroProfesor(){
 bool System::ModificarProfesor(){
 
 	string straux;
-	int intaux; 
+	int intaux;
 	list <Profesor> listprofesor = BuscarProfesor();
     Profesor new_profesor("dni", "nombre", "fichero", "apellidos");
 
@@ -769,7 +769,7 @@ bool System::ModificarProfesor(){
 				case 0:
                     //ATENCION esta parte no está hecha
                     BDsistema_.deleteUser(it->getDNI());
-                    new_profesor = *it; 
+                    new_profesor = *it;
                     BDsistema_.addUser(new_profesor);
 					cout << "Profesor editado y guardado correctamente.\n"; //Falta la comprobación de errores
 					cout << "\n";
@@ -797,9 +797,11 @@ list<Profesor> System::BuscarProfesor(){
     return profesores;
 }
 
-/*
-void EliminarAyudante(){ //Sin terminar
+
+bool System::EliminarAyudante(){ //Sin terminar
     string dniaux, dniaux2;
+    Profesor profesor_aux("dni", "nombre", "fichero", "apellidos");
+
     do {
         cout << "DNI del profesor ayudante a borrar: ";
         cin >> dniaux;
@@ -810,8 +812,18 @@ void EliminarAyudante(){ //Sin terminar
         }
     } while(! (dniaux == dniaux2) );
 
+
+    std::ifstream input_stream;
+    input_stream.open(BDsistema_.getUsersDB());
+    while(input_stream >> profesor_aux) {
+        if(profesor_aux.getDNI() == dniaux){
+            BDsistema_.deleteUser(dniaux);
+            return true;
+        }
+    }
+    printf("Error, no existe ningún profesor con dni %s\n", dniaux);
+    return false;
 }
-*/
 
 //Genera un archivo binario con una copia de la BD
 void System::GenerarBackup() {
@@ -834,7 +846,7 @@ void System::CargarBackup() {
 	std::ifstream input_file_stream;
 	input_file_stream.open(BDsistema_.getStudentsDBBackup(), istream::binary);
 	std::ofstream output_file_stream;
-	output_file_stream.open(BDsistema_.getStudentsDB()); 
+	output_file_stream.open(BDsistema_.getStudentsDB());
 	while(!input_file_stream.eof()) {
 		input_file_stream.read(line, 200);
 		output_file_stream << line;
