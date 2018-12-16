@@ -57,7 +57,7 @@ Alumno Database::getStudentByValue(string value, int parameter) {
 	while(input_stream >> alumno_aux) {
 		if(CompareValueAndStudent(alumno_aux, value, parameter)) return alumno_aux;
 	}
-	perror("Ningun usuario coincide con el valor especificado");
+	fprintf(stderr, "Ningun usuario coincide con el valor especificado");
 	return alumno_aux;
 }
 
@@ -79,7 +79,7 @@ bool Database::CompareValueAndStudent(Alumno &alumno_aux, string value, int para
 			return false;
 		break;
 	}
-	return true;
+	return false;
 }
 
 void Database::WriteStudentsDB(list <Alumno> new_students_list) {
