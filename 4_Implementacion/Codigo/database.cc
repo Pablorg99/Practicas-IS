@@ -121,7 +121,7 @@ void Database::addUser(Profesor new_user) {
 		}
     }
 
-	output_stream.open(getUsersDB(), std::ios::app);
+	output_stream.open(getUsersDB(), std::ios_base::app);
 	output_stream << new_user;
 }
 
