@@ -15,25 +15,25 @@ class System{
         list<Alumno> alumnos_;
     public:
         System(string ficheroCredenciales, Profesor &usuario, Database BDsistema);
-        //Profesor getUsuarioByCredencial(string credencial);
-        bool RegistroCoordinador();
-        Profesor RegistroProfesor();
-        bool ModificarProfesor();
+        int menuPrincipal();
+		bool InsertarAlumno();
 		list <Alumno> BuscarAlumnos();
-		list <Alumno> SeleccionarUnEquipo(int n_equipo);
-		list <Alumno> SeleccionarNumeroAlumnos(int n_alumnos);
+			list <Alumno> SeleccionarUnEquipo(int n_equipo);
+			list <Alumno> SeleccionarNumeroAlumnos(int n_alumnos);
+			int PedirParametro();
+			string PedirValor(int parametro);
+        	int subMenuBuscar();
+				void MostrarAlumno();
+        		list<Alumno> ModificarAlumno();
+        		void BorrarAlumnos(list<Alumno> list_seleccion_alumnos);
+        Profesor RegistroProfesor();
+        bool RegistroCoordinador();
+        bool ModificarProfesor();
+		//void EliminarAyudante();
 		void GenerarBackup();
 		void CargarBackup();
-		int PedirParametro();
-		string PedirValor(int parametro);
 		void FormatearBD();
-		void MostrarAlumno();
-		bool InsertarAlumno();
         list<Profesor> BuscarProfesor();
-        int menuPrincipal();
-        int subMenuBuscar();
-        list<Alumno> ModificarAlumno();
-        void BorrarAlumnos(list<Alumno> list_seleccion_alumnos);
 
 };
 
