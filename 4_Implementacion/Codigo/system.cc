@@ -105,22 +105,28 @@ int System::menuPrincipal(){
 //Devuelve true si el alumno es añadido correctamente, false en caso contrario
 bool System::InsertarAlumno(){
 	cout << "--Insertar alumno--" << endl;
-	string dniaux, nombreaux, straux;
+	Alumno alumno("dniaux", "nombreaux", "straux");
 	int intaux;
+	string straux;
 
 	//Introduce DNI
 	cout << "DNI:  ";
-	cin >> dniaux;
+	cin >> straux;
+	while(!alumno.setDNI(straux)){
+		cout<<"DNI incorrecto, introduzcalo de nuevo\n"<<endl;
+		cout << "DNI:  ";
+		cin >> straux;
+	}
 
 	//Introduce Nombre
 	cout << "Nombre:  ";
-	cin >> nombreaux;
+	cin >> straux;
+	alumno.setNombre(straux);
 
 	//Introduce Apellido
 	cout << "Apellido:  ";
 	cin >> straux;
-
-	Alumno alumno(dniaux, nombreaux, straux);
+	alumno.setApellido(straux);
 
 	int opcion;
 
@@ -156,7 +162,7 @@ bool System::InsertarAlumno(){
 				alumno.setDireccion(straux);
 				cout << "\n";
 				break;
-				
+
 			case '3':
 				cout << "Email:  ";
 				cin >> straux;
