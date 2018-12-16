@@ -10,8 +10,8 @@
 
 class System{
     private:
-        Database BDsistema_;
         Profesor usuario_;
+        Database BDsistema_;
         list<Alumno> alumnos_;
     public:
         System(string ficheroCredenciales, Profesor &usuario, Database BDsistema);
