@@ -23,6 +23,8 @@ class System{
 		list <Alumno> BuscarAlumnos();
 		list <Alumno> SeleccionarUnEquipo(int n_equipo);
 		list <Alumno> SeleccionarNumeroAlumnos(int n_alumnos);
+		void GenerarBackup();
+		void CargarBackup();
 		int PedirParametro();
 		string PedirValor(int parametro);
 		void FormatearBD();

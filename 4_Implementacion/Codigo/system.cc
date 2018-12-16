@@ -249,6 +249,34 @@ void EliminarAyudante(){ //Sin terminar
 
 }
 
+void System::GenerarBackup() {
+	string line;
+	std::ifstream input_file_stream;
+	input_file_stream.open(BDsistema_.getStudentsBD());
+	std::ofstream output_file_stream;
+	output_file_stream.open(BDsistema_.getStudentsBDBackup(), ostream::binary);
+	while(!input_file_stream.eof()) {
+		getline(input_file_stream, line);
+		line += "\n";
+		output_file_stream.write(line.c_str(), line.size());
+	}
+	input_file_stream.close();
+	output_file_stream.close();
+}
+
+void System::CargarBackup() {
+	char line[200];
+	std::ifstream input_file_stream;
+	input_file_stream.open(BDsistema_.getStudentsBDBackup(), istream::binary);
+	std::ofstream output_file_stream;
+	output_file_stream.open(BDsistema_.getStudentsBD());
+	while(!input_file_stream.eof()) {
+		input_file_stream.read(line, 200);
+		output_file_stream << line;
+	}
+	input_file_stream.close();
+	output_file_stream.close();
+}
 
 list <Alumno> System::BuscarAlumnos() {
     int opcion_submenu;
