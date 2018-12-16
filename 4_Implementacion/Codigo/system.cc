@@ -7,12 +7,12 @@ using std::cout;
 using std::cin;
 using std::endl;
 
-system::system(){
+System::System(){
     BDsistema_ = "usuarios.txt";
 }
 
 //Lee el fichero de credenciales e inicia el sistema si este usuario es valido
-void system::LeeCredenciales(string ficheroCredenciales){
+void System::LeeCredenciales(string ficheroCredenciales){
     std::ifstream fichero;
     fichero.open(ficheroCredenciales);
 
@@ -27,11 +27,11 @@ void system::LeeCredenciales(string ficheroCredenciales){
     start(usuario);
 }
 
-void system::start(Profesor usuario){
+void System::start(Profesor usuario){
 
 }
 
-Profesor system::getUsuarioByCredencial(string credencial){
+Profesor System::getUsuarioByCredencial(string credencial){
     std::ifstream BDusuarios;
 
 
@@ -48,7 +48,7 @@ Profesor system::getUsuarioByCredencial(string credencial){
 
 
 
-bool system::ModificarProfesor(){
+bool System::ModificarProfesor(){
 
 	string straux;
 	int intaux;
@@ -149,7 +149,7 @@ bool system::ModificarProfesor(){
 	}
 }
 
-bool system::RegistroCoordinador(){
+bool System::RegistroCoordinador(){
     Profesor coordinador("dni", "nombre", "fichero", "apellido");
 
     if (!usuario_.getCoordinador()){
@@ -162,7 +162,7 @@ bool system::RegistroCoordinador(){
     BDsistema_.InsertarProfesor(coordinador);
 }
 
-Profesor system::RegistroProfesor(){
+Profesor System::RegistroProfesor(){
   Profesor ayudante("dni", "nombre", "fichero", "apellidos");
   cout << "--Registrar Profesor--" << endl;
   string straux;
@@ -256,7 +256,7 @@ void EliminarAyudante(){ //Sin terminar
 }
 
 
-list <Alumno> system::BuscarAlumnos() {
+list <Alumno> System::BuscarAlumnos() {
     int opcion_submenu;
 
 	while(true) {

@@ -8,12 +8,12 @@
 #include "database.h"
 #include <string>
 
-class system{
+class System{
     private:
         Database BDsistema_;
         Profesor usuario_;
     public:
-        system();
+        System();
         void LeeCredenciales(string ficheroCredenciales);
         void start(Profesor usuario);
         Profesor getUsuarioByCredencial(string credencial);
