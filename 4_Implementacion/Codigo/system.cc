@@ -826,7 +826,7 @@ bool System::EliminarAyudante(){
             return true;
         }
     }
-    printf("Error, no existe ningún profesor con dni %s\n", dniaux);
+    fprintf(stderr, "Error, no existe ningún profesor con ese dni\n");
     return false;
 }
 
