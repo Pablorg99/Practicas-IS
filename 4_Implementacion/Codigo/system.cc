@@ -118,11 +118,10 @@ bool System::InsertarAlumno(){
 	cin >> nombreaux;
 
 	//Introduce Apellido
-	cout << "Apellido:  ";
+	cout << "Apellidos:  ";
 	cin >> straux;
 
 	Alumno alumno(dniaux, nombreaux, straux);
-
 	int opcion;
 
 	do {

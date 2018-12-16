@@ -1,5 +1,6 @@
 #include "alumno.h"
 #include <fstream>
+#include <iostream>
 
 Alumno::Alumno(string dni, string nombre, string apellidos,
 	int telefono, string direccion, string email,
@@ -13,8 +14,7 @@ Alumno::Alumno(string dni, string nombre, string apellidos,
 bool Alumno::unicoLider() {
 	Alumno aux("dni", "nombre", "apellidos");
 	std::ifstream file("Students_DataBase.txt");
-
-	while(file.eof()){
+	while(!file.eof()){
 			file >> aux;
 			if( this->getNequipo() == aux.getNequipo() ){
 				if(aux.getLider()){return false;}
@@ -29,7 +29,7 @@ void Alumno::setLider(bool nuevo_lider) {
 	if( nuevo_lider && !unicoLider() ){
 		exit(-1);
 	}
-	setLider(nuevo_lider);
+	lider_ = false;
 }
 
 void Alumno::cambiaLider(){     //Se encarga de cambiar el valor de lider_ entre true y false
