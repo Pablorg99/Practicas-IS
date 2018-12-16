@@ -49,6 +49,7 @@ int System::subMenuBuscar(){
 
             }
     }while(opcion!=0);
+	return 0;
 }
 
 int System::menuPrincipal(){
@@ -57,10 +58,10 @@ int System::menuPrincipal(){
 			cout << "Sistema de gestion del alumnado" << endl;
 			cout << endl;
 			cout << "\t1. Insertar nuevo alumno " << endl;
-			cout << "\t2. Buscar alumno " << endl;
-			cout << "\t3. Registrar nuevo usuario " << endl;
-			cout << "\t4. Modificar usuario " << endl;
-			cout << "\t5. Eliminar usuario " << endl;
+			cout << "\t2. Buscar alumnos " << endl;
+			cout << "\t3. Registrar nuevo profesor " << endl;
+			cout << "\t4. Modificar profesor " << endl;
+			cout << "\t5. Eliminar profesor " << endl;
             cout << "\t6. Crear Backup de alumnos" <<endl;
             cout << "\t7. Cargar Backup de alumnos" <<endl;
             cout << "\t8. Formatear base de datos de alumnos" <<endl;
@@ -69,8 +70,6 @@ int System::menuPrincipal(){
 
 			cout << "Opción número: ";
             cin >> opcion;
-
-            int status;
 
             switch(opcion){
                 case 1:
@@ -109,6 +108,7 @@ int System::menuPrincipal(){
             }
             
     }while(opcion!=0);
+	return opcion;
 }
 
 void System::BorrarAlumnos(list <Alumno> list_seleccion_alumnos) {
@@ -218,6 +218,7 @@ bool System::ModificarProfesor(){
                     BDsistema_.addUser(new_profesor);
 					cout << "Profesor editado y guardado correctamente.\n"; //Falta la comprobación de errores
 					cout << "\n";
+					return true;
 					break;
 
 				default:
@@ -225,8 +226,8 @@ bool System::ModificarProfesor(){
 					cout << endl;
 			}
 		}while (opcion != 0 );
-
 	}
+	return true;
 }
 
 list<Alumno> System::ModificarAlumno(){
@@ -349,87 +350,89 @@ bool System::RegistroCoordinador(){
     coordinador.CambiarCoordinador(); //Tiene que ser True
     //Guardamos al profesor 
     BDsistema_.addUser(coordinador);
+	return true;
 }
 
 Profesor System::RegistroProfesor(){
-  Profesor ayudante("dni", "nombre", "fichero", "apellidos");
-  cout << "--Registrar Profesor--" << endl;
-  string straux;
-  int intaux;
+	Profesor ayudante("dni", "nombre", "fichero", "apellidos");
+	cout << "--Registrar Profesor--" << endl;
+	string straux;
+	int intaux;
 
-  //Introduce DNI
-  cout << "DNI:  ";
-  cin >> straux;
-  //Comprobaciónd e formato de DNI
-  while(!ayudante.setDNI(straux)){
-    cout << "Error. Formato de DNI incorrecto."<<endl;
-    cout << "Introduzcalo de nuevo. DNI:  " << endl;
-    cin >> straux;
-  }
+	//Introduce DNI
+	cout << "DNI:  ";
+	cin >> straux;
+	//Comprobaciónd e formato de DNI
+	while(!ayudante.setDNI(straux)){
+		cout << "Error. Formato de DNI incorrecto."<<endl;
+		cout << "Introduzcalo de nuevo. DNI:  " << endl;
+		cin >> straux;
+	}
 
-  //Introduce Nombre
-  cout << "Nombre:  ";
-  cin >> straux;
-  ayudante.setNombre(straux);
+	//Introduce Nombre
+	cout << "Nombre:  ";
+	cin >> straux;
+	ayudante.setNombre(straux);
 
-  //Introduce Apellido
-  cout << "Apellido:  ";
-  cin >> straux;
-  ayudante.setApellido(straux);
+	//Introduce Apellido
+	cout << "Apellido:  ";
+	cin >> straux;
+	ayudante.setApellido(straux);
 
-  //Introduce contraseña
-  cout << "Contraseña:  ";
-  cin >> straux;
-  ayudante.setContrasena(straux);
+	//Introduce contraseña
+	cout << "Contraseña:  ";
+	cin >> straux;
+	ayudante.setContrasena(straux);
 
-  int opcion;
+	int opcion;
 
-  do {
-    cout << "¿Qué otro parámetro desea rellenar?" << endl;
-    cout << "\t1. Teléfono:" << ayudante.getTelefono() << endl;
-    cout << "\t2. Dirección:" << ayudante.getDireccion() << endl;
-    cout << "\t3. Email:" << ayudante.getEmail() << endl;
-    cout << "\t4. Guardar profesor y salir." << endl;
-    cout << endl;             //Para que no quede tan apelotonado
+	do {
+		cout << "¿Qué otro parámetro desea rellenar?" << endl;
+		cout << "\t1. Teléfono:" << ayudante.getTelefono() << endl;
+		cout << "\t2. Dirección:" << ayudante.getDireccion() << endl;
+		cout << "\t3. Email:" << ayudante.getEmail() << endl;
+		cout << "\t4. Guardar profesor y salir." << endl;
+		cout << endl;             //Para que no quede tan apelotonado
 
-    cout << "Opción número: ";
-    cin >> opcion;
+		cout << "Opción número: ";
+		cin >> opcion;
 
-   switch (opcion) {
-       case '1':
-           cout << "Teléfono:  ";
-           cin >> intaux;
-           ayudante.setTelefono(intaux);
-           cout << "\n";
-           break;
+		switch (opcion) {
+			case '1':
+				cout << "Teléfono:  ";
+				cin >> intaux;
+				ayudante.setTelefono(intaux);
+				cout << "\n";
+				break;
 
-       case '2':
-           cout << "Dirección:  ";
-           cin >> straux;
-           ayudante.setDireccion(straux);
-           cout << "\n";
-           break;
-       case '3':
-           cout << "Email:  ";
-           cin >> straux;
-           ayudante.setEmail(straux);
-           cout << "\n";
-           break;
+			case '2':
+				cout << "Dirección:  ";
+				cin >> straux;
+				ayudante.setDireccion(straux);
+				cout << "\n";
+				break;
+			case '3':
+				cout << "Email:  ";
+				cin >> straux;
+				ayudante.setEmail(straux);
+				cout << "\n";
+				break;
 
-       case '4':
-           BDsistema_.addUser(ayudante); 
-           cout << "Profesor guardado correctamente.\n";
-           cout << "\n";
-           break;
+			case '4':
+				BDsistema_.addUser(ayudante); 
+				cout << "Profesor guardado correctamente.\n";
+				cout << "\n";
+				break;
 
-       default: cout << opcion << " no es una opción válida del menú.\n";
+			default: cout << opcion << " no es una opción válida del menú.\n";
 
-       cout << endl;
-     }
-   }while (opcion != 4 );
-
+			cout << endl;
+		}
+	}while (opcion != 4 );
+	return ayudante;
 }
 
+/*
 void EliminarAyudante(){ //Sin terminar
     string dniaux, dniaux2;
     do {
@@ -443,6 +446,7 @@ void EliminarAyudante(){ //Sin terminar
     } while(! (dniaux == dniaux2) );
 
 }
+*/
 
 void System::GenerarBackup() {
 	string line;
@@ -612,6 +616,7 @@ string System::PedirValor(int parametro) {
 			return valor;
 			break;
 	}
+	return "";
 }
 
 void System::FormatearBD() {
