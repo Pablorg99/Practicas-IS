@@ -797,7 +797,7 @@ list<Profesor> System::BuscarProfesor(){
 }
 
 
-bool System::EliminarAyudante(){ //Sin terminar
+bool System::EliminarAyudante(){
     string dniaux, dniaux2;
     Profesor profesor_aux("dni", "nombre", "fichero", "apellidos");
 
@@ -824,10 +824,7 @@ bool System::EliminarAyudante(){ //Sin terminar
     return false;
 }
 
-<<<<<<< HEAD
-=======
 //Genera un archivo binario con una copia de la BD
->>>>>>> ea2417d1d4ba743593c0f5492b13322f1730aed3
 void System::GenerarBackup() {
 	string line;
 	std::ifstream input_file_stream;
