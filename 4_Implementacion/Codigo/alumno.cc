@@ -44,8 +44,8 @@ ostream &operator<<(ostream &output_stream, const Alumno &alumno) {
 	if(alumno.getLider()) bool_lider = "true";
 	else bool_lider = "false";
 
-	output_stream << alumno.getDNI() << ',' << alumno.getNombre() <<
-		alumno.getApellidos() << ',' << alumno.getTelefono() << ','
+	output_stream << alumno.getDNI() << ',' << alumno.getNombre() << ','
+		 << alumno.getApellidos() << ',' << alumno.getTelefono() << ','
 		<< alumno.getDireccion() << ',' << alumno.getEmail() << ','
 		<< alumno.getCurso() << ',' << alumno.getNequipo() << ','
 		<< bool_lider << '\n';
