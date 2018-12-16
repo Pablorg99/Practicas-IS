@@ -8,7 +8,7 @@ using std::cin;
 using std::endl;
 
 system::system(){
-    BDusuarios_ = "usuarios.txt";
+    BDsistema_ = "usuarios.txt";
 }
 
 //Lee el fichero de credenciales e inicia el sistema si este usuario es valido
@@ -30,9 +30,9 @@ void system::LeeCredenciales(string ficheroCredenciales){
 void system::start(Profesor usuario){
 
 }
+
 Profesor system::getUsuarioByCredencial(string credencial){
     std::ifstream BDusuarios;
-    BDusuarios.open(BDusuarios_);
 
 
     std::string aux;
@@ -52,7 +52,7 @@ bool system::ModificarProfesor(){
 
 	string straux;
 	int intaux;
-	list <Profesor> listprofesor = BD.BuscarProfesor(); //No esta hecha esa parte
+	list <Profesor> listprofesor = BuscarProfesor(); //No esta hecha esa parte
 
     if (!usuario_.getCoordinador()){
         cout << "No tiene permisos para realizar esta acción" <<endl;
@@ -150,7 +150,7 @@ bool system::ModificarProfesor(){
 }
 
 bool system::RegistroCoordinador(){
-    Profesor coordinador;
+    Profesor coordinador("dni", "nombre", "fichero", "apellido");
 
     if (!usuario_.getCoordinador()){
         cout << "No tiene permisos para realizar esta acción" <<endl;
@@ -159,7 +159,7 @@ bool system::RegistroCoordinador(){
     coordinador = RegistroProfesor();
     coordinador.setCoordinador(); //Tiene que ser True
     //Guardamos al profesor 
-    BDusuarios_.InsertarProfesor(coordinador);
+    BDsistema_.InsertarProfesor(coordinador);
 }
 
 Profesor system::RegistroProfesor(){
@@ -228,7 +228,8 @@ Profesor system::RegistroProfesor(){
            break;
 
        case '4':
-           cout << "Profesor ayudante guardado correctamente.\n";
+           BDsistema_.InsertarProfesor(ayudante); 
+           cout << "Profesor guardado correctamente.\n";
            cout << "\n";
            break;
 
@@ -238,11 +239,9 @@ Profesor system::RegistroProfesor(){
      }
    }while (opcion != 4 );
 
-   //Guardamos al profesor
-   BDusuarios_.InsertarProfesor(ayudante);
 }
 
-void EliminarAyudante(){
+void EliminarAyudante(){ //Sin terminar
     string dniaux, dniaux2;
     do {
         std::std::cout << "DNI del profesor ayudante a borrar: ";
@@ -254,13 +253,10 @@ void EliminarAyudante(){
         }
     } while(! (dniaux == dniaux2) );
 
-    
-
-
 }
 
 
-list <Alumno> BuscarAlumnos() {
+list <Alumno> system::BuscarAlumnos() {
     int opcion_submenu;
 
 	while(true) {
@@ -275,7 +271,7 @@ list <Alumno> BuscarAlumnos() {
 		
 		switch (opcion_submenu) {
 			case 1:
-				return getAllStudents();    
+				return BDsistema_.getAllStudents();    
 				break;
 
 			case 2:
@@ -309,7 +305,7 @@ list <Alumno> BuscarAlumnos() {
 list <Alumno> SeleccionarUnEquipo(int n_equipo) {
 	list <Alumno> list_aux;
 	Alumno alumno_aux("dni", "nombre", "apellidos");
-	ifstream input_stream;
+	std::ifstream input_stream;
 	
 	input_stream.open(BD);
 	while(input_stream.eof()) {
@@ -335,7 +331,7 @@ list <Alumno> SeleccionarNumeroAlumnos(int n_alumnos) {
 	
 	for(int i = 0; i < n_alumnos; i++) {
 		valor = PedirValor(parametro);
-		alumno_aux = getStudentByValue(valor, parametro);
+		alumno_aux = BDsistema_.getStudentByValue(valor, parametro);
 		cout << alumno_aux.getApellidosyNombre() << " seleccionado" << endl;
 		list_aux.push_back(alumno_aux);
 	}

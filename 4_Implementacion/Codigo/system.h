@@ -4,6 +4,7 @@
 #define SYSTEM_H
 
 #include "profesor.h"
+#include "alumno.h"
 #include "database.h"
 #include <string>
 
@@ -19,6 +20,7 @@ class system{
         bool RegistroCoordinador();
         Profesor RegistroProfesor();
         bool ModificarProfesor();
+        list<Alumno> BuscarAlumnos();
 
 };
 
