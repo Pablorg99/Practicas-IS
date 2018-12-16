@@ -121,7 +121,7 @@ void Database::addUser(Profesor new_user) {
 		}
     }
 
-	output_stream.open(getStudentsDB());
+	output_stream.open(getUsersDB());
 	output_stream << new_user;
 }
 

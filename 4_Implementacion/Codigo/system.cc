@@ -81,35 +81,44 @@ int System::menuPrincipal(){
                     if(!InsertarAlumno()){ 
                         cout<<"Error al insertar el alumno"<<endl;
                     }
+					break;
                 case 2:
                     alumnos_ = BuscarAlumnos();
                     return subMenuBuscar();
                 case 3:
                     RegistroProfesor();
+					break;
                 case 4:
+					cout<<"Estoy aqui companero\n";
                     ModificarProfesor();
+					break;
                 case 5:
                     cout<<"Hola, Work in progress"<<endl;
+					break;
                 case 6:
                     if(usuario_.getCoordinador()){
                         GenerarBackup();
                     }
                     else{cout<<"No tiene premisos para realizar esta operacion"<<endl;}
+					break;
                 case 7:
                     if(usuario_.getCoordinador()){
                         CargarBackup();
                     }
                     else{cout<<"No tiene premisos para realizar esta operacion"<<endl;}
+					break;
                 case 8:
                     if(usuario_.getCoordinador()){
                         FormatearBD();
                     }
                     else{cout<<"No tiene premisos para realizar esta operacion"<<endl;}
+					break;
                 case 0:
                     return 0;
 
                 default:
                     cout<<"No ha seleccionado un operacion posible"<<endl;
+					break;
             }
             
     }while(opcion!=0);
@@ -408,27 +417,27 @@ Profesor System::RegistroProfesor(){
 		cin >> opcion;
 
 		switch (opcion) {
-			case '1':
+			case 1:
 				cout << "Teléfono:  ";
 				cin >> intaux;
 				ayudante.setTelefono(intaux);
 				cout << "\n";
 				break;
 
-			case '2':
+			case 2:
 				cout << "Dirección:  ";
 				cin >> straux;
 				ayudante.setDireccion(straux);
 				cout << "\n";
 				break;
-			case '3':
+			case 3:
 				cout << "Email:  ";
 				cin >> straux;
 				ayudante.setEmail(straux);
 				cout << "\n";
 				break;
 
-			case '4':
+			case 4:
 				BDsistema_.addUser(ayudante); 
 				cout << "Profesor guardado correctamente.\n";
 				cout << "\n";
