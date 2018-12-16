@@ -14,7 +14,7 @@ class System{
         Profesor usuario_;
         list<Alumno> alumnos_;
     public:
-        System::System(string ficheroCredenciales, Profesor &usuario, Database BDsistema);
+        System(string ficheroCredenciales, Profesor &usuario, Database BDsistema);
         //Profesor getUsuarioByCredencial(string credencial);
         bool RegistroCoordinador();
         Profesor RegistroProfesor();

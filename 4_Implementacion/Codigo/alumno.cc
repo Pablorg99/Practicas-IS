@@ -34,7 +34,7 @@ void Alumno::setLider(bool nuevo_lider) {
 
 void Alumno::cambiaLider(){     //Se encarga de cambiar el valor de lider_ entre true y false
 	if(!getLider() && !unicoLider()) { exit(-1); }
-	else{ if(getLider) { setLider(false); }
+	else{ if(getLider()) { setLider(false); }
 		else { setLider(true); }
 	}
 }

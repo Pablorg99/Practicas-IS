@@ -1,4 +1,4 @@
-#include <database.h>
+#include "database.h"
 #include <fstream>
 using std::ifstream;
 using std::ofstream;
@@ -16,7 +16,7 @@ bool Database::addStudent(Alumno &new_user) {
     ofstream output_stream;
 
     input_stream.open(getStudentsDB());
-    while(!input_stream.eof) {
+    while(!input_stream.eof()) {
         input_stream >> aux_user;
 		if(aux_user.getDNI() == new_user.getDNI()) return false;
     }
@@ -89,7 +89,7 @@ void Database::addUser(Profesor new_user) {
     ofstream output_stream;
 
     input_stream.open(getUsersDB());
-    while(!input_stream.eof) {
+    while(!input_stream.eof()) {
         input_stream >> aux_user;
 		if(aux_user.getDNI() == new_user.getDNI()) {
 			perror("Este profesor ya existe");
@@ -125,7 +125,7 @@ void Database::deleteUser(string user_dni) {
     ofstream output_stream;
 
 	input_stream.open(getUsersDB());
-	while(!input_stream.eof) {
+	while(!input_stream.eof()) {
 		input_stream >> aux_user;
 		updated_user_list.push_back(aux_user);
 	}
