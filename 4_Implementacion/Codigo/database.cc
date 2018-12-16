@@ -15,7 +15,7 @@ bool Database::addStudent(Alumno &new_user) {
 	ifstream input_stream;
     ofstream output_stream;
 
-    input_stream.open(getStudentsDB());
+    input_stream.open(getStudentsDB(), std::ios::app);
     while(!input_stream.eof()) {
         input_stream >> aux_user;
 		if(aux_user.getDNI() == new_user.getDNI()) return false;
@@ -100,7 +100,7 @@ void Database::addUser(Profesor new_user) {
 	ifstream input_stream;
     ofstream output_stream;
 
-    input_stream.open(getUsersDB());
+    input_stream.open(getUsersDB(), std::ios::app);
     while(!input_stream.eof()) {
         input_stream >> aux_user;
 		if(aux_user.getDNI() == new_user.getDNI()) {
