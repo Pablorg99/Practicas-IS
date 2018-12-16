@@ -26,11 +26,7 @@ class Profesor :public Persona{
 
     //Modificadores
     bool CambiarCoordinador();
-<<<<<<< HEAD
 	inline void setCoordinador(bool nuevo_coordinador) {coordinador_ = nuevo_coordinador;}
-=======
-	  inline void setCoordinador(bool nuevo_coordinador){coordinador_ = nuevo_coordinador;};
->>>>>>> 65d60c8e64635f6786d20188d1c5e990812d5810
     inline void setFichero(string nuevo_fichero){fichero_ = nuevo_fichero;};
     inline void setContrasena(string nuevo_password){contrasena_=nuevo_password;};
 
