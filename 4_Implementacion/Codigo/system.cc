@@ -478,7 +478,9 @@ void System::CargarBackup() {
 }
 
 list <Alumno> System::BuscarAlumnos() {
-    int opcion_submenu;
+    
+	list <Alumno> void_list;
+	int opcion_submenu;
 
 	while(true) {
 		cout << "Indica el tipo de selección que quieres hacer:" << endl;
@@ -514,13 +516,14 @@ list <Alumno> System::BuscarAlumnos() {
 				break;
 			
 			case 5:
-				return;
+				return void_list;
 				break;
 			
 			default:
 				cout << "Elija una opción del menú." << endl;
 		}
 	}
+	return void_list;
 }
 
 list <Alumno> System::SeleccionarUnEquipo(int n_equipo) {
@@ -548,7 +551,7 @@ list <Alumno> System::SeleccionarNumeroAlumnos(int n_alumnos) {
 
 	parametro = PedirParametro();
 	//Sale de la función si PedirParametro devuelve 0
-	if(!parametro) return;
+	if(!parametro) return list_aux;
 	
 	for(int i = 0; i < n_alumnos; i++) {
 		valor = PedirValor(parametro);
