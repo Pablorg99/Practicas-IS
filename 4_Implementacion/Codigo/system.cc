@@ -7,10 +7,6 @@ using std::cout;
 using std::cin;
 using std::endl;
 
-System::System(){
-    BDsistema_ = "usuarios.txt";
-}
-
 //Lee el fichero de credenciales e inicia el sistema si este usuario es valido
 void System::LeeCredenciales(string ficheroCredenciales){
     std::ifstream fichero;
@@ -46,13 +42,12 @@ Profesor System::getUsuarioByCredencial(string credencial){
 
 }
 
-
-
 bool System::ModificarProfesor(){
 
 	string straux;
 	int intaux;
-	list <Profesor> listprofesor = BuscarProfesor(); //No esta hecha esa parte
+	list <Profesor> listprofesor = BuscarProfesor();
+    Profesor new_profesor("dni", "nombre", "fichero", "apellidos");
 
     if (!usuario_.getCoordinador()){
         cout << "No tiene permisos para realizar esta acción" <<endl;
@@ -75,7 +70,7 @@ bool System::ModificarProfesor(){
 			cout << "\t7. Coordinador: ";
 			if(it->getCoordinador()){cout << "Sí" <<endl;}
 			else{cout << "No" << endl;}
-            cout << "\t8.Password: "
+            cout << "\t8.Password: ";
 			cout << "\t0. Guardar profesor y salir." << endl;
 			cout << endl;             //Para que no quede tan apelotonado
 
@@ -132,10 +127,9 @@ bool System::ModificarProfesor(){
 
 				case '0':
                     //ATENCION esta parte no está hecha
-                    BDsistema_.borrarProfesor(it->getDNI());
-                    Profesor profesor("dni", "nombre", "fichero", "apellidos");
-                    profesor = *it; 
-                    BDsistema_.insertarProfesor(profesor);
+                    BDsistema_.deleteUser(it->getDNI());
+                    new_profesor = *it; 
+                    BDsistema_.addUser(new_profesor);
 					cout << "Profesor editado y guardado correctamente.\n"; //Falta la comprobación de errores
 					cout << "\n";
 					break;
@@ -159,7 +153,7 @@ bool System::RegistroCoordinador(){
     coordinador = RegistroProfesor();
     coordinador.setCoordinador(); //Tiene que ser True
     //Guardamos al profesor 
-    BDsistema_.InsertarProfesor(coordinador);
+    BDsistema_.addUser(coordinador);
 }
 
 Profesor System::RegistroProfesor(){
@@ -228,7 +222,7 @@ Profesor System::RegistroProfesor(){
            break;
 
        case '4':
-           BDsistema_.InsertarProfesor(ayudante); 
+           BDsistema_.addUser(ayudante); 
            cout << "Profesor guardado correctamente.\n";
            cout << "\n";
            break;

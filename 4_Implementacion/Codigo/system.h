@@ -29,6 +29,7 @@ class System{
 		void FormatearBD();
 		void MostrarAlumno(list <Alumno> listalumno);
 		bool InsertarAlumno();
+        list<Profesor> BuscarProfesor();
 
 };
 
