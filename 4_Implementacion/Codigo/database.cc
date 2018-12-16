@@ -8,18 +8,6 @@ Database::Database() {
 	Students_DB = "Students_DataBase.txt";
 	Students_DB_Backup = "Students_DataBase.bin";
 	Users_DB = "Users_DataBase.txt";
-
-	ifstream aux_stream_student(Students_DB);
-
-	if(!aux_stream_student.is_open()){
-		std::cout<<"Creando BD Alumnos"<<std::endl;
-		ofstream new_stream_student(Students_DB);
-	}
-	ifstream aux_stream_user(Users_DB);
-	if(!aux_stream_user.is_open()){
-		std::cout<<"Creando BD Usuarios"<<std::endl;
-		ofstream new_stream_user(Users_DB);
-	}
 }
 
 bool Database::addStudent(Alumno &new_user) {
