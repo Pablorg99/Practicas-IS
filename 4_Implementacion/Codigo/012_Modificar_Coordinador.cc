@@ -10,13 +10,13 @@ using std::cout
 using std::cin
 using std::endl
 
-bool ModificarProfesor(){
+bool system::ModificarProfesor(){
 
 	string straux;
 	int intaux;
 	list <Profesor> listprofesor = BD.BuscarProfesor(); //No esta hecha esa parte
 
-    if (!profesor_.getCoordinador()){
+    if (!usuario_.getCoordinador()){
         cout << "No tiene permisos para realizar esta acción" <<endl;
         return false
     };
