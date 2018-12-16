@@ -772,7 +772,7 @@ list<Profesor> System::BuscarProfesor(){
 }
 
 
-void System::EliminarAyudante(){ //Sin terminar
+void System::EliminarAyudante(){ 
     string dniaux, dniaux2;
     Profesor profesor_aux("dni", "nombre", "fichero", "apellidos");
 
