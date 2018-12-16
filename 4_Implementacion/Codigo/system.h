@@ -9,6 +9,7 @@
 class system{
     private:
         std::string BDusuarios_;
+        Profesor usuario_;
     public:
         system();
         void LeeCredenciales(string ficheroCredenciales);
