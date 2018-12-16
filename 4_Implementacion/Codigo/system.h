@@ -30,7 +30,7 @@ class System{
 		list<Profesor> BuscarProfesor();
         Profesor RegistroCoordinador();
         bool ModificarProfesor();
-		//void EliminarAyudante();
+		bool EliminarAyudante();
 		void GenerarBackup();
 		void CargarBackup();
 		void FormatearBD();
