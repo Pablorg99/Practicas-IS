@@ -338,6 +338,7 @@ list <Alumno> System::SeleccionarNumeroAlumnos(int n_alumnos) {
 	for(int i = 0; i < n_alumnos; i++) {
 		valor = PedirValor(parametro);
 		alumno_aux = BDsistema_.getStudentByValue(valor, parametro);
+		if(alumno_aux.getDNI() == "dni") return list_aux;
 		cout << alumno_aux.getApellidosyNombre() << " seleccionado" << endl;
 		list_aux.push_back(alumno_aux);
 	}
@@ -348,14 +349,12 @@ list <Alumno> System::SeleccionarNumeroAlumnos(int n_alumnos) {
 //Selecciona el campo para realizar la busqueda
 int System::PedirParametro() {
 	int opcion_parametro;
-	
-	//Despliega un menú de selección
-	while(true) {	
+	while(true) {
+		cout << endl;	
 		cout << "Por qué parametro desea buscar:" << endl;
-		cout << "\t1. DNI." << endl;
-		cout << "\t2. Nombre." << endl;
-		cout << "\t3. Apellidos." << endl;
 		cout << "\t4. Cancelar Búsqueda." << endl;
+		cout << endl;
+		cout << "Opción número: ";
 		cin >> opcion_parametro;
 
 		switch (opcion_parametro) {
@@ -798,7 +797,7 @@ list<Profesor> System::BuscarProfesor(){
 }
 
 
-bool System::EliminarAyudante(){ //Sin terminar
+bool System::EliminarAyudante(){
     string dniaux, dniaux2;
     Profesor profesor_aux("dni", "nombre", "fichero", "apellidos");
 
