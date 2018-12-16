@@ -12,6 +12,10 @@ class Database {
 		string Users_DB; 
 	public:
 		Database();
+		//Getters
+		inline string getStudentsBD() const {return Students_DB;}
+		inline string getStudentsBDBackup() const {return Students_DB_Backup;}
+		inline string getUsersBD() const {return Users_DB;}
 		bool addStudent(Alumno &new_student);
 		list <Alumno> getAllStudents();
 		Alumno getStudentByValue(string value, int parameter);
