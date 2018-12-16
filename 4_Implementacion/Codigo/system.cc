@@ -37,6 +37,11 @@ int System::subMenuBuscar(){
             switch(opcion){
                 case 1:
                     ModificarAlumno();
+                    BorrarAlumnos(alumnos_);
+                    for(list <Alumno>::iterator it = alumnos_.begin(); it != alumnos_.end(); it++){
+                        BDsistema_.addStudent(*it);
+                    }
+                    return menuPrincipal();
                 case 2:
                     BorrarAlumnos(alumnos_);
                     return menuPrincipal();
@@ -234,7 +239,7 @@ list<Alumno> System::ModificarAlumno(){
 
 	string straux;
 	int intaux;
-	list <Alumno> listalumno = BuscarAlumnos();
+	list <Alumno> listalumno = alumnos_;
 
 	for(list <Alumno>::iterator it = listalumno.begin(); it != listalumno.end(); it++){
 
@@ -475,6 +480,17 @@ void System::CargarBackup() {
 	}
 	input_file_stream.close();
 	output_file_stream.close();
+}
+
+list<Profesor> System::BuscarProfesor(){
+    string dni;
+    Profesor user("dni", "nombre", "fichero", "apellido");
+    cout << "Introduzca el dni del usuario" << endl;
+    cin >> dni;
+    user = BDsistema_.getUserByDNI(dni);
+    list<Profesor> profesores;
+    profesores.push_back(user);
+    return profesores;
 }
 
 list <Alumno> System::BuscarAlumnos() {

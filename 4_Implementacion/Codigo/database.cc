@@ -26,6 +26,18 @@ bool Database::addStudent(Alumno &new_user) {
 	return true;
 }
 
+Profesor Database::getUserByDNI(string dni){
+	Profesor profesor_aux("dni", "nombre", "fichero", "apellidos");
+	ifstream input_stream;
+	input_stream.open(getUsersDB());
+	while(!input_stream.eof()) {
+		input_stream >> profesor_aux;
+		if(profesor_aux.getDNI() == dni) return profesor_aux;
+	}
+	perror("Ningun usuario coincide con el valor especificado");
+	return profesor_aux;
+}
+
 list <Alumno> Database::getAllStudents() {
     list <Alumno> list_aux;
 	Alumno alumno_aux("dni", "nombre", "apellidos");
