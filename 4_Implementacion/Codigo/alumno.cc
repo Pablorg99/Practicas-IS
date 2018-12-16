@@ -1,17 +1,18 @@
 #include "alumno.h"
+#include <fstream>
 
 Alumno::Alumno(string dni, string nombre, string apellidos,
 	int telefono, string direccion, string email,
-	int curso, int Nequipo, bool lider): Persona(dni, nombre,
+	int curso, int Nequipo, bool lider) : Persona(dni, nombre,
 	apellidos, telefono, direccion, email){
 	setCurso(curso);
 	setNequipo(Nequipo);
 	setLider(lider);
 }
 
-bool ALumno::unicoLider(){
-	Alumno aux;
-	ifstream file(BD);
+bool Alumno::unicoLider() {
+	Alumno aux("dni", "nombre", "apellidos");
+	std::ifstream file("Students_DataBase.txt");
 
 	while(file.eof()){
 			file >> aux;
