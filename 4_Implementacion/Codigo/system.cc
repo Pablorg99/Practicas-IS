@@ -347,7 +347,7 @@ list <Alumno> System::SeleccionarNumeroAlumnos(int n_alumnos) {
 
 //Selecciona el campo para realizar la busqueda
 int System::PedirParametro() {
-	int opcion_p;
+	int opcion_parametro;
 	
 	//Despliega un menú de selección
 	while(true) {	
