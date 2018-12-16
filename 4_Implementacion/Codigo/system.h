@@ -27,13 +27,13 @@ class System{
         		list<Alumno> ModificarAlumno();
         		void BorrarAlumnos(list<Alumno> list_seleccion_alumnos);
         Profesor RegistroProfesor();
+        	list<Profesor> BuscarProfesor();
         bool RegistroCoordinador();
         bool ModificarProfesor();
 		//void EliminarAyudante();
 		void GenerarBackup();
 		void CargarBackup();
 		void FormatearBD();
-        list<Profesor> BuscarProfesor();
 
 };
 
