@@ -28,8 +28,7 @@ bool Database::addStudent(Alumno &new_user) {
     ofstream output_stream;
 
     input_stream.open(getStudentsDB());
-    while(!input_stream.eof()) {
-        input_stream >> aux_user;
+    while(input_stream >> aux_user) {
 		if(aux_user.getDNI() == new_user.getDNI()) return false;
     }
 
@@ -42,8 +41,7 @@ Profesor Database::getUserByDNI(string dni){
 	Profesor profesor_aux("dni", "nombre", "fichero", "apellidos");
 	ifstream input_stream;
 	input_stream.open(getUsersDB());
-	while(!input_stream.eof()) {
-		input_stream >> profesor_aux;
+	while(input_stream >> profesor_aux) {
 		if(profesor_aux.getDNI() == dni) return profesor_aux;
 	}
 	perror("Ningun usuario coincide con el valor especificado");
@@ -56,8 +54,7 @@ list <Alumno> Database::getAllStudents() {
 	ifstream input_stream;
     
 	input_stream.open(getStudentsDB());
-	while(!input_stream.eof()) {
-		input_stream >> alumno_aux;
+	while(input_stream >> alumno_aux) {
 		list_aux.push_back(alumno_aux);
 	}
 	input_stream.close();
@@ -69,8 +66,7 @@ Alumno Database::getStudentByValue(string value, int parameter) {
 	Alumno alumno_aux("dni", "nombre", "apellidos");
 	ifstream input_stream;
 	input_stream.open(getStudentsDB());
-	while(!input_stream.eof()) {
-		input_stream >> alumno_aux;
+	while(input_stream >> alumno_aux) {
 		if(CompareValueAndStudent(alumno_aux, value, parameter)) return alumno_aux;
 	}
 	perror("Ningun usuario coincide con el valor especificado");
@@ -113,8 +109,7 @@ void Database::addUser(Profesor new_user) {
     ofstream output_stream;
 
     input_stream.open(getUsersDB());
-    while(!input_stream.eof()) {
-        input_stream >> aux_user;
+    while(input_stream >> aux_user) {
 		if(aux_user.getDNI() == new_user.getDNI()) {
 			perror("Este profesor ya existe");
 			return;
@@ -131,8 +126,7 @@ list <Profesor> Database::getAllUsers() {
 	ifstream input_stream;
     
 	input_stream.open(getUsersDB());
-	while(!input_stream.eof()) {
-		input_stream >> user_aux;
+	while(input_stream >> user_aux) {
 		list_aux.push_back(user_aux);
 	}
 	input_stream.close();
@@ -149,8 +143,7 @@ void Database::deleteUser(string user_dni) {
     ofstream output_stream;
 
 	input_stream.open(getUsersDB());
-	while(!input_stream.eof()) {
-		input_stream >> aux_user;
+	while(input_stream >> aux_user) {
 		updated_user_list.push_back(aux_user);
 	}
 	

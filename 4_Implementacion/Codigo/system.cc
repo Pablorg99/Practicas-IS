@@ -204,7 +204,7 @@ bool System::InsertarAlumno(){
 		}
 	}while (opcion != 7 );
 	if(BDsistema_.addStudent(alumno)) {
-		cout << "Alumno guardado correctamente" << endl;
+		cout << "Alumno guardado correctamente. Pulse intro para continuar." << endl;
 		return true;
 	}
 	else return false;
@@ -218,6 +218,7 @@ list <Alumno> System::BuscarAlumnos() {
 	while(true) {
 		cout << endl;
 		cout << "Indica el tipo de selección que quieres hacer:" << endl;
+		cout << endl;
 		cout << "\t1. Todos los alumnos registrados." << endl;
 		cout << "\t2. Un equipo." << endl;
 		cout << "\t3. Un número determinado de alumnos." << endl;
@@ -268,8 +269,7 @@ list <Alumno> System::SeleccionarUnEquipo(int n_equipo) {
 	std::ifstream input_stream;
 	
 	input_stream.open(BDsistema_.getStudentsDB());
-	while(!input_stream.eof()) {
-		input_stream >> alumno_aux;
+	while(input_stream >> alumno_aux) {
 		if(alumno_aux.getNequipo() == n_equipo) {
 			cout << alumno_aux.getApellidosyNombre() << " seleccionado" << endl;
 			list_aux.push_back(alumno_aux);	
@@ -361,6 +361,7 @@ string System::PedirValor(int parametro) {
 int System::subMenuBuscar(){
     int opcion;
     do{
+			cout << endl;
 			cout << "SubMenu de busqueda" << endl;
 			cout << endl;
 			cout << "\t1. Modificar Alumnos" << endl;
@@ -415,6 +416,7 @@ void System::MostrarAlumno(){
     }
 
     cout << "---------------------------------------------" << endl;
+	cout << "Pulse intro para continuar. ";
 	cin.ignore();
 	cin.get();
 }
@@ -763,8 +765,7 @@ void System::GenerarBackup() {
 	input_file_stream.open(BDsistema_.getStudentsDB());
 	std::ofstream output_file_stream;
 	output_file_stream.open(BDsistema_.getStudentsDBBackup(), ostream::binary);
-	while(!input_file_stream.eof()) {
-		getline(input_file_stream, line);
+	while(getline(input_file_stream, line)) {
 		line += "\n";
 		output_file_stream.write(line.c_str(), line.size());
 	}

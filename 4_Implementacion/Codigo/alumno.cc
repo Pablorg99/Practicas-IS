@@ -14,8 +14,7 @@ Alumno::Alumno(string dni, string nombre, string apellidos,
 bool Alumno::unicoLider() {
 	Alumno aux("dni", "nombre", "apellidos");
 	std::ifstream file("Students_DataBase.txt");
-	while(!file.eof()){
-			file >> aux;
+	while(file >> aux){
 			if( this->getNequipo() == aux.getNequipo() ){
 				if(aux.getLider()){return false;}
 			}
