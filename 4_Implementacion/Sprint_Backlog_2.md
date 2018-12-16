@@ -6,23 +6,7 @@
 
 ### Manuel Alejandro Luque León
 
-* Eliminar ayudante
-
-### José Márquez Doblas
-
-* Modificar Coordinador
-
-### Pablo Rodríguez Guillén
-
-* Especificar Lider (1/2)
-
-## Sprint Backlog 2
-
----
-
-### Manuel Alejandro Luque León
-
-* Ordenar Alumnos
+* Eliminar ayudante(1/2)
 
 ### José Márquez Doblas
 
@@ -30,4 +14,20 @@
 
 ### Pablo Rodríguez Guillén
 
-* Especificar Lider(2/2)
+* Buscar Alumnos (2/2)
+
+## Sprint Backlog 2
+
+---
+
+### Manuel Alejandro Luque León
+
+* Eliminar Ayudante(2/2)
+
+### José Márquez Doblas
+
+* Modificar Coordinador
+
+### Pablo Rodríguez Guillén
+
+* Insertar Alumno (2/2)

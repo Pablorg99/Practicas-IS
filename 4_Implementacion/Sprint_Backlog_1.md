@@ -6,7 +6,7 @@
 
 ### Manuel Alejandro Luque León
 
-* Insertar Alumno
+* Insertar Alumno(1/2)
 * Insertar Ayudante
 
 ### José Márquez Doblas
@@ -15,7 +15,7 @@
 
 ### Pablo Rodríguez Guillén
 
-* Buscar Alumnos
+* Buscar Alumnos(1/2)
 
 ## Sprint Backlog 2
 
