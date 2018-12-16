@@ -190,8 +190,7 @@ bool System::InsertarAlumno(){
 				break;
 
 			case 7:
-				cout << "Alumno guardado correctamente.\n";
-				cout << "\n";
+				cout << "Registrando alumno...\n";
 				break;
 
 			default:
@@ -199,7 +198,11 @@ bool System::InsertarAlumno(){
 				cout << endl;
 		}
 	}while (opcion != 7 );
-	return BDsistema_.addStudent(alumno);
+	if(BDsistema_.addStudent(alumno)) {
+		cout << "Alumno guardado correctamente" << endl;
+		return true;
+	}
+	else return false;
 }
 
 list <Alumno> System::BuscarAlumnos() {
@@ -214,7 +217,9 @@ list <Alumno> System::BuscarAlumnos() {
 		cout << "\t3. Un número determinado de alumnos." << endl;
 		cout << "\t4. Un único alumno." << endl;
 		cout << "\t5. Volver al menú principal." << endl;
-
+		
+		cout << endl;
+		cout << "Opción número: ";
 		cin >> opcion_submenu;
 		
 		switch (opcion_submenu) {
