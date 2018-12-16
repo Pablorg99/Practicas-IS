@@ -16,8 +16,8 @@ ostream &operator<<(ostream &output_stream, const Profesor &profesor) {
 	if(profesor.getCoordinador()) bool_coordinador = "true";
 	else bool_coordinador = "false";
 
-	output_stream << profesor.getDNI() << ',' << profesor.getNombre() <<
-		profesor.getFichero() << ',' << profesor.getApellidos() << ',' 
+	output_stream << profesor.getDNI() << ',' << profesor.getNombre() << ','
+		<< profesor.getFichero() << ',' << profesor.getApellidos() << ',' 
 		<< profesor.getTelefono() << ',' << profesor.getDireccion() 
 		<< ',' << profesor.getEmail() << ',' << bool_coordinador << '\n';
 
