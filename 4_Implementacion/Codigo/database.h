@@ -27,6 +27,7 @@ class Database {
 		void deleteUser(string user_dni);
 		Profesor getUserByCredentials(string credentials);
 		void WriteUsersDB(list <Profesor> new_users_list);
+		Profesor getUserByDNI(string dni);
 };
 
 
