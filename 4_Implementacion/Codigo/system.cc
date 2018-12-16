@@ -342,7 +342,9 @@ list <Alumno> System::SeleccionarNumeroAlumnos(int n_alumnos) {
 		cout << alumno_aux.getApellidosyNombre() << " seleccionado" << endl;
 		list_aux.push_back(alumno_aux);
 	}
-
+	cout << "Pulse intro para continuar." << endl;
+	cin.ignore();
+	cin.get();
 	return list_aux;
 }
 
@@ -352,6 +354,9 @@ int System::PedirParametro() {
 	while(true) {
 		cout << endl;	
 		cout << "Por qué parametro desea buscar:" << endl;
+		cout << "\t1. DNI." << endl;
+		cout << "\t2. Nombre." << endl;
+		cout << "\t3. Apellido." << endl;
 		cout << "\t4. Cancelar Búsqueda." << endl;
 		cout << endl;
 		cout << "Opción número: ";
