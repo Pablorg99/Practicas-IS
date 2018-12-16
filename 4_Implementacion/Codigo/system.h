@@ -18,22 +18,23 @@ class System{
         int menuPrincipal();
 		bool InsertarAlumno();
 		list <Alumno> BuscarAlumnos();
-			list <Alumno> SeleccionarUnEquipo(int n_equipo);
-			list <Alumno> SeleccionarNumeroAlumnos(int n_alumnos);
-			int PedirParametro();
-			string PedirValor(int parametro);
-        	int subMenuBuscar();
-				void MostrarAlumno();
-        		list<Alumno> ModificarAlumno();
-        		void BorrarAlumnos(list<Alumno> list_seleccion_alumnos);
+		list <Alumno> SeleccionarUnEquipo(int n_equipo);
+		list <Alumno> SeleccionarNumeroAlumnos(int n_alumnos);
+		int PedirParametro();
+		string PedirValor(int parametro);
+		int subMenuBuscar();
+		void MostrarAlumno();
+		list<Alumno> ModificarAlumno();
+		void BorrarAlumnos(list<Alumno> list_seleccion_alumnos);
         Profesor RegistroProfesor();
-        	list<Profesor> BuscarProfesor();
-        bool RegistroCoordinador();
+		list<Profesor> BuscarProfesor();
+        Profesor RegistroCoordinador();
         bool ModificarProfesor();
 		//void EliminarAyudante();
 		void GenerarBackup();
 		void CargarBackup();
 		void FormatearBD();
+		string primerInicio();
 
 };
 

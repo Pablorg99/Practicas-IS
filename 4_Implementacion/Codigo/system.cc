@@ -9,7 +9,21 @@ using std::cin;
 using std::endl;
 
 System::System(string ficheroCredenciales, Profesor &usuario, Database BDsistema) : usuario_(usuario), BDsistema_(BDsistema) {
-    std::ifstream fichero;
+    
+	std::ifstream aux_stream_student(BDsistema.getStudentsDB());
+
+	if(!aux_stream_student.is_open()){
+		std::cout<<"Creando BD Alumnos"<<std::endl;
+		std::ofstream new_stream_student(BDsistema.getStudentsDB());
+	}
+	std::ifstream aux_stream_user(BDsistema.getUsersDB());
+	if(!aux_stream_user.is_open()){
+		std::cout<<"Creando BD Usuarios"<<std::endl;
+		std::ofstream new_stream_user(BDsistema.getUsersDB());
+		ficheroCredenciales = primerInicio();
+	}
+
+	std::ifstream fichero;
     fichero.open(ficheroCredenciales);
     //Lee las credenciales
     std::string credencial;
@@ -22,18 +36,32 @@ System::System(string ficheroCredenciales, Profesor &usuario, Database BDsistema
     exit(status);
 }
 
-bool System::RegistroCoordinador(){
+string System::primerInicio(){ 
+	//La primera vez que se inicia es sistema se registra el profesor coordinador
+	Profesor usuario("dni", "nombre", "fichero", "apellido");
+	usuario = RegistroCoordinador();
+
+	string nombreFichero;
+	nombreFichero = usuario.getDNI() + "_CDL.txt"; 
+
+	//Se crea tambien su archivo de credenciales
+	std::ofstream new_stream_user(nombreFichero);
+	string credenciales = usuario.getDNI() + "," + usuario.getNombre();
+	new_stream_user << credenciales;
+
+	return nombreFichero;
+}
+
+
+Profesor System::RegistroCoordinador(){
     Profesor coordinador("dni", "nombre", "fichero", "apellido");
 
-    if (!usuario_.getCoordinador()){
-        cout << "No tiene permisos para realizar esta acción" <<endl;
-        return false;
-    }
     coordinador = RegistroProfesor();
     coordinador.CambiarCoordinador(); //Tiene que ser True
     //Guardamos al profesor 
+	BDsistema_.deleteUser(coordinador.getDNI());
     BDsistema_.addUser(coordinador);
-	return true;
+	return coordinador;
 }
 
 int System::menuPrincipal(){
@@ -577,10 +605,8 @@ Profesor System::RegistroProfesor(){
 	cin >> straux;
 	ayudante.setApellido(straux);
 
-	//Introduce contraseña
-	cout << "Contraseña:  ";
-	cin >> straux;
-	ayudante.setContrasena(straux);
+	string fichero_credencial = ayudante.getDNI() + "_CDL.txt";
+	ayudante.setFichero(fichero_credencial);
 
 	int opcion;
 
