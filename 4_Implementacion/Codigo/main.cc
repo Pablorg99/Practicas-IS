@@ -10,6 +10,8 @@ int main(int argc, char const *argv[]){
         return 0;
     }
     credenciales = argv[1];
-    System system(credenciales);
+    Profesor usuario("dni", "nombre", "fichero", "apellido");
+    Database BD;
+    System system(credenciales, usuario, BD);
     return 0;
 }

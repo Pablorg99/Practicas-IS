@@ -12,7 +12,7 @@ System::System(string ficheroCredenciales, Profesor &usuario, Database BDsistema
     fichero.open(ficheroCredenciales);
     //Lee las credenciales
     std::string credencial;
-    getline(fichero, credencial);
+    getline(fichero, credencial); 
 
     usuario_ = BDsistema_.getUserByCredentials(credencial);
 
