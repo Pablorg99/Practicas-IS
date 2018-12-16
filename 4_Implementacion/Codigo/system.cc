@@ -102,7 +102,7 @@ int System::menuPrincipal(){
                     ModificarProfesor();
 					break;
                 case 5:
-                    cout<<"Hola, Work in progress"<<endl;
+                    EliminarAyudante();
 					break;
                 case 6:
 					//Comprueba que el usuario que lo hace tiene permisos
@@ -679,7 +679,7 @@ Profesor System::RegistroProfesor(){
 	std::ofstream new_stream_user(nombreFichero);
 	string credenciales = ayudante.getDNI() + "," + ayudante.getNombre();
 	new_stream_user << credenciales;
-	
+
 	return ayudante;
 }
 
