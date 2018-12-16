@@ -269,7 +269,11 @@ list<Alumno> System::ModificarAlumno(){
 				case '1':
 					cout << "DNI:  ";
 					cin >> straux;
-					(*it).setDNI(straux);
+					while(!(*it).setDNI(straux)){
+						cout << "Formato de DNI incorrecto, introduzcalo de nuevo."<< endl;
+						cout << "DNI:  ";
+						cin >> straux;
+					}
 					cout << "\n";
 					break;
 
@@ -370,7 +374,8 @@ Profesor System::RegistroProfesor(){
 	//Comprobaciónd e formato de DNI
 	while(!ayudante.setDNI(straux)){
 		cout << "Error. Formato de DNI incorrecto."<<endl;
-		cout << "Introduzcalo de nuevo. DNI:  " << endl;
+		cout << "Introduzcalo de nuevo." << endl;
+		cout << "DNI: ";
 		cin >> straux;
 	}
 
