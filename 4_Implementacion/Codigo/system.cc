@@ -389,9 +389,9 @@ void System::MostrarAlumno(){
     list<Alumno> listalumno = alumnos_;
 
     for(list <Alumno>::iterator it = listalumno.begin(); it != listalumno.end(); it++){
-        cout << "\t DNI: " << it->getTelefono() << endl;
-        cout << "\t Nombre: " << it->getTelefono() << endl;
-        cout << "\t Apellidos: " << it->getTelefono() << endl;
+        cout << "\t DNI: " << it->getDNI() << endl;
+        cout << "\t Nombre: " << it->getNombre() << endl;
+        cout << "\t Apellidos: " << it->getApellidos() << endl;
         cout << "\t Teléfono: " << it->getTelefono() << endl;
         cout << "\t Dirección: " << it->getDireccion() << endl;
         cout << "\t Email: " << it->getEmail() << endl;
