@@ -21,6 +21,8 @@ class Database {
 		Alumno getStudentByValue(string value, int parameter);
 		bool CompareValueAndStudent(Alumno &alumno_aux, string value, int parameter);
 		bool WriteDataBase(list <Alumno> new_students_list);
+		void deleteUser(string user_dni);
+		void addUser(Profesor new_user)
 
 };
 
