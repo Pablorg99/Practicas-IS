@@ -128,7 +128,7 @@ void System::BorrarAlumnos(list <Alumno> list_seleccion_alumnos) {
 			alumno_seleccion++;
 		}
 	}
-	BDsistema_.WriteDataBase(list_alumnos_bd);
+	BDsistema_.WriteStudentsDB(list_alumnos_bd); 
 }
 
 Profesor System::getUsuarioByCredencial(string credencial){
@@ -225,7 +225,7 @@ bool System::ModificarProfesor(){
 					break;
 
 				case '7':
-					(*it).setCoordinador();         //setLider cambia el valor de lider_ cada vez que se ejecuta
+					(*it).CambiarCoordinador();         //setLider cambia el valor de lider_ cada vez que se ejecuta
 					cout << "\n";
 					break;
 
@@ -364,7 +364,7 @@ bool System::RegistroCoordinador(){
         return false;
     }
     coordinador = RegistroProfesor();
-    coordinador.setCoordinador(); //Tiene que ser True
+    coordinador.CambiarCoordinador(); //Tiene que ser True
     //Guardamos al profesor 
     BDsistema_.addUser(coordinador);
 }
@@ -482,7 +482,7 @@ void System::CargarBackup() {
 	std::ifstream input_file_stream;
 	input_file_stream.open(BDsistema_.getStudentsDBBackup(), istream::binary);
 	std::ofstream output_file_stream;
-	output_file_stream.open(BDsistema_.getStudentsDB());
+	output_file_stream.open(BDsistema_.getStudentsDB()); 
 	while(!input_file_stream.eof()) {
 		input_file_stream.read(line, 200);
 		output_file_stream << line;
