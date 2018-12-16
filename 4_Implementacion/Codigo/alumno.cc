@@ -14,11 +14,11 @@ bool Alumno::unicoLider() {
 	Alumno aux("dni", "nombre", "apellidos");
 	std::ifstream file("Students_DataBase.txt");
 
-	while(file.eof()){
-			file >> aux;
-			if( this->getNequipo() == aux.getNequipo() ){
-				if(aux.getLider()){return false;}
-			}
+	while(!file.eof()){
+		file >> aux;
+		if( this->getNequipo() == aux.getNequipo() ){
+			if(aux.getLider()){return false;}
+		}
 	}
 
 	file.close();
