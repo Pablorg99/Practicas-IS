@@ -87,17 +87,17 @@ int System::menuPrincipal(){
                 case 5:
                     cout<<"Hola, Work in progress"<<endl;
                 case 6:
-                    if(usuario_.getCoordinador){
+                    if(usuario_.getCoordinador()){
                         GenerarBackup();
                     }
                     else{cout<<"No tiene premisos para realizar esta operacion"<<endl;}
                 case 7:
-                    if(usuario_.getCoordinador){
+                    if(usuario_.getCoordinador()){
                         CargarBackup();
                     }
                     else{cout<<"No tiene premisos para realizar esta operacion"<<endl;}
                 case 8:
-                    if(usuario_.getCoordinador){
+                    if(usuario_.getCoordinador()){
                         FormatearBD();
                     }
                     else{cout<<"No tiene premisos para realizar esta operacion"<<endl;}
