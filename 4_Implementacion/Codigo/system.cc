@@ -61,7 +61,8 @@ int System::menuPrincipal(){
                     if(!InsertarAlumno()){ 
                         cout<<"Alumno ya existente"<<endl;
                     }
-					sleep(2);
+					cin.ignore();
+					cin.get();
 					break;
                 case 2:
                     alumnos_ = BuscarAlumnos();
@@ -128,7 +129,8 @@ bool System::InsertarAlumno(){
 
 	//Introduce Apellido
 	cout << "Apellidos:  ";
-	cin >> straux;
+	getchar();
+	getline(cin, straux);
 	alumno.setApellido(straux);
 
 	int opcion;
@@ -214,6 +216,7 @@ list <Alumno> System::BuscarAlumnos() {
 	int opcion_submenu;
 
 	while(true) {
+		cout << endl;
 		cout << "Indica el tipo de selección que quieres hacer:" << endl;
 		cout << "\t1. Todos los alumnos registrados." << endl;
 		cout << "\t2. Un equipo." << endl;
