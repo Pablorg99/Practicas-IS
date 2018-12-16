@@ -15,13 +15,13 @@ bool Database::addStudent(Alumno &new_student) {
 	ifstream input_stream;
     ofstream output_stream;
 
-    input_stream.open(BD);
+    input_stream.open(getStudentsBD());
     while(input_stream.eof) {
         input_stream >> aux_student;
 		if(aux_student.getDNI() == new_student.getDNI()) return false;
     }
 
-	output_stream.open(BD);
+	output_stream.open(getStudentsBD());
 	output_stream << new_student;
 	return true;
 }
@@ -31,7 +31,7 @@ list <Alumno> Database::getAllStudents() {
 	Alumno alumno_aux("dni", "nombre", "apellidos");
 	ifstream input_stream;
     
-	input_stream.open(BD);
+	input_stream.open(getStudentsBD());
 	while(input_stream.eof()) {
 		input_stream >> alumno_aux;
 		list_aux.push_back(alumno_aux);
@@ -44,12 +44,12 @@ list <Alumno> Database::getAllStudents() {
 Alumno Database::getStudentByValue(string value, int parameter) {
 	Alumno alumno_aux("dni", "nombre", "apellidos");
 	ifstream input_stream;
-	input_stream.open(BD);
+	input_stream.open(getStudentsBD());
 	while(input_stream.eof()) {
 		input_stream >> alumno_aux;
 		if(CompareValueAndStudent(alumno_aux, value, parameter)) return alumno_aux;
 	}
-	std::cout << "No se ha encontrado ningún alumno con el valor especificado" << std::endl;
+	perror("Ningun usuario coincide con el valor especificado");
 	return;
 }
 
@@ -77,7 +77,7 @@ bool Database::CompareValueAndStudent(Alumno &alumno_aux, string value, int para
 bool Database::WriteDataBase(list <Alumno> new_students_list) {
 	list <Alumno> :: iterator student;
 	ofstream output_stream;
-	output_stream.open(BD);
+	output_stream.open(getStudentsBD());
 	for(student = new_students_list.begin(); student != new_students_list.end(); student++) {
 		output_stream << *student;
 	}
