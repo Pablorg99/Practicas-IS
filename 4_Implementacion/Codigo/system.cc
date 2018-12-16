@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <unistd.h>
 
 using std::cout;
 using std::cin;
@@ -58,8 +59,9 @@ int System::menuPrincipal(){
             switch(opcion){
                 case 1:
                     if(!InsertarAlumno()){ 
-                        cout<<"Error al insertar el alumno"<<endl;
+                        cout<<"Alumno ya existente"<<endl;
                     }
+					sleep(2);
 					break;
                 case 2:
                     alumnos_ = BuscarAlumnos();
@@ -263,7 +265,7 @@ list <Alumno> System::SeleccionarUnEquipo(int n_equipo) {
 	std::ifstream input_stream;
 	
 	input_stream.open(BDsistema_.getStudentsDB());
-	while(input_stream.eof()) {
+	while(!input_stream.eof()) {
 		input_stream >> alumno_aux;
 		if(alumno_aux.getNequipo() == n_equipo) {
 			cout << alumno_aux.getApellidosyNombre() << " seleccionado" << endl;
@@ -410,6 +412,8 @@ void System::MostrarAlumno(){
     }
 
     cout << "---------------------------------------------" << endl;
+	cin.ignore();
+	cin.get();
 }
 
 list<Alumno> System::ModificarAlumno(){
