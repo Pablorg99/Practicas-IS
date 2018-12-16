@@ -38,6 +38,7 @@ bool System::RegistroCoordinador(){
 int System::menuPrincipal(){
     int opcion;
     do{
+			system("clear");
 			cout << "Sistema de gestion del alumnado" << endl;
 			cout << endl;
 			cout << "\t1. Insertar nuevo alumno " << endl;
