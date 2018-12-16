@@ -46,16 +46,7 @@ string System::primerInicio(){
 	Profesor usuario("dni", "nombre", "fichero", "apellido");
 	usuario = RegistroCoordinador();
 
-	//El nombre del archivo de credenciales esta formado por el dni y la terminacion _CDL.txt
-	string nombreFichero;
-	nombreFichero = usuario.getDNI() + "_CDL.txt";
-
-	//Se crea el archivo de credenciales
-	std::ofstream new_stream_user(nombreFichero);
-	string credenciales = usuario.getDNI() + "," + usuario.getNombre();
-	new_stream_user << credenciales;
-
-	return nombreFichero;
+	return usuario.getFichero();
 }
 
 //Registro del usuario coordinador
@@ -111,7 +102,7 @@ int System::menuPrincipal(){
                     ModificarProfesor();
 					break;
                 case 5:
-                    cout<<"Hola, Work in progress"<<endl;
+                    EliminarAyudante();
 					break;
                 case 6:
 					//Comprueba que el usuario que lo hace tiene permisos
@@ -684,6 +675,16 @@ Profesor System::RegistroProfesor(){
 			cout << endl;
 		}
 	}while (opcion != 4 );
+
+	//El nombre del archivo de credenciales esta formado por el dni y la terminacion _CDL.txt
+	string nombreFichero;
+	nombreFichero = ayudante.getDNI() + "_CDL.txt";
+
+	//Se crea el archivo de credenciales
+	std::ofstream new_stream_user(nombreFichero);
+	string credenciales = ayudante.getDNI() + "," + ayudante.getNombre();
+	new_stream_user << credenciales;
+
 	return ayudante;
 }
 
