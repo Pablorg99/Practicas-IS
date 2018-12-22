@@ -161,8 +161,7 @@ bool System::InsertarAlumno(){
 
 	//Introduce Nombre
 	cout << "Nombre:  ";
-	getchar();
-	getline(cin, straux);
+	cin >> straux;
 	alumno.setNombre(straux);
 
 	//Introduce Apellido
