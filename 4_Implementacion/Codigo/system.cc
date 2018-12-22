@@ -71,12 +71,13 @@ int System::menuPrincipal(){
 			cout << endl;
 			cout << "\t1. Insertar nuevo alumno " << endl;
 			cout << "\t2. Buscar alumnos " << endl;
-			cout << "\t3. Registrar nuevo profesor " << endl;
-			cout << "\t4. Modificar profesor " << endl;
-			cout << "\t5. Eliminar profesor " << endl;
-            cout << "\t6. Crear Backup de alumnos" <<endl;
-            cout << "\t7. Cargar Backup de alumnos" <<endl;
-            cout << "\t8. Formatear base de datos de alumnos" <<endl;
+			cout << "\t3. Especificar líder " << endl;
+			cout << "\t4. Registrar nuevo profesor " << endl;
+			cout << "\t5. Modificar profesor " << endl;
+			cout << "\t6. Eliminar profesor " << endl;
+            cout << "\t7. Crear Backup de alumnos" <<endl;
+            cout << "\t8. Cargar Backup de alumnos" <<endl;
+            cout << "\t9. Formatear base de datos de alumnos" <<endl;
             cout << "\t0. Salir" <<endl;
             cout << endl;
 
@@ -95,30 +96,35 @@ int System::menuPrincipal(){
                 case 2:
                     alumnos_ = BuscarAlumnos();
                     return subMenuBuscar();
-                case 3:
-                    RegistroProfesor();
+				case 3:
+					if(!EspecificarLider()){
+						cout<<"El DNI introducido no pertenece a un alumno de este grupo"<<endl;
+					}
 					break;
                 case 4:
-                    ModificarProfesor();
+                    RegistroProfesor();
 					break;
                 case 5:
-                    EliminarAyudante();
+                    ModificarProfesor();
 					break;
                 case 6:
+                    EliminarAyudante();
+					break;
+                case 7:
 					//Comprueba que el usuario que lo hace tiene permisos
                     if(usuario_.getCoordinador()){
                         GenerarBackup();
                     }
                     else{cout<<"No tiene premisos para realizar esta operacion"<<endl;}
 					break;
-                case 7:
+                case 8:
 					//Comprueba que el usuario que lo hace tiene permisos
                     if(usuario_.getCoordinador()){
                         CargarBackup();
                     }
                     else{cout<<"No tiene premisos para realizar esta operacion"<<endl;}
 					break;
-                case 8:
+                case 9:
 					//Comprueba que el usuario que lo hace tiene permisos
                     if(usuario_.getCoordinador()){
                         FormatearBD();
@@ -155,7 +161,8 @@ bool System::InsertarAlumno(){
 
 	//Introduce Nombre
 	cout << "Nombre:  ";
-	cin >> straux;
+	getchar();
+	getline(cin, straux);
 	alumno.setNombre(straux);
 
 	//Introduce Apellido
@@ -194,7 +201,8 @@ bool System::InsertarAlumno(){
 
 			case 2:
 				cout << "Dirección:  ";
-				cin >> straux;
+				getchar();
+				getline(cin, straux);
 				alumno.setDireccion(straux);
 				cout << "\n";
 				break;
@@ -867,7 +875,7 @@ void System::FormatearBD() {
     BD_file_stream.close();
 }
 
-bool System::EspecificarLider(){
+bool System::EspecificarLider() {
 	int Nequip_aux = 0;
 	while( (!isdigit(Nequip_aux)) || (Nequip_aux <= 0) ){
 		cout << "Nº de Equipo a especificar líder: ";
