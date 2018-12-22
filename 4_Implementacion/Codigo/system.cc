@@ -41,8 +41,8 @@ System::System(string ficheroCredenciales, Profesor &usuario, Database BDsistema
 }
 
 //La primera vez que se inicia es sistema se registra el profesor coordinador
-string System::primerInicio(){ 
-	
+string System::primerInicio(){
+
 	Profesor usuario("dni", "nombre", "fichero", "apellido");
 	usuario = RegistroCoordinador();
 
@@ -57,7 +57,7 @@ Profesor System::RegistroCoordinador(){
     coordinador = RegistroProfesor();
     coordinador.CambiarCoordinador();
     //Guarda al profesor en la base de datos de usuario
-	BDsistema_.deleteUser(coordinador.getDNI()); 
+	BDsistema_.deleteUser(coordinador.getDNI());
     BDsistema_.addUser(coordinador);
 	return coordinador;
 }
@@ -78,7 +78,7 @@ int System::menuPrincipal(){
             cout << "\t7. Cargar Backup de alumnos" <<endl;
             cout << "\t8. Formatear base de datos de alumnos" <<endl;
             cout << "\t0. Salir" <<endl;
-            cout << endl;            
+            cout << endl;
 
 			cout << "Opción número: ";
             cin >> opcion;
@@ -221,7 +221,7 @@ bool System::InsertarAlumno(){
 				break;
 
 			case 6:
-				alumno.cambiaLider();         //setLider cambia el valor de lider_ cada vez que se ejecuta
+				alumno.cambiaLider();         //cambiaLider cambia el valor de lider_ cada vez que se ejecuta
 				cout << "\n";
 				break;
 
@@ -302,7 +302,7 @@ list <Alumno> System::SeleccionarUnEquipo(int n_equipo) {
 	list <Alumno> list_aux;
 	Alumno alumno_aux("dni", "nombre", "apellidos");
 	std::ifstream input_stream;
-	
+
 	//Busca todos los alumnos que pertenezcan a n_equipo
 	input_stream.open(BDsistema_.getStudentsDB());
 	while(input_stream >> alumno_aux) {
@@ -343,7 +343,7 @@ list <Alumno> System::SeleccionarNumeroAlumnos(int n_alumnos) {
 int System::PedirParametro() {
 	int opcion_parametro;
 	while(true) {
-		cout << endl;	
+		cout << endl;
 		cout << "Por qué parametro desea buscar:" << endl;
 		cout << "\t1. DNI." << endl;
 		cout << "\t2. Nombre." << endl;
@@ -442,7 +442,7 @@ int System::subMenuBuscar(){
 }
 
 //Despliega la ficha de alumno
-void System::MostrarAlumno(){ 
+void System::MostrarAlumno(){
     cout << "---------------------------------------------" << endl;
     cout << endl;
     list<Alumno> listalumno = alumnos_;
@@ -561,7 +561,7 @@ list<Alumno> System::ModificarAlumno(){
 					break;
 
 				case '9':
-					(*it).cambiaLider();         //setLider cambia el valor de lider_ cada vez que se ejecuta
+					(*it).cambiaLider();         //cambiaider cambia el valor de lider_ cada vez que se ejecuta
 					cout << "\n";
 					break;
 
@@ -767,7 +767,7 @@ bool System::ModificarProfesor(){
 					break;
 
 				case 7:
-					(*it).CambiarCoordinador();         //setLider cambia el valor de lider_ cada vez que se ejecuta
+					(*it).CambiarCoordinador();
 					cout << "\n";
 					break;
 
@@ -865,4 +865,40 @@ void System::FormatearBD() {
 	std::ofstream BD_file_stream;
 	BD_file_stream.open(BDsistema_.getStudentsDB());
     BD_file_stream.close();
+}
+
+bool System::EspecificarLider(){
+	int Nequip_aux = 0;
+	while( (!isdigit(Nequip_aux)) || (Nequip_aux <= 0) ){
+		cout << "Nº de Equipo a especificar líder: ";
+		cin >> Nequip_aux;
+		if( (!isdigit(Nequip_aux)) || (Nequip_aux <= 0) ){
+			cout << "Selección inválida, introduzcalo de nuevo." << '\n';
+		}
+	}
+
+	list <Alumno> list_aux = SeleccionarUnEquipo(Nequip_aux);
+	int i = 1;
+	for(list <Alumno>::iterator it = alumnos_.begin(); it != alumnos_.end(); it++){
+		cout << i << ". " << it->getDNI() << '\n';
+		cout << "   " << it->getApellidosyNombre() << '\n';
+		it->setLider(false);
+		cout << '\n';
+		i++;
+	}
+
+	string dniaux;
+	cout << "DNI del alumno a hacer líder: " << '\n';
+	cin >> dniaux;
+
+	int comprobacion = 0;
+
+	for(list <Alumno>::iterator it = alumnos_.begin(); it != alumnos_.end(); it++){
+		if(it->getDNI() == dniaux){
+			it->setLider(true);
+			comprobacion++;
+		}
+	}
+	if(comprobacion){return true;}
+	else{return false;}
 }

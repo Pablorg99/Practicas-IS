@@ -14,8 +14,9 @@
 **Flujo Principal:**
 
 1. El caso comienza cuando el usuario quiere seleccionar quien es el lider de un grupo.
-2. El usuario debe buscar y seleccionar el alumno que quiere seleccionar como lider.
-3. El sistema comprueba que no hay otro lider en el grupo del alumno seleccionado.
+2. El usuario debe seleccionar el grupo del que quiere seleccionar lider.
+3. El usuario introduce al miembro del grupo a hacer lider.
+4. El sistema comprueba que no hay otro lider en el grupo.
 
 **Postcondiciones:**
 
@@ -23,5 +24,5 @@
 
 **Flujo alternativo:**
 
-* Si el alumno buscado no existe el sistema mostrará un mensaje de error.
+* Si el alumno seleccionado no pertenece al grupo el sistema mostrará un mensaje de error.
 * Si ya hay un líder en ese grupo el sistema mostrará un error.
