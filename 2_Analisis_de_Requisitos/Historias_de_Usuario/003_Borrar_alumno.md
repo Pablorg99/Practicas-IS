@@ -2,7 +2,7 @@
 
 ---
 
-### **ID:** 003 **Borrar alumno**
+### **ID:** 003 **Borrar Alumno**
 
 Quiero poder borrar un alumno registrado en la base de datos.
 

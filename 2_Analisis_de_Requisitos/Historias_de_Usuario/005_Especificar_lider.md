@@ -2,7 +2,7 @@
 
 ---
 
-### **ID:** 005 **Insertar líder**
+### **ID:** 005 **Insertar Líder**
 
 Quiero poder seleccionar un miembro del grupo como líder
 
