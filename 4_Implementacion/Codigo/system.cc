@@ -508,7 +508,7 @@ list<Alumno> System::ModificarAlumno(){
 			cin >> opcion;
 
 			switch (opcion) {
-				case '1':
+				case 1:
 					cout << "DNI:  ";
 					cin >> straux;
 					while(!(*it).setDNI(straux)){
@@ -519,61 +519,61 @@ list<Alumno> System::ModificarAlumno(){
 					cout << "\n";
 					break;
 
-				case '2':
+				case 2:
 					cout << "Nombre:  ";
 					cin >> straux;
 					(*it).setNombre(straux);
 					cout << "\n";
 					break;
 
-				case '3':
+				case 3:
 					cout << "Apellidos:  ";
 					cin >> straux;
 					(*it).setApellido(straux);
 					cout << "\n";
 					break;
 
-				case '4':
+				case 4:
 					cout << "Teléfono:  ";
 					cin >> intaux;
 					(*it).setTelefono(intaux);
 					cout << "\n";
 					break;
 
-				case '5':
+				case 5:
 					cout << "Dirección:  ";
 					cin >> straux;
 					(*it).setDireccion(straux);
 					cout << "\n";
 					break;
 
-				case '6':
+				case 6:
 					cout << "Email:  ";
 					cin >> straux;
 					(*it).setEmail(straux);
 					cout << "\n";
 					break;
 
-				case '7':
+				case 7:
 					cout << "Último curso matriculado:  ";
 					cin >> intaux;
 					(*it).setCurso(intaux);
 					cout << "\n";
 					break;
 
-				case '8':
+				case 8:
 					cout << "Nº de equipo:  ";
 					cin >> intaux;
 					(*it).setNequipo(intaux);
 					cout << "\n";
 					break;
 
-				case '9':
+				case 9:
 					(*it).cambiaLider();         //cambiaider cambia el valor de lider_ cada vez que se ejecuta
 					cout << "\n";
 					break;
 
-				case '0':
+				case 0:
 					cout << "Alumno editado correctamente.\n";
 					cout << "\n";
 					break;
