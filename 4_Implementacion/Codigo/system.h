@@ -34,7 +34,7 @@ class System{
 		void GenerarBackup();
 		void CargarBackup();
 		void FormatearBD();
-        bool EspecificarLider()
+        bool EspecificarLider();
 		string primerInicio();
 
 };
