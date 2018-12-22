@@ -877,10 +877,10 @@ void System::FormatearBD() {
 
 bool System::EspecificarLider() {
 	int Nequip_aux = 0;
-	while( (!isdigit(Nequip_aux)) || (Nequip_aux <= 0) ){
+	while( Nequip_aux <= 0 ){
 		cout << "Nº de Equipo a especificar líder: ";
 		cin >> Nequip_aux;
-		if( (!isdigit(Nequip_aux)) || (Nequip_aux <= 0) ){
+		if( Nequip_aux <= 0 ){
 			cout << "Selección inválida, introduzcalo de nuevo." << '\n';
 		}
 	}
