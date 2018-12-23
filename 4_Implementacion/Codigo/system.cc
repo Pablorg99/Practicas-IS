@@ -427,8 +427,8 @@ int System::subMenuBuscar(){
             cin >> opcion;
             switch(opcion){
                 case 1:
-                    ModificarAlumno();
                     BorrarAlumnos(alumnos_);
+                    alumnos_ = ModificarAlumno();
                     for(list <Alumno>::iterator it = alumnos_.begin(); it != alumnos_.end(); it++){
                         BDsistema_.addStudent(*it);
                     }
