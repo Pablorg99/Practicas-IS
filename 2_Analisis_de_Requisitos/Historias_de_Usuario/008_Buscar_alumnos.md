@@ -2,7 +2,7 @@
 
 ---
 
-### **ID:** 009 **Buscar Alumnos**
+### **ID:** 008 **Buscar Alumnos**
 
 Quiero poder buscar un alumno registrado en la base de datos.
 
