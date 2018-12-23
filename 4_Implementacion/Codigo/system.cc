@@ -489,9 +489,9 @@ list<Alumno> System::ModificarAlumno(){
 		do {
 			cout << "¿Qué parámetro desea modificar?" << endl;
 			cout << endl;
-			cout << "\t1. DNI: " << it->getTelefono() << endl;
-			cout << "\t2. Nombre: " << it->getTelefono() << endl;
-			cout << "\t3. Apellidos: " << it->getTelefono() << endl;
+			cout << "\t1. DNI: " << it->getDNI() << endl;
+			cout << "\t2. Nombre: " << it->getNombre() << endl;
+			cout << "\t3. Apellidos: " << it->getApellidos() << endl;
 			cout << "\t4. Teléfono: " << it->getTelefono() << endl;
 			cout << "\t5. Dirección: " << it->getDireccion() << endl;
 			cout << "\t6. Email: " << it->getEmail() << endl;
@@ -527,7 +527,8 @@ list<Alumno> System::ModificarAlumno(){
 
 				case 3:
 					cout << "Apellidos:  ";
-					cin >> straux;
+					getchar();
+					getline(cin, straux);
 					(*it).setApellido(straux);
 					cout << "\n";
 					break;
@@ -541,7 +542,8 @@ list<Alumno> System::ModificarAlumno(){
 
 				case 5:
 					cout << "Dirección:  ";
-					cin >> straux;
+					getchar();
+					getline(cin, straux);
 					(*it).setDireccion(straux);
 					cout << "\n";
 					break;
@@ -631,7 +633,8 @@ Profesor System::RegistroProfesor(){
 
 	//Introduce Apellido
 	cout << "Apellido:  ";
-	cin >> straux;
+	getchar();
+	getline(cin, straux);
 	ayudante.setApellido(straux);
 
 	string fichero_credencial = ayudante.getDNI() + "_CDL.txt";
@@ -660,7 +663,8 @@ Profesor System::RegistroProfesor(){
 
 			case 2:
 				cout << "Dirección:  ";
-				cin >> straux;
+				getchar();
+				getline(cin, straux);
 				ayudante.setDireccion(straux);
 				cout << "\n";
 				break;
@@ -747,7 +751,8 @@ bool System::ModificarProfesor(){
 
 				case 3:
 					cout << "Apellidos:  ";
-					cin >> straux;
+					getchar();
+					getline(cin, straux);
 					(*it).setApellido(straux);
 					cout << "\n";
 					break;
@@ -761,7 +766,8 @@ bool System::ModificarProfesor(){
 
 				case 5:
 					cout << "Dirección:  ";
-					cin >> straux;
+					getchar();
+					getline(cin, straux);
 					(*it).setDireccion(straux);
 					cout << "\n";
 					break;
