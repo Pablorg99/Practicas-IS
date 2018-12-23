@@ -1,6 +1,6 @@
 ## Cargar Backup
 
-**ID:** 010.
+**ID:** 009.
 **Breve descripción:** Lee un archivo binario con los datos de los alumnos.
 
 **Actores principales:** Profesor.  

@@ -1,6 +1,6 @@
 ## Eliminar Ayudante
 
-**ID:** 015.  
+**ID:** 014.  
 **Breve descripción:** Permite eliminar un profesor ayudante.
 
 **Actores principales:** Profesor.  

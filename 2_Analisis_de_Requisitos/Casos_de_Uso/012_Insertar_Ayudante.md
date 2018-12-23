@@ -1,6 +1,6 @@
 ## Añadir Ayudante
 
-**ID:** 013.  
+**ID:** 012.  
 **Breve descripción:** Permite insertar un nuevo profesor ayudante.
 
 **Actores principales:** Profesor.  

@@ -1,6 +1,6 @@
 ## Modificar Coordinador
 
-**ID:** 012.  
+**ID:** 011.  
 **Breve descripción:** Permite editar al coordinador de un sistema.
 
 **Actores principales:** Profesor.  

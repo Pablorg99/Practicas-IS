@@ -1,6 +1,6 @@
 ## Crear Coordinador
 
-**ID:** 011.  
+**ID:** 010.  
 **Breve descripción:** Permite insertar al profesor coordinador.
 
 **Actores principales:** Profesor.  

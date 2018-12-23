@@ -1,6 +1,6 @@
 ## Buscar alumnos
 
-**ID:** 009.  
+**ID:** 008.  
 **Breve descripción:** Busca uno, o un conjunto de alumnos y los selecciona.
 
 **Actores principales:** Profesor.  

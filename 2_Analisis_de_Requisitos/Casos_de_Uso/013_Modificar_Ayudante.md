@@ -1,6 +1,6 @@
 ## Modificar Ayudante
 
-**ID:** 014.  
+**ID:** 013.  
 **Breve descripción:** Permite editar un profesor ayudante ya existente.
 
 **Actores principales:** Profesor.  
