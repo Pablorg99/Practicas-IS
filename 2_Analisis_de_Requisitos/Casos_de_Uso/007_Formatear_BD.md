@@ -9,6 +9,8 @@
 **Precondiciones:**
 
 1. La base de datos debe tener almacenada información de al menos un alumno.
+2. El usuario debe ser profesor coordinador.
+
 
 **Flujo Principal:**
 
@@ -22,3 +24,4 @@
 **Flujo alternativo:**
 
 * Si no se encuentra ningún alumno en la base de datos, se le informará al usuario y no se realizará ninguna acción.
+* Si el usuario no es coordinador el sistema muestra un error y se vuelve al menú.
