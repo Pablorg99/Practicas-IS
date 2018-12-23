@@ -161,12 +161,12 @@ bool System::InsertarAlumno(){
 
 	//Introduce Nombre
 	cout << "Nombre:  ";
-	cin >> straux;
+	getchar();
+	getline(cin, straux);
 	alumno.setNombre(straux);
 
 	//Introduce Apellido
 	cout << "Apellidos:  ";
-	getchar();
 	getline(cin, straux);
 	alumno.setApellido(straux);
 
@@ -520,14 +520,14 @@ list<Alumno> System::ModificarAlumno(){
 
 				case 2:
 					cout << "Nombre:  ";
-					cin >> straux;
+					getchar();
+					getline(cin, straux);
 					(*it).setNombre(straux);
 					cout << "\n";
 					break;
 
 				case 3:
 					cout << "Apellidos:  ";
-					getchar();
 					getline(cin, straux);
 					(*it).setApellido(straux);
 					cout << "\n";
@@ -628,12 +628,12 @@ Profesor System::RegistroProfesor(){
 
 	//Introduce Nombre
 	cout << "Nombre:  ";
-	cin >> straux;
+	getchar();
+	getline(cin, straux);
 	ayudante.setNombre(straux);
 
 	//Introduce Apellido
 	cout << "Apellido:  ";
-	getchar();
 	getline(cin, straux);
 	ayudante.setApellido(straux);
 
@@ -744,14 +744,14 @@ bool System::ModificarProfesor(){
 
 				case 2:
 					cout << "Nombre:  ";
-					cin >> straux;
+					getchar();
+					getline(cin, straux);
 					(*it).setNombre(straux);
 					cout << "\n";
 					break;
 
 				case 3:
 					cout << "Apellidos:  ";
-					getchar();
 					getline(cin, straux);
 					(*it).setApellido(straux);
 					cout << "\n";
