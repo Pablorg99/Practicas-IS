@@ -1,3 +1,5 @@
+# Extracción de Requisitos
+
 ## Actores
 
 * Principal:  Profesor.
@@ -31,6 +33,11 @@
 7. Restaurar copia de datos (5)
 8. Formateo de base de datos. (5)
 9. Buscar alumnos. (3)
+10. Crear coordinador. (1)
+11. Modificar coordinador. (4)
+12. Añadir profesor ayudante. (2)
+13. Modificar profesor ayudante. (4)
+14. Eliminar profesor ayudante. (4)
 
 > *Nota:* Las prioridades se establecerán con un número entre paréntesis tras el requisito
 al que hace referencia (siendo 1 la máxima prioridad y 5 la mínima)
