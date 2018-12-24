@@ -36,8 +36,16 @@ Se observan dos tipos:
 
 * Loop
 
-    Los mensajes de su interior iteran hasta que un momento específico en el que se cumple una condición. La cual se señala en una nota situada al lado del loop.
+    Los mensajes de su interior iteran mientras que se cumpla la condición señalada entre corchetes.
 
-* Ref
+* Alt
 
-    Se trata de una referencia a otro diagrama de secuencia, implica que para que el sistema se encuentre en la situación posterior a la referencia, tiene que haberse realizado la secuencia expresada en el diagrama de "ref".
+    Se utiliza para señalar una sentencia if. Implica que hay 2 secuencias de mensajes alternativas, que o se cumple una o la otra. La condición se señala entre corchetes cuando es necesario. En otras ocasiones se sobreentiende esta condición por el primer mensaje de la secuencia.
+
+* Opt
+
+	Implica que los mensajes que contiene no se producen en todas las ejecuciones, ya que son mensajes opcionales. En la mayoría de casos es utilizado para indicar el flujo de mensajes de una opción de un menú.
+
+* Break
+
+	Se incluye en el interior de algunos bucles para señalar que si se llega a esta secuencia, se produce una salida del mismo.
