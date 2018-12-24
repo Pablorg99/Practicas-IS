@@ -32,7 +32,7 @@ Está presente en algunos de los diagramas de secuencia. Esto se debe a que cier
 
 Los representan los diferentes recuadros presentes en algunos diagramas de secuencia que incluyen dentro de ellos ciertos mensajes.
 
-Se observan dos tipos:
+Se observan cuatro tipos:
 
 * Loop
 
